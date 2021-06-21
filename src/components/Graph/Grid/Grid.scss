@@ -1,0 +1,105 @@
+.grid {
+	display: flex;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	right: 30px;
+	.grid_card {
+		opacity: 0.1;
+		border-left: 1px solid lightgrey;
+		border-right: 1px solid lightgrey;
+		height: 9vh;
+		width: 18px;
+		position: relative;
+		bottom: 10vh;
+		left: 14px;
+	}
+}
+.grid_vertical {
+	pointer-events: none;
+	position: relative;
+	bottom: 74vh;
+	left: 16.5vw;
+	width: 400px;
+	height: 30vh;
+	rotate: 90deg;
+}
+.grid_v {
+	opacity: 0.08;
+	position: relative;
+	width: 340px;
+	height: 5%;
+	left: 4vw;
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 3vw;
+}
+.grid-container {
+	position: relative;
+	bottom: 44vh;
+	width: 100%;
+	pointer-events: none;
+}
+.grid2 {
+	position: relative;
+	width: 110%;
+	height: 2vh;
+	left: 3vw;
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 3vh;
+	pointer-events: none;
+
+	line {
+		opacity: 0.1;
+		margin-top: 20px;
+	}
+	.line2 {
+		position: relative;
+		top: 2vh;
+	}
+}
+.grid6 {
+	position: absolute;
+	top: 2vh;
+	opacity: 0.1;
+	left: 4vw;
+	width: 110%;
+}
+.grid5 {
+	position: relative;
+	top: -36vh;
+	opacity: 0.1;
+	left: 4%;
+	width: 320px;
+	rotate: 90deg;
+}
+.grid8 {
+	position: relative;
+	top: -67vh;
+	opacity: 0.1;
+	left: -2vw;
+	width: 320px;
+	rotate: 90deg;
+}
+.grid3 {
+	@extend .grid2;
+	position: absolute;
+	top: 21.1vh;
+	left: 5.6vw;
+
+	width: 200%;
+}
+
+.grid_div {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	height: 3vh;
+	width: 100%;
+}

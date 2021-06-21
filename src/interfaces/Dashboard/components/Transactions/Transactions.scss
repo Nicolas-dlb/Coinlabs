@@ -1,0 +1,18 @@
+@import "theme/_variables.scss";
+
+@media only screen and (min-width: 992px) {
+	.transactions {
+		margin-top: 2vh;
+		padding-top: 2vh;
+
+		width: 340px;
+		height: 39vh;
+		background: var(--third-bg-color);
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		overflow: hidden;
+	}
+}

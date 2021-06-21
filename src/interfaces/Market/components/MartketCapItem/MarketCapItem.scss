@@ -1,0 +1,46 @@
+.market_cap_item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 2vh;
+	width: 87%;
+	.item_name {
+		width: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		p {
+			margin-left: 5px;
+		}
+		svg {
+			scale: 0.9;
+		}
+	}
+	.item_variation {
+		display: flex;
+		align-items: center;
+		width: 55px;
+		margin-left: 5%;
+		margin-right: 6%;
+		svg {
+			width: 15px;
+			margin-right: 5px;
+		}
+		p:first-child {
+			margin-right: 5px;
+		}
+	}
+	.item_volume {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		width: 185px;
+		p:first-child {
+			margin-right: 5px;
+		}
+		p:last-child {
+			font-size: 14px;
+		}
+	}
+}

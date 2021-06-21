@@ -1,0 +1,46 @@
+.graph_container {
+	.graph {
+		position: relative;
+		top: 4vh;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.recharts-responsive-container {
+			position: relative;
+			top: 2vh;
+		}
+		width: 100%;
+		.tooltip-top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			svg {
+				width: 11px;
+			}
+		}
+		.tooltip-bottom {
+			display: flex;
+			align-items: center;
+			font-size: 21px;
+			margin-top: 15px;
+			margin-bottom: 2px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: -4vh;
+			left: 0;
+			right: 5.2%;
+			bottom: 70.2vh;
+			border-radius: 20px;
+			-webkit-box-shadow: inset 0px 13px 31px 39px rgba(34, 30, 52, 1);
+			-moz-box-shadow: inset 0px 13px 31px 39px rgba(34, 30, 52, 1);
+			box-shadow: inset 0px 13px 31px 39px rgba(34, 30, 52, 1);
+
+			pointer-events: none;
+			z-index: 1;
+		}
+	}
+}

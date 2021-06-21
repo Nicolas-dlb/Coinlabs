@@ -1,0 +1,39 @@
+.transaction {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	margin: 15px;
+	.buy > div {
+		background: #534840 !important;
+		color: #e3c76f !important;
+	}
+	.transaction_statut {
+		div {
+			padding: 5px 7px;
+			background: #264a45;
+			border-radius: 5px;
+			width: 60px;
+			font-size: 14px;
+			text-align: center;
+			color: #3aba77;
+		}
+	}
+
+	.transaction_name {
+		text-align: start;
+		width: 120px;
+		display: flex;
+		align-items: center;
+		svg {
+			height: 32px;
+			width: 32px;
+		}
+		p {
+			margin-left: 10px;
+		}
+	}
+	.transaction_price {
+		width: 50px;
+	}
+}

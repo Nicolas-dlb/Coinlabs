@@ -1,0 +1,52 @@
+.infoboxD {
+	border-radius: 12px;
+	background: var(--third-bg-color);
+	width: 46vw;
+	height: 8vh;
+	display: flex;
+	flex-direction: column;
+	align-items: space-evenly;
+	justify-content: space-between;
+	padding: 20px;
+
+	.infobox_top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #c4c3c9;
+		.infobox_top_variation {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			svg {
+				height: 14px;
+				width: 14px;
+
+				margin-right: 5px;
+			}
+			color: #37bb77;
+		}
+	}
+	.infobox_bottom {
+		font-size: 24px;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.infoboxD {
+		margin: 0;
+		width: 30%;
+		border-right: 1px solid #3b374d;
+		border-radius: 0;
+		padding: 0vh 4.5vw;
+		margin-right: 0 !important;
+		&:first-child {
+			padding-left: 20px;
+		}
+
+		.infobox_bottom {
+			font-size: 26px;
+		}
+	}
+}
