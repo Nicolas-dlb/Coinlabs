@@ -10,7 +10,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #171429;
+	background: var(--app-bg);
 	overflow-x: hidden;
 	&::-webkit-scrollbar {
 		display: none;
@@ -23,7 +23,11 @@ code {
 }
 
 @media only screen and (min-width: 992px) {
-	body::-webkit-scrollbar {
-		display: none;
+	body {
+		transition: background-color 0.3s ease;
+		overflow-y: hidden;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 }

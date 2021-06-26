@@ -2,8 +2,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 2vh;
-	width: 87%;
+	padding-top: 3.5vh;
+	width: 95.8%;
 	.item_name {
 		width: 180px;
 		display: flex;
@@ -34,13 +34,22 @@
 	.item_volume {
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: flex-end;
 		width: 185px;
 		p:first-child {
 			margin-right: 5px;
 		}
 		p:last-child {
 			font-size: 14px;
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.market_cap_item {
+		padding-top: 2.1vh;
+		.item_variation {
+			margin-right: 2.5%;
 		}
 	}
 }

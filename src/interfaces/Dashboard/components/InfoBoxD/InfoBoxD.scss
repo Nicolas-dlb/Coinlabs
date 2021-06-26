@@ -1,6 +1,7 @@
 .infoboxD {
 	border-radius: 12px;
-	background: var(--third-bg-color);
+	transition: background-color 0.3s ease;
+	background-color: var(--third-bg-color);
 	width: 46vw;
 	height: 8vh;
 	display: flex;
@@ -30,6 +31,31 @@
 	.infobox_bottom {
 		font-size: 24px;
 		width: 100%;
+		display: flex;
+		p:first-child {
+			margin-right: 5px;
+		}
+		input {
+			position: relative;
+			top: 1px;
+			font-size: 22px;
+			cursor: pointer;
+			background: var(--third-bg-color);
+			outline: none;
+			border: none;
+			color: var(--primary-font-color);
+			width: 95%;
+			caret-color: #1baa63;
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+
+			&[type="number"] {
+				-moz-appearance: textfield;
+			}
+		}
 	}
 }
 

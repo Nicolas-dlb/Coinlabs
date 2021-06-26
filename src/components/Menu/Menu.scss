@@ -13,6 +13,7 @@
 
 	color: var(--primary-font-color) !important;
 }
+
 .menu {
 	display: flex;
 	flex-direction: column;
@@ -27,7 +28,8 @@
 	z-index: 10000;
 	transform: translateX(-50vw);
 	transition: all 0.5s ease;
-	background: var(--app-bg);
+
+	background-color: var(--app-bg);
 
 	.user {
 		display: flex;
@@ -139,6 +141,7 @@
 		margin-left: 0;
 		padding-left: 30px;
 		padding-right: 40px;
+		background-color: var(--secondary-bg-color);
 		.user {
 			display: none;
 		}

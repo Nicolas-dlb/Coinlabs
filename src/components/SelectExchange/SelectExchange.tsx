@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-nested-ternary */
 import { useEffect } from "react";
-import "./Select.scss";
+import "./SelectExchange.scss";
 import $ from "jquery";
 
 
@@ -24,7 +24,7 @@ function Select({
 
     const array: any = [];
     const options = [...document.getElementsByClassName("option")];
-    const btn = document.querySelector(".btn-select")!;
+    const btn = document.querySelector(".select-sell")!;
     const cryptoList = document.querySelector(".crypto-list")!;
     const cryptoItems = document.getElementById("crypto-items")!;
     const liItems = cryptoItems.querySelectorAll("li")!;
@@ -51,26 +51,26 @@ function Select({
   }, []); */
   const langArray: any = [];
   let array = langArray;
-  let type: string = "crypto";
-  let secondType: string = "currency";
-  let arrow: string = "select-crypto-arrow";
-  let firstValue: string = "ethereum";
-  if (items === "currency") {
+  let type: string = "sell";
+  let secondType: string = "buy";
+  let arrow: string = "select-sell-arrow";
+  let firstValue: string = "Bitcoin";
+  if (items === "buy") {
     const langArray2: any = [];
     array = langArray2;
-    type = "currency";
-    secondType = "crypto";
-    arrow = "select-currency-arrow";
-    firstValue = "usd";
-  }
-  if (items === "currency2") {
-    const langArray3: any = [];
+    type = "buy";
+    secondType = "sell";
+    arrow = "select-buy-arrow";
+    firstValue = "Bitcoin";
+  } else if (items === "add") {
+ const langArray3: any = [];
     array = langArray3;
-    type = "currency2";
-    secondType = "crypto2";
-    arrow = "select-currency2-arrow";
-    firstValue = "usd";
+    type = "add";
+    secondType = "";
+    arrow = "select-add-arrow";
+    firstValue = "Bitcoin";
   }
+
 
   useEffect(() => {
     // load array with items
@@ -89,12 +89,33 @@ function Select({
 
     // change button stuff on click
     $(`#${type}-items li`).click(function selectItem(e) {
-      const img = $(this).find("img").attr("src");
-      const value: any = $(this).find("p").text();
+      
+      const value: any = $(this).text();
       const item = `<li><p>${value}</p></li>`;
       $(`.btn-${type}`).html(item);
       $(`.btn-${type}`).attr("value", value);
-   setCryptoSelected(value);
+   const sell = $(`#select-sell`).text();
+  const add = $(`#select-add`).text();
+  if (setCryptoSelected) {
+
+    if (items === "add") {
+      setCryptoSelected(add);
+      return;
+    }
+     const result = sell === "BTC" ? "bitcoin" : sell === "ETH" ? "ethereum" : sell === "XRP" ? "ripple" : sell === "LTC" ? "litecoin" : "neo";
+    setCryptoSelected(result);
+    
+  }
+
+   const buy = $(`#select-buy`).text();
+  
+  if (setCurrencySelected) {
+    const result = buy === "BTC" ? "bitcoin" : buy === "ETH" ? "ethereum" : buy === "XRP" ? "ripple" : buy === "LTC" ? "litecoin" : "neo";
+    setCurrencySelected(result);
+
+    
+  }
+
    
       $(`.${type}-list`).removeClass(`${type}-list-active`);
       $("#select-c").removeClass("toggle-select");
@@ -114,88 +135,49 @@ function Select({
       $("#select-c").removeClass("toggle-select");
     });
   }, []);
-  const crypto = $("#btn-select").text();
-  
-  if (setCryptoSelected) {
-    setCryptoSelected(crypto);
-
-    
-  }
-
+ 
 
   return (
     <>
       <div>
         <select className={`${type} exchange_element`}>
-          {items === "crypto" ? (
-            <>
+         
             <option
                 className="option exchange_element"
-                label="All"
-                value="All"
+                label="BTC"
+                value="BTC"
                 
-              >All</option>
-            <option
-                className="option exchange_element"
-                label="Bitcoin"
-                value="Bitcoin"
-                
-              >Bitcoin</option>
+              >BTC</option>
               <option
                 className="option exchange_element"
-                label="Ethereum"
-                value="Ethereum"
+                label="ETH"
+                value="ETH"
                 
-              >Ethereum</option>
+              >ETH</option>
               
               <option
                 className="option exchange_element"
-                label="Ripple"
-                value="Ripple"
+                label="XRP"
+                value="XRP"
                 
-              >Ripple</option>
+              >XRP</option>
               <option
                 className="option exchange_element"
-                label="Litecoin"
-                value="Litecoin"
+                label="LTC"
+                value="LTC"
                 
-              >Litecoin</option>
+              >LTC</option>
               <option
                 className="option exchange_element"
-                label="Neo"
-                value="Neo"
+                label="NEO"
+                value="NEO"
                 
-              >Neo</option>
-             
-
-             
-            </>
-          ) : (
-            <>
-              <option label="dollar" value="usd" />
-              <option label="euro" value="eur"  />
-              <option label="livre" value="gbp"  />
-              <option label="pesos" value="mxn"  />
-            </>
-          )}
+              >NEO</option>    
         </select>
         <div
-          className={
-            items === "crypto"
-              ? "crypto-select exchange_element"
-              : items === "currency2"
-              ? "currency-select3 exchange_element"
-              : "currency-select2 exchange_element"
-          }
-        >
+          className={`${type}-select exchange_element`}>
           <svg
-            className={
-              items === "crypto"
-                ? "select-crypto-arrow exchange_element"
-                : items === "currency2"
-                ? "select-currency2-arrow exchange_element"
-                : "select-currency-arrow exchange_element"
-            }
+            className={`select-${type}-arrow exchange_element`}
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 0 24 24"
@@ -206,35 +188,17 @@ function Select({
             <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
           </svg>
           <button
-            id="btn-select"
-            aria-label="btn-select"
+            id={`select-${type}`}
+            aria-label={`select-${type}`}
             type="button"
-            className={
-              items === "crypto"
-                ? "btn-crypto exchange_element"
-                : items === "currency2"
-                ? "btn-currency2 exchange_element"
-                : "btn-currency exchange_element"
-            }
+            className={`btn-${type} exchange_element`}
             value=""
           />
           <div
-            className={
-              items === "crypto"
-                ? "crypto-list exchange_element"
-                : items === "currency2"
-                ? "currency2-list exchange_element"
-                : "currency-list exchange_element"
-            }
+            className={`${type}-list exchange_element`}
           >
             <ul
-              id={
-                items === "crypto"
-                  ? "crypto-items"
-                  : items === "currency2"
-                  ? "currency2-items"
-                  : "currency-items"
-              }
+              id={`${type}-items`}
             />
           </div>
         </div>

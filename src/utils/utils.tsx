@@ -74,6 +74,8 @@ export const updateUserWallet = (wallet: any, user: any) => {
       ethereum: wallet.ethereum,
       ripple: wallet.ripple,
       litecoin: wallet.litecoin,
+      expenses: wallet.expenses,
+      income: wallet.income
     },
     { merge: true }
   );
@@ -138,7 +140,7 @@ export const fetchWallet = (dispatch: any) => {
     .then((doc) => doc.data())
     .then((data) => {
       if (data) {
-        console.log(data)
+        
         dispatch(setWallets(data));
       }
     });

@@ -116,12 +116,10 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
        BoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
     WebkitBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
     MozBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
-       
+    
        alignItems: "space-evenly",
        justifyContent: "center",
         zIndex: 1000,
-        
-    
     };
 
  

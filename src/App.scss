@@ -20,11 +20,37 @@
 	opacity: 0;
 	transform: scale(0.9);
 }
-.menu_active {
+.shadow_active {
+	transform: translateX(44vw) scale(0.7) translateY(-5vh);
+}
+.container_active {
 	transform: translateX(44vw) scale(0.7) translateY(-5vh);
 }
 .opacity {
 	opacity: 1;
+}
+
+.container {
+	transition: all 0.5s ease;
+	height: 119vh;
+}
+
+.active_window {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}
+.page-title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	margin-left: 5%;
+}
+.title {
+	font-size: 18px;
+	margin-left: 5%;
+	margin-top: 3vh;
+	margin-bottom: 2vh;
+	color: #e8e8e9;
 }
 
 @media only screen and (min-width: 992px) {

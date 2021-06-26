@@ -1,11 +1,12 @@
 .dashboard {
-	padding-left: 10px;
+	padding-left: 17px;
 	padding-bottom: 20px;
 	border-radius: 30px;
-	transition: all 0.5s ease;
-	background: var(--secondary-bg-color);
+	transition: background-color 0.3s ease;
+	background-color: var(--secondary-bg-color);
 	padding-top: 10vh;
-
+	opacity: 0;
+	pointer-events: none;
 	margin-top: 1vh;
 	overflow: hidden;
 
@@ -13,7 +14,7 @@
 		font-size: 20px;
 		font-weight: 600;
 		margin-bottom: 15px;
-		margin-left: 5%;
+		margin-left: 1%;
 	}
 	.infobox_dashboard {
 		display: flex;
@@ -52,13 +53,13 @@
 }
 @media only screen and (min-width: 992px) {
 	.dashboard {
-		padding-left: 183px;
+		padding-left: 196px;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
 		padding-top: 7vh;
-		scale: 0.95;
+		transform: scaleY(0.95);
 		overflow: visible;
 		.dashboard_title {
 			margin-left: 1vw;
@@ -69,12 +70,13 @@
 			align-items: center;
 			justify-content: flex-start;
 			margin-bottom: 0vh;
-			background: var(--third-bg-color);
+			transition: background-color 0.3s ease;
+			background-color: var(--third-bg-color);
 			border-radius: 20px;
 			padding: 25px 35px;
 			height: fit-content;
 			flex-direction: row;
-			width: 94%;
+			width: 92.5%;
 			.infobox_dashboard_top,
 			.infobox_dashboard_bottom {
 				justify-content: center;
@@ -95,7 +97,7 @@
 			display: flex;
 			align-items: flex-start;
 			justify-content: flex-start;
-			width: 100%;
+			width: 98%;
 
 			.growth_container {
 				display: flex;

@@ -1,12 +1,36 @@
-import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectWallets, setWallets } from 'redux/reducers/walletsSlice';
+import { getNumberFixed, numberWithSpaces } from 'utils/utils';
 import './InfoBoxD.scss';
+import $ from "jquery"
+import { useEffect } from 'react';
 type InfoBoxProps = {
     title: string;
     variation?: number;
+    input?: true;
 }
-function InfoBox({ title, variation }: InfoBoxProps) {
+function InfoBox({ title, variation, input }: InfoBoxProps) {
+    const wallet = useSelector(selectWallets);
     const color = variation && variation > 0 ? "#37bb77" : "#f1c94f";
     const angle = variation && variation > 0 ? "140deg" : "215deg";
+    const amount = title === "Balance" ? wallet.usd : title === "Crypto"? wallet.TotalCrypto : wallet[title.toLowerCase()];
+const dispatch = useDispatch();
+   
+const setBalance = (e: any) => {
+    const value = $("#balance").val();
+ 
+
+    
+    dispatch(setWallets({
+        usd: Number(value)
+    }))
+
+$("#balance").val(getNumberFixed(value, 2));
+    }
+
+    useEffect(() => {
+        $("#balance").val(getNumberFixed(wallet.usd, 2));
+    }, [])
     return (
         <div className="infoboxD">
             <div className="infobox_top">
@@ -25,7 +49,12 @@ function InfoBox({ title, variation }: InfoBoxProps) {
                     </div>}
             </div>
             <div className="infobox_bottom">
-                <p>$75.028,00</p>
+                <p>$</p>
+                {!input ? <>
+                <p>{numberWithSpaces(getNumberFixed(amount, 2))}</p>
+                </> : <>
+                <input onBlur={setBalance} id="balance" type="number" min="0"/>
+                </>}
             </div>
         </div>
     )

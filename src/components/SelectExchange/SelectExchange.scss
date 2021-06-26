@@ -1,144 +1,136 @@
-.crypto,
-.currency,
-.currency2 {
+.sell,
+.buy,
+.add {
 	display: none;
 }
 
-#crypto-items img,
-.btn-crypto img,
-#currency-items img,
-.btn-currency img,
-#currency2-items img,
-.btn-currency2 img {
+#sell-items img,
+.btn-sell img,
+#buy-items img,
+.btn-buy img,
+#add-items img,
+.btn-add img {
 	width: 15px;
 	height: 15px;
 	position: relative;
 	left: 25%;
 }
 
-.btn-crypto img,
-.btn-currency img,
-.btn-currency2 img {
+.btn-sell img,
+.btn-buy img,
+.btn-add img {
 	margin-right: 30px;
 }
 
-#crypto-items li,
-#currency-items li,
-#currency2-items li {
+#sell-items li,
+#buy-items li,
+#add-items li {
 	list-style: none;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#crypto-items li:hover,
-#currency-items li:hover,
-#currency2-items li:hover {
+#sell-items li:hover,
+#buy-items li:hover,
+#add-items li:hover {
 	background: #312d49;
 }
 
-#crypto-items > li > img,
-#currency-items > li > img,
-#currency2-items > li > img {
+#sell-items > li > img,
+#buy-items > li > img,
+#add-items > li > img {
 	margin: 5px;
 }
 
-#crypto-items > li > span,
-.btn-crypto > li > span,
-#currency-items > li > span,
-.btn-currency > li > span,
-#currency2-items > li > span,
-.btn-currency2 > li > span {
+#sell-items > li > span,
+.btn-sell > li > span,
+#buy-items > li > span,
+.btn-buy > li > span,
+#add-items > li > span,
+.btn-add > li > span {
 	margin-left: 30px;
 	cursor: pointer;
 }
 
 /* item list */
 
-.crypto-list {
+.sell-list,
+.buy-list,
+.add-list {
 	background: #1d1a3f;
 	height: 0;
-	width: 103px;
-	background: #2b263f;
+	width: 60px;
+	position: relative;
+	bottom: 35px;
+	background: var(--third-bg-color);
 	transition: all 0.35s ease-in;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 	overflow: hidden;
 	cursor: pointer;
-	position: absolute;
+
+	padding-top: 5px;
 	p {
 		padding-left: 11px;
 	}
-	transform: translateY(-37px);
+
 	z-index: 1000;
 }
-.currency-list {
-	@extend .crypto-list;
-	transition: all 0.3s ease-in;
-	position: absolute;
-	top: 225px;
-	left: 10px;
+
+.buy-list {
+	z-index: 100;
 }
-.currency2-list {
-	@extend .currency-list;
-	position: relative;
-	top: -1vh;
-}
-.crypto-list-active {
-	height: 168px;
-}
-.currency-list-active,
-.currency2-list-active {
-	height: 160px !important;
-	padding-top: 2px;
+
+.sell-list-active,
+.buy-list-active,
+.add-list-active {
+	height: 143.2px;
 }
 
 .open {
 	display: flex !important;
 }
 
-.select-crypto-arrow,
-.select-currency-arrow {
+.select-sell-arrow,
+.select-buy-arrow,
+.select-add-arrow {
 	width: 20px;
 	position: relative;
-	left: 37px;
-	top: 43px;
+	left: 45px;
+	top: 3px;
 	z-index: 101;
 	cursor: pointer;
 	pointer-events: none;
 }
 
-.select-currency2-arrow {
-	width: 20px;
-	position: relative;
-	left: 58px;
-	top: 42px;
-	z-index: 101;
-	cursor: pointer;
-	opacity: 0.5;
+.select-add-arrow {
+	left: 25px;
 }
-.btn-crypto,
-.btn-currency,
-.btn-currency2 {
+
+.btn-sell,
+.btn-buy,
+.btn-add {
 	outline: none;
 	position: relative;
-	bottom: 30px;
-	width: 80px;
+	top: -30px;
+	width: 60px;
+	font-size: 16px;
 	padding-left: 15px;
 	color: var(--primary-font-color);
 	font-family: Karla;
 	text-align: start;
 	height: 34px;
 	border-radius: 15px;
-	background: #2b263f;
+	background: var(--third-bg-color);
 	border: none;
 	cursor: pointer;
 
 	z-index: 100;
 }
 
-.btn-crypto > li,
-.btn-currency > li,
-.btn-currency2 > li {
+.btn-sell > li,
+.btn-buy > li,
+.btn-add > li {
 	list-style: none;
 	float: center;
 	position: relative;

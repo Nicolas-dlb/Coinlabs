@@ -4,10 +4,10 @@
 	.transactions {
 		margin-top: 2vh;
 		padding-top: 2vh;
-
+		transition: background-color 0.3s ease;
 		width: 340px;
-		height: 39vh;
-		background: var(--third-bg-color);
+		height: 42vh;
+		background-color: var(--third-bg-color);
 		border-radius: 20px;
 		display: flex;
 		flex-direction: column;

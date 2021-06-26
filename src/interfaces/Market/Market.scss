@@ -2,24 +2,28 @@
 	padding-left: 10px;
 	padding-bottom: 20px;
 	border-radius: 30px;
-	transition: all 0.5s ease;
+
 	background: var(--secondary-bg-color);
 	padding-top: 10vh;
-
+	opacity: 0;
+	pointer-events: none;
 	margin-top: 1vh;
 	overflow: hidden;
-	.page-title {
-		font-size: 20px;
-		font-weight: 600;
-		margin-bottom: 15px;
-		margin-left: 5%;
-	}
+	position: relative;
+	bottom: 118vh;
+
 	.infobox_market {
 		display: flex;
 		overflow-x: scroll;
 		overflow-y: hidden;
 		&::-webkit-scrollbar {
 			display: none;
+		}
+
+		.graph {
+			.recharts-responsive-container {
+				top: 40px !important;
+			}
 		}
 	}
 
@@ -40,13 +44,7 @@
 			width: 100%;
 		}
 	}
-	.title {
-		font-size: 18px;
-		margin-left: 5%;
-		margin-top: 3vh;
-		margin-bottom: 2vh;
-		color: #e8e8e9;
-	}
+
 	.exchange {
 		display: flex;
 		flex-direction: column;
@@ -61,8 +59,8 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin: 2vh 0;
-			width: 100%;
+			margin: 3vh 0;
+			width: 80vw;
 
 			.exchange_left {
 				display: flex;
@@ -80,12 +78,12 @@
 				.input {
 					display: flex;
 					justify-content: space-between;
-					align-items: center;
+					align-items: flex-start;
 					border-bottom: 1px solid var(--third-font-color);
-					padding-bottom: 1vh;
+					padding-bottom: 1.3vh;
 					width: 100%;
 					margin-top: 1vh;
-
+					height: 25px;
 					&:first-of-type {
 						margin-bottom: 20px;
 					}
@@ -108,15 +106,6 @@
 							-moz-appearance: textfield;
 						}
 					}
-
-					select {
-						background: var(--third-bg-color);
-						border: none;
-						outline: none;
-						color: var(--primary-font-color);
-						font-family: Karla;
-						font-size: 18px;
-					}
 				}
 			}
 			.exchange_right {
@@ -125,29 +114,35 @@
 					rgba(10, 171, 81, 1) 0%,
 					rgba(30, 169, 156, 1) 100%
 				);
-
+				pointer-events: none;
 				border-radius: 20px;
-				height: 130px;
+				height: 140px;
 				padding-left: 12px;
 				padding-top: 1.5vh;
-				width: 100px;
+				width: 90px;
 				svg {
 					width: 30px;
 				}
 				p:first-of-type {
 					font-size: 14px;
+					margin-top: 1vh;
 				}
 				.wallet {
 					font-size: 15px;
 					font-weight: bold;
-					margin: 1vh 0;
+					margin: 1.5vh 0;
+					display: flex;
+					p:first-child {
+						position: relative;
+						bottom: 7px;
+					}
 				}
 				.date {
 					font-size: 14px;
 				}
 			}
 		}
-		button {
+		.btn-exchange {
 			padding: 12px 8px;
 			border-radius: 10px;
 			color: var(--primary-font-color);
@@ -165,9 +160,9 @@
 	.market_cap {
 		width: 93%;
 		background: var(--third-bg-color);
-		height: 20vh;
+		height: 39.5vh;
 		border-radius: 20px;
-
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -178,6 +173,13 @@
 @media only screen and (min-width: 992px) {
 	.market {
 		padding-left: 208px;
+		bottom: 103vh;
+		.page-title {
+			margin-left: 1%;
+		}
+		.title {
+			margin-left: 1%;
+		}
 		.recharts-surface {
 			position: relative;
 
@@ -284,7 +286,16 @@
 				width: 460px;
 
 				.exchange-top {
-					width: 310px;
+					width: 330px;
+					.exchange_right {
+						width: 100px;
+						.wallet {
+							font-size: 16px;
+						}
+					}
+				}
+				.market_cap {
+					height: 19.5vh;
 				}
 			}
 		}

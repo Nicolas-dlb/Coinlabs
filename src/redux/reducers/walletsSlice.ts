@@ -4,6 +4,9 @@ type WalletsState = {
   wallets: any;
   balanceHistory: any;
   walletHistory: any;
+  cryptoHistory: any;
+  incomeHistory: any;
+  expensesHistory: any;
 };
 const initialState: WalletsState = {
   wallets: {
@@ -26,6 +29,9 @@ const initialState: WalletsState = {
   },
   balanceHistory: [],
   walletHistory: [],
+  cryptoHistory: [],
+  incomeHistory: [],
+  expensesHistory: [],
 };
 
 function isIterable(value: any) {
@@ -86,13 +92,56 @@ const walletsSlice = createSlice({
     loadWalletHistory: (state: WalletsState, action: any) => {
       state.walletHistory = action.payload;
     },
+    setCryptoHistory: (state: WalletsState, action: any) => {
+      if (isIterable(state.cryptoHistory)) {
+        state.cryptoHistory = [...state.cryptoHistory, action.payload];
+      } else {
+        state.cryptoHistory = [action.payload];
+      }
+    },
+    loadCryptoHistory: (state: WalletsState, action: any) => {
+      state.cryptoHistory = action.payload;
+    },
+    resetCryptoHistory: (state: WalletsState) => {
+      state.cryptoHistory = [];
+    },
+    setIncomeHistory: (state: WalletsState, action: any) => {
+      if (isIterable(state.incomeHistory)) {
+        state.incomeHistory = [...state.incomeHistory, action.payload];
+      } else {
+        state.incomeHistory = [action.payload];
+      }
+    },
+    loadIncomeHistory: (state: WalletsState, action: any) => {
+      state.incomeHistory = action.payload;
+    },
+    resetIncomeHistory: (state: WalletsState) => {
+      state.incomeHistory = [];
+    },
+    setExpensesHistory: (state: WalletsState, action: any) => {
+      if (isIterable(state.expensesHistory)) {
+        state.expensesHistory = [...state.expensesHistory, action.payload];
+      } else {
+        state.expensesHistory = [action.payload];
+      }
+    },
+    loadExpensesHistory: (state: WalletsState, action: any) => {
+      state.expensesHistory = action.payload;
+    },
+    resetExpensesHistory: (state: WalletsState) => {
+      state.expensesHistory = [];
+    },
+    
   },
 });
 
 export const selectWallets = (state: any) => state.wallets.wallets;
 export const selectBalanceHistory = (state: any) =>
   state.wallets.balanceHistory;
-export const selectWalletHistory = (state: any) => state.wallets.walletHistory;
+  export const selectWalletHistory = (state: any) => state.wallets.walletHistory;
+export const selectCryptoHistory = (state: any) => state.wallets.cryptoHistory;
+export const selectIncomeHistory = (state: any) => state.wallets.incomeHistory;
+export const selectExpensesHistory = (state: any) => state.wallets.expensesHistory;
 export const {
   loadWallets,
   setWallets,
@@ -102,5 +151,14 @@ export const {
   setWalletHistory,
   resetWalletHistory,
   loadWalletHistory,
+  setIncomeHistory,
+  resetIncomeHistory,
+  loadIncomeHistory,
+  setExpensesHistory,
+  resetExpensesHistory,
+  loadExpensesHistory,
+  setCryptoHistory,
+  resetCryptoHistory,
+  loadCryptoHistory,
 } = walletsSlice.actions;
 export default walletsSlice.reducer;

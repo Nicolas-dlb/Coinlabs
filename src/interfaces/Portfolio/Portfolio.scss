@@ -1,0 +1,130 @@
+.portfolio {
+	padding-left: 19px;
+	padding-bottom: 3vh;
+	border-radius: 30px;
+
+	background: var(--secondary-bg-color);
+	padding-top: 10vh;
+	opacity: 0;
+	pointer-events: none;
+	margin-top: 1vh;
+	overflow: hidden;
+	position: relative;
+	bottom: 237vh;
+
+	.portfolio_container {
+		width: 95%;
+		background: var(--third-bg-color);
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding-bottom: 5vh;
+	}
+	.crypto {
+		display: none;
+	}
+	.add_founds_container {
+		width: 95%;
+		background: var(--third-bg-color);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2vh 0;
+	}
+	.input {
+		border-bottom: 1px solid var(--third-font-color);
+		display: flex;
+		align-items: center;
+		padding-bottom: 1vh;
+		margin-left: 6vw;
+		width: 60%;
+		margin-right: 4vw;
+		.dollar {
+			color: var(--third-font-color);
+			font-size: 18px;
+		}
+		input {
+			outline: none;
+			border: none;
+			border-radius: 5px;
+			padding: 4px;
+			font-size: 18px;
+			font-family: Karla;
+			background: var(--third-bg-color);
+			caret-color: #4a58f3;
+			color: var(--primary-font-color);
+			padding-left: 20px;
+			width: 90%;
+		}
+	}
+	button {
+		font-family: Karla;
+		border-radius: 5px;
+		padding: 4px 20px;
+		border: none;
+		cursor: pointer;
+		position: relative;
+
+		background: #2b263f;
+		color: var(--primary-font-color);
+	}
+	.balance_container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 97%;
+		.infoboxD {
+			margin-right: 10px;
+			.infobox_bottom {
+				font-size: 23px;
+			}
+		}
+		.balance_top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			&:first-of-type {
+				margin-bottom: 1vh;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.portfolio {
+		padding-left: 208px;
+		bottom: 205vh;
+		.page-title,
+		.title {
+			margin-left: 1%;
+		}
+
+		.balance_container {
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 0vh;
+			transition: background-color 0.3s ease;
+			background-color: var(--third-bg-color);
+			border-radius: 20px;
+			padding: 25px 35px;
+			height: fit-content;
+			flex-direction: row;
+			width: 90%;
+			.balance_top:last-of-type > .infoboxD:last-child {
+				border-right: none;
+			}
+		}
+		.infoboxD {
+			border-radius: 0px;
+			width: 10vw !important;
+		}
+		.portfolio_item {
+			padding-top: 7vh;
+		}
+	}
+}

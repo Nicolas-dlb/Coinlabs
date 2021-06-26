@@ -1,27 +1,31 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Graph from 'components/Graph/Graph';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectBalanceHistory, setBalanceHistory } from 'redux/reducers/walletsSlice';
+import { useSelector } from 'react-redux';
+import { selectBalanceHistory, selectCryptoHistory, selectExpensesHistory, selectIncomeHistory } from 'redux/reducers/walletsSlice';
 import './Growth.scss';
+import Select from "components/Select/Select";
 
 function Growth() {
     const [active, setActive] = useState("1m");
-    const dispatch = useDispatch();
 const balanceHistory = useSelector(selectBalanceHistory);
 const [data, setData] = useState([{tokens: 0, Price: 0, timestamp: 3227632}])
- 
+ const [growthSelected, setGrowthSelected] = useState("Balance");
+ const incomeHistory = useSelector(selectIncomeHistory);
+ const cryptoHistory = useSelector(selectCryptoHistory);
+ const expensesHistory = useSelector(selectExpensesHistory);
 
+ const timeline = growthSelected === "Balance" ? balanceHistory : growthSelected === "Income" ? incomeHistory : growthSelected === "Expenses" ? expensesHistory : cryptoHistory;
   useEffect(() => {
-   if (balanceHistory) {
+   if (timeline) {
        
-        setData([...Array(balanceHistory.length).keys()].map((x) => ({
+        setData([...Array(101).keys()].map((x) => ({
     tokens: x,
-    Price: balanceHistory[x]?.total,
-    timestamp: balanceHistory[x]?.timestamp
-  })).filter((balance) => balance.tokens > balanceHistory.length - 110));
+    Price: timeline.slice(-101)[x]?.total,
+    timestamp: timeline.slice(-101)[x]?.timestamp
+  })));
    }
-  }, [balanceHistory])
+  }, [timeline])
 
     return (
         <div  className="growth">
@@ -33,14 +37,11 @@ const [data, setData] = useState([{tokens: 0, Price: 0, timestamp: 3227632}])
                 <span onClick={() => setActive("6m")} className={active === "6m" ? "btn_growth btn_growth_active" : "btn_growth"}>6m</span>
                 <span onClick={() => setActive("1y")} className={active === "1y" ? "btn_growth btn_growth_active" : "btn_growth"}>1y</span>
                 </div>
-                <div onClick={() => {
-                    dispatch(setBalanceHistory({timestamp: 87638752, total: 30498}))
-                }} className="tabs_right">
-                    <p>Balance</p>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="452" height="452" viewBox="0 0 451.8 451.8"><path d="M225.9 354.7c-8.1 0-16.2-3.1-22.4-9.3L9.3 151.2c-12.4-12.4-12.4-32.4 0-44.8 12.4-12.4 32.4-12.4 44.7 0l171.9 171.9 171.9-171.9c12.4-12.4 32.4-12.4 44.7 0 12.4 12.4 12.4 32.4 0 44.8L248.3 345.4C242.1 351.6 234 354.7 225.9 354.7z"/></svg>
+                <div className="tabs_right">
+                   <Select items="currency" setCurrencySelected={setGrowthSelected} />
                 </div>
             </div>
-            <Graph data={data} color="Green" width={0} height={300} tooltip/>
+            <Graph data={data} color="Green" width={0} height={200} tooltip/>
         </div>
     )
 }

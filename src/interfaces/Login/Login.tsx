@@ -14,6 +14,9 @@ import {
 import { useDispatch } from "react-redux";
 import {
   loadBalanceHistory,
+  loadCryptoHistory,
+  loadExpensesHistory,
+  loadIncomeHistory,
   setWallets,
 } from "redux/reducers/walletsSlice";
 import { changeTypeTextToPassword, resetLoginInputValue } from "utils/utils";
@@ -58,6 +61,7 @@ function Login() {
       "translateY(40vh) scale(1.4)";
 
     document.getElementById("login")!.style.transform = "translateY(80vh)";
+    document.getElementById("register")!.style.transform = "translateY(90vh)";
   };
   const [userList, setUserList]: any = useState({});
   const length = Object.keys(userList)?.length;
@@ -169,14 +173,7 @@ function Login() {
       .catch((error: Error) => alert(error));
   };
 
-  const handleLogout = () => {
-    auth
-      .signOut()
-      .then(() => {
-        dispatch(logout());
-      })
-      .catch((error: any) => alert(error.messsage));
-  };
+ 
   const emailExist = (mail: any) => {
     let r = false;
     const list = Object.entries(userList);
@@ -677,12 +674,16 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((userAuth: any) => {
        
-        const timelineData = [...Array(110).keys()].map((x) => ({
-          total: 20000,
+    
+        const timelineDefault = [...Array(101).keys()].map((x) => ({
+          total: 0,
           timestamp: new Date().getTime(),
         }));
-
-        dispatch(loadBalanceHistory(timelineData));
+        
+dispatch(loadCryptoHistory(timelineDefault));
+dispatch(loadIncomeHistory(timelineDefault));
+dispatch(loadExpensesHistory(timelineDefault));
+        dispatch(loadBalanceHistory(timelineDefault));
         userAuth.user
           .updateProfile({
             displayName: userName,
@@ -702,6 +703,8 @@ function Login() {
                 ripplePrice: 0,
                 neoPrice: 0,
                 TotalCrypto: 0,
+                income: 0,
+                expenses: 0,
               })
             );
             dispatch(setProfilPic(picture));
@@ -721,7 +724,10 @@ function Login() {
                 time: "Month",
                 currency: "Dollar",
                 profilPic: picture,
-                balanceHistory: timelineData,
+                balanceHistory: timelineDefault,
+                cryptoHistory: timelineDefault,
+                expensesHistory: timelineDefault,
+                incomeHistory: timelineDefault,
               },
               { merge: true }
             );
@@ -733,6 +739,8 @@ function Login() {
     setPassword("");
     setEmail("");
   };
+
+
 
   return (
     <div id="login_container" className="login-container">

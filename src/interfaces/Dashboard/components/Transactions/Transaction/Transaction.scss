@@ -3,8 +3,8 @@
 	align-items: center;
 	justify-content: space-evenly;
 	width: 100%;
-	margin: 15px;
-	.buy > div {
+	margin: 12px;
+	.transaction_buy > div {
 		background: #534840 !important;
 		color: #e3c76f !important;
 	}
@@ -34,6 +34,7 @@
 		}
 	}
 	.transaction_price {
-		width: 50px;
+		width: 65px;
+		text-align: right;
 	}
 }

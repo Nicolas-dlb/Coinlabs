@@ -16,16 +16,16 @@ function Dashboard() {
 
 
     return (
-        <div id="dashboard" className="dashboard">
+        <div id="dashboard" className="dashboard active_window">
             <p className="page_title">Dashboard</p>
             <div className="infobox_dashboard">
                <div className="infobox_dashboard_top">
-                    <InfoBoxD title="Balance" variation={12} />
-                <InfoBoxD title="Income" variation={2.4} />
+                    <InfoBoxD title="Balance" />
+                <InfoBoxD title="Income" />
                </div>
                <div className="infobox_dashboard_bottom">
-                    <InfoBoxD title="Expenses" variation={-12} />
-                <InfoBoxD title="Transaction" />
+                    <InfoBoxD title="Expenses" />
+                <InfoBoxD title="Crypto" />
                </div>
             </div>
             <p className="title">Market</p>

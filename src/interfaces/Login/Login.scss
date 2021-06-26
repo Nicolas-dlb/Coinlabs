@@ -1,13 +1,17 @@
 @import "theme/_variables.scss";
 .stick3,
 .stick1 {
-	height: 18px;
+	height: 20px;
 	width: 5px;
 	border-radius: 30px;
-	background: rgb(211, 198, 198);
+	background: #71ce98;
 	margin-right: 3px;
 	backface-visibility: hidden;
 	perspective: 1000;
+}
+.stick3 {
+	background: #209654;
+	height: 15px;
 }
 
 .stick2 {
@@ -16,6 +20,7 @@
 	position: relative;
 	backface-visibility: hidden;
 	perspective: 1000;
+	background: #1baa63;
 }
 .login-container {
 	width: 100vw;
@@ -39,7 +44,7 @@
 		position: absolute;
 		top: 5vh;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		transition: all 1s ease;
 		p {
 			margin-left: 5px;
@@ -138,15 +143,15 @@
 
 				input {
 					border-radius: 5px;
-					background: white;
 					outline: none;
 					border: 1px solid var(--third-font-color);
 					width: 220px;
 					padding: 4px;
 					font-family: Karla;
+
 					background: var(--third-bg-color);
-					caret-color: #4a58f3;
-					color: white;
+					caret-color: #1baa63;
+					color: var(--primary-font-color);
 					&::placeholder {
 						color: var(--third-font-color);
 						font-family: Karla;

@@ -4,6 +4,7 @@ import notifications from "assets/pictures/notifications.png";
 import { auth } from 'firebaseConfig';
 import { useSelector } from 'react-redux';
 import { selectProfilPic, selectUserName } from 'redux/reducers/userSlice';
+
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
   const username = useSelector(selectUserName);
@@ -11,15 +12,17 @@ function Header() {
     /*<div id="menu_stick1" className="stick1"></div>
                 <div id="menu_stick2" className="stick2"></div>
                 <div id="menu_stick3" className="stick1"></div> */
+
+     
         
     return (
         <div className="header">
             <div onClick={() => {
                 document.getElementById('toggleMenu')!.classList.toggle("is-active");
                 document.getElementById("menu")!.classList.toggle('toggle_menu');
-                document.getElementById('dashboard')!.classList.toggle("menu_active");
+                document.getElementById('container')!.classList.toggle("container_active");
                 
-                document.getElementById('shadow')!.classList.toggle("menu_active");
+                document.getElementById('shadow')!.classList.toggle("shadow_active");
                 document.getElementById('shadow')!.classList.toggle("opacity");
                 setMenuActive(!menuActive);
                const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-bg-color');
@@ -79,6 +82,7 @@ document.documentElement.style.setProperty(
                 <div className="green_dot"></div> 
                 </>
                 )}
+                 
                   <img className="header_user_icon"  src={
                     profilPic ||
                     "https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
