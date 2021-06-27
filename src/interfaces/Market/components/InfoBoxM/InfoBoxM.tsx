@@ -39,7 +39,8 @@ function InfoBox({ name, price, variation, data }: InfoBoxProps) {
                     </svg>
                 </div>
                 <div className="infobox_left_bottom">
-                    <p>${numberWithSpaces(price)}</p>
+                    <p>$</p>
+                    <p>{numberWithSpaces(price)}</p>
                 </div>
             </div>
             <div className="infobox_right">

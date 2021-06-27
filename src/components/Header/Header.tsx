@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './Header.scss';
-import notifications from "assets/pictures/notifications.png";
 import { auth } from 'firebaseConfig';
 import { useSelector } from 'react-redux';
 import { selectProfilPic, selectUserName } from 'redux/reducers/userSlice';
@@ -14,7 +13,7 @@ function Header() {
                 <div id="menu_stick3" className="stick1"></div> */
 
      
-        
+        const logoutColor = menuActive ? "#787878" : "#FFF";
     return (
         <div className="header">
             <div onClick={() => {
@@ -63,25 +62,17 @@ document.documentElement.style.setProperty(
                 </div>
                 <p>Coinlabs</p>
             </div>
-            <div className="header_input">
-              <input type="text" placeholder="Search for something . ." spellCheck="false" autoComplete="off" />
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 57"><path d="M55.1 51.9L41.6 37.8c3.5-4.1 5.4-9.4 5.4-14.8 0-12.7-10.3-23-23-23s-23 10.3-23 23 10.3 23 23 23c4.8 0 9.3-1.4 13.2-4.2l13.7 14.2c0.6 0.6 1.3 0.9 2.2 0.9 0.8 0 1.5-0.3 2.1-0.8C56.3 55 56.3 53.1 55.1 51.9zM24 6c9.4 0 17 7.6 17 17s-7.6 17-17 17 -17-7.6-17-17S14.6 6 24 6z" /></svg>
-            </div>
+            
             </div>
             <div className="header_right">
                
-                {menuActive ? <>
+                
                  <svg onClick={() => { 
                    document.getElementById('toggleMenu')!.click();
                    auth.signOut()
-                 }} className="header_logout" height="20px" fill="#787878" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M255.2 468.6H63.8c-11.7 0-21.3-9.5-21.3-21.3V64.6c0-11.7 9.5-21.3 21.3-21.3H255.2c11.8 0 21.3-9.5 21.3-21.3S266.9 0.9 255.2 0.9H63.8C28.6 0.9 0 29.5 0 64.6v382.7c0 35.2 28.6 63.8 63.8 63.8H255.2c11.8 0 21.3-9.5 21.3-21.3C276.4 478.1 266.9 468.6 255.2 468.6z"/><path d="M505.7 240.9L376.4 113.3c-8.3-8.2-21.8-8.1-30.1 0.2s-8.2 21.8 0.2 30.1l92.4 91.2H191.4c-11.8 0-21.3 9.5-21.3 21.3 0 11.8 9.5 21.3 21.3 21.3h247.6l-92.4 91.2c-8.4 8.3-8.4 21.7-0.2 30.1 4.2 4.2 9.7 6.3 15.1 6.3 5.4 0 10.8-2 14.9-6.1l129.3-127.6c4-4 6.3-9.4 6.3-15.1C512 250.3 509.7 244.9 505.7 240.9z"/></svg>
-        </>
-         :  ( <>
-                <svg className="header_right_search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 57"><path d="M55.1 51.9L41.6 37.8c3.5-4.1 5.4-9.4 5.4-14.8 0-12.7-10.3-23-23-23s-23 10.3-23 23 10.3 23 23 23c4.8 0 9.3-1.4 13.2-4.2l13.7 14.2c0.6 0.6 1.3 0.9 2.2 0.9 0.8 0 1.5-0.3 2.1-0.8C56.3 55 56.3 53.1 55.1 51.9zM24 6c9.4 0 17 7.6 17 17s-7.6 17-17 17 -17-7.6-17-17S14.6 6 24 6z" /></svg>
-                <img  src={notifications} alt="" />
-                <div className="green_dot"></div> 
-                </>
-                )}
+                 }} className="header_logout" height="20px" fill={logoutColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M255.2 468.6H63.8c-11.7 0-21.3-9.5-21.3-21.3V64.6c0-11.7 9.5-21.3 21.3-21.3H255.2c11.8 0 21.3-9.5 21.3-21.3S266.9 0.9 255.2 0.9H63.8C28.6 0.9 0 29.5 0 64.6v382.7c0 35.2 28.6 63.8 63.8 63.8H255.2c11.8 0 21.3-9.5 21.3-21.3C276.4 478.1 266.9 468.6 255.2 468.6z"/><path d="M505.7 240.9L376.4 113.3c-8.3-8.2-21.8-8.1-30.1 0.2s-8.2 21.8 0.2 30.1l92.4 91.2H191.4c-11.8 0-21.3 9.5-21.3 21.3 0 11.8 9.5 21.3 21.3 21.3h247.6l-92.4 91.2c-8.4 8.3-8.4 21.7-0.2 30.1 4.2 4.2 9.7 6.3 15.1 6.3 5.4 0 10.8-2 14.9-6.1l129.3-127.6c4-4 6.3-9.4 6.3-15.1C512 250.3 509.7 244.9 505.7 240.9z"/></svg>
+        
+         
                  
                   <img className="header_user_icon"  src={
                     profilPic ||

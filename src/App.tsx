@@ -52,7 +52,7 @@ import {
 } from "redux/reducers/userSlice";
 import { auth, db } from "firebaseConfig";
 import Portfolio from 'interfaces/Portfolio/Portfolio';
-
+import SearchPage from 'interfaces/SearchPage/SearchPage';
 function App() {
 const a = useSelector(selectHistory);
   
@@ -69,31 +69,30 @@ const a = useSelector(selectHistory);
     let ethereumMonth1: number;
     let ethereum3Month1: number;
     let ethereum6Month1: number;
-    let ethereumDay1: number;
     let ethereumYear1: number;
     let ethereumWeek1: number;
+
     let bitcoinMonth1: number;
     let bitcoin6Month1: number;
     let bitcoin3Month1: number;
-    let bitcoinDay1: number;
     let bitcoinYear1: number;
     let bitcoinWeek1: number;
+
     let rippleMonth1: number;
     let ripple6Month1: number;
     let ripple3Month1: number;
-    let rippleDay1: number;
     let rippleYear1: number;
     let rippleWeek1: number;
+
     let litecoinMonth1: number;
     let litecoin6Month1: number;
     let litecoin3Month1: number;
-    let litecoinDay1: number;
     let litecoinYear1: number;
     let litecoinWeek1: number;
+
     let neo6Month1: number;
     let neoMonth1: number;
     let neo3Month1: number;
-    let neoDay1: number;
     let neoYear1: number;
     let neoWeek1: number;
 
@@ -134,7 +133,7 @@ let last6Month: number | Date | any = new Date();
 
       getHistoricalData("ethereum", lastMonth, now).then((data: any) => {
         ethereumMonth1 = data?.prices;
-        ethereumCap1 = data?.market_caps;
+        
       });
        getHistoricalData("ethereum", last3Month, now).then((data: any) => {
         ethereum3Month1 = data?.prices;
@@ -148,10 +147,11 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("ethereum", lastWeek, now).then((data: any) => {
         ethereumWeek1 = data?.prices;
+        ethereumCap1 = data?.market_caps;
       });
       getHistoricalData("bitcoin", lastMonth, now).then((data: any) => {
         bitcoinMonth1 = data?.prices;
-        bitcoinCap1 = data?.market_caps
+        
       });
       getHistoricalData("bitcoin", last6Month, now).then((data: any) => {
         bitcoin6Month1 = data?.prices;
@@ -165,10 +165,11 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("bitcoin", lastWeek, now).then((data: any) => {
         bitcoinWeek1 = data?.prices;
+        bitcoinCap1 = data?.market_caps;
       });
       getHistoricalData("ripple", lastMonth, now).then((data: any) => {
         rippleMonth1 = data?.prices;
-        rippleCap1 = data?.market_caps;
+        
       });
       getHistoricalData("ripple", last6Month, now).then((data: any) => {
         ripple6Month1 = data?.prices;
@@ -182,6 +183,7 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("ripple", lastWeek, now).then((data: any) => {
         rippleWeek1 = data?.prices;
+        rippleCap1 = data?.market_caps;
       });
       
       getHistoricalData("litecoin", last6Month, now).then((data: any) => {
@@ -195,10 +197,11 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("litecoin", lastWeek, now).then((data: any) => {
         litecoinWeek1 = data?.prices;
+        litecoinCap1 = data?.market_caps;
       });
       getHistoricalData("litecoin", lastMonth, now).then((data: any) => {
         litecoinMonth1 = data?.prices;
-        litecoinCap1 = data?.market_caps;
+        
       });
       getHistoricalData("neo", lastMonth, now).then((data: any) => {
         neoMonth1 = data?.prices;
@@ -208,7 +211,7 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("neo", last3Month, now).then((data: any) => {
         neo3Month1 = data?.prices;
-        neoCap1 = data?.market_caps;
+        
       });
      
       getHistoricalData("neo", lastYear, now).then((data: any) => {
@@ -216,13 +219,13 @@ let last6Month: number | Date | any = new Date();
       });
       getHistoricalData("neo", lastWeek, now).then((data: any) => {
         neoWeek1 = data?.prices;
+        neoCap1 = data?.market_caps;
       });
     };
     get();
-    const load = () => {
+    const load2 = () => {
       if (
         
-        bitcoinWeek1 &&
         bitcoinMonth1 &&
         bitcoinYear1 &&
         bitcoin3Month1 &&
@@ -231,63 +234,82 @@ let last6Month: number | Date | any = new Date();
         ethereumYear1 &&
         ethereum6Month1 &&
        ethereum3Month1 &&
-        ethereumWeek1 &&
         ethereumMonth1 &&
         
         ripple6Month1 &&
         ripple3Month1 &&
-        rippleWeek1 &&
         rippleYear1 &&
         rippleMonth1 &&
       
         litecoin6Month1 &&
         litecoin3Month1 &&
-        litecoinWeek1 &&
         litecoinYear1 &&
         litecoinMonth1 &&
 
         neo6Month1 &&
-        neoWeek1 &&
         neo3Month1 &&    
         neoYear1 &&
         neoMonth1
       ) {
         dispatch(
           loadHistory({
-            bitcoinCap: bitcoinCap1,
-            bitcoinWeek: bitcoinWeek1,
+            
             bitcoinMonth: bitcoinMonth1,
             bitcoinYear: bitcoinYear1,
             bitcoin3Month: bitcoin3Month1,
             bitcoin6Month: bitcoin6Month1,
 
-            ethereumCap: ethereumCap1,
+           
             ethereumYear: ethereumYear1,
             ethereum3Month: ethereum3Month1,
             ethereum6Month: ethereum6Month1,
-            ethereumWeek: ethereumWeek1,
             ethereumMonth: ethereumMonth1,
 
-            rippleCap: rippleCap1,
+           
             ripple3Month: ripple3Month1,
             ripple6Month: ripple6Month1,
-            rippleWeek: rippleWeek1,
             rippleYear: rippleYear1,
             rippleMonth: rippleMonth1,
 
             litecoin3Month: litecoin3Month1,
-            litecoinCap: litecoinCap1,
             litecoin6Month: litecoin6Month1,
-            litecoinWeek: litecoinWeek1,
             litecoinMonth: litecoinMonth1,
             litecoinYear: litecoinYear1,
 
             neo3Month: neo3Month1,
-            neoCap: neoCap1,
             neo6Month: neo6Month1,
-            neoWeek: neoWeek1,
             neoYear: neoYear1,
             neoMonth: neoMonth1,
+          })
+        );
+      } else {
+        setTimeout(() => {
+          load2();
+        }, 10);
+      }
+    };
+    const load = () => {
+      if (
+        bitcoinWeek1 && 
+        ethereumWeek1 &&
+        rippleWeek1 &&
+        litecoinWeek1 &&
+        neoWeek1 
+      ) {
+        dispatch(
+          loadHistory({
+         bitcoinCap: bitcoinCap1,
+             litecoinCap: litecoinCap1,
+ rippleCap: rippleCap1,
+ ethereumCap: ethereumCap1,
+ neoCap: neoCap1,
+
+            bitcoinWeek: bitcoinWeek1,
+            ethereumWeek: ethereumWeek1,
+            rippleWeek: rippleWeek1,
+            litecoinWeek: litecoinWeek1,
+            neoWeek: neoWeek1,
+           
           })
         );
       } else {
@@ -298,6 +320,7 @@ let last6Month: number | Date | any = new Date();
     };
 
     load();
+    load2();
   }
 
   useEffect(() => {
@@ -534,31 +557,43 @@ let last6Month: number | Date | any = new Date();
   let resultWeek: number = 0;
   let resultMonth: number = 0;
   let resultYear: number = 0;
+  let result3Month: number = 0;
+  let result6Month: number = 0;
   let resultCap: number = 0;
 
   let rippleWeek: number;
   let rippleYear: number;
   let rippleMonth: number;
+  let ripple3Month: number;
+  let ripple6Month: number;
   let rippleCap: number;
 
   let bitcoinWeek: number;
   let bitcoinYear: number;
   let bitcoinMonth: number;
+  let bitcoin3Month: number;
+  let bitcoin6Month: number;
   let bitcoinCap: number;
 
   let ethereumWeek: number;
   let ethereumYear: number;
   let ethereumMonth: number;
+  let ethereum3Month: number;
+  let ethereum6Month: number;
   let ethereumCap: number;
 
   let litecoinWeek: number;
   let litecoinYear: number;
   let litecoinMonth: number;
+  let litecoin3Month: number;
+  let litecoin6Month: number;
   let litecoinCap: number;
 
   let neoWeek: number;
   let neoYear: number;
   let neoMonth: number;
+  let neo3Month: number;
+  let neo6Month: number;
   let neoCap: number;
 
     function check() {
@@ -603,6 +638,22 @@ let last6Month: number | Date | any = new Date();
       resultYear = betweenYear / onePercentYear;
       rippleYear = resultYear;
 
+      let l3Month = a.ripple3Month.length - 1;
+      let value13Month = a.ripple3Month[0][1];
+      let value23Month = a.ripple3Month[l3Month][1];
+      let between3Month = value23Month - value13Month;
+      let onePercent3Month = value13Month / 100;
+      result3Month = between3Month / onePercent3Month;
+      ripple3Month = result3Month;
+
+      let l6Month = a.ripple6Month.length - 1;
+      let value16Month = a.ripple6Month[0][1];
+      let value26Month = a.ripple6Month[l6Month][1];
+      let between6Month = value26Month - value16Month;
+      let onePercent6Month = value16Month / 100;
+      result6Month = between6Month / onePercent6Month;
+      ripple6Month = result6Month;
+
        let lCap = a.rippleCap.length - 1;
       let value1Cap = a.rippleCap[0][1];
       let value2Cap = a.rippleCap[lCap][1];
@@ -635,6 +686,22 @@ let last6Month: number | Date | any = new Date();
       resultYear = betweenYear / onePercentYear;
       bitcoinYear = resultYear;
 
+        l3Month = a.bitcoin3Month.length - 1;
+       value13Month = a.bitcoin3Month[0][1];
+       value23Month = a.bitcoin3Month[l3Month][1];
+       between3Month = value23Month - value13Month;
+       onePercent3Month = value13Month / 100;
+      result3Month = between3Month / onePercent3Month;
+      bitcoin3Month = result3Month;
+
+       l6Month = a.bitcoin6Month.length - 1;
+       value16Month = a.bitcoin6Month[0][1];
+       value26Month = a.bitcoin6Month[l6Month][1];
+       between6Month = value26Month - value16Month;
+       onePercent6Month = value16Month / 100;
+      result6Month = between6Month / onePercent6Month;
+      bitcoin6Month = result6Month;
+
        lCap = a.bitcoinCap.length - 1;
       value1Cap = a.bitcoinCap[0][1];
        value2Cap = a.bitcoinCap[lCap][1];
@@ -665,6 +732,22 @@ let last6Month: number | Date | any = new Date();
       onePercentYear = value1Year / 100;
       resultYear = betweenYear / onePercentYear;
       ethereumYear = resultYear;
+
+      l3Month = a.ethereum3Month.length - 1;
+       value13Month = a.ethereum3Month[0][1];
+       value23Month = a.ethereum3Month[l3Month][1];
+       between3Month = value23Month - value13Month;
+       onePercent3Month = value13Month / 100;
+      result3Month = between3Month / onePercent3Month;
+      ethereum3Month = result3Month;
+
+       l6Month = a.ethereum6Month.length - 1;
+       value16Month = a.ethereum6Month[0][1];
+       value26Month = a.ethereum6Month[l6Month][1];
+       between6Month = value26Month - value16Month;
+       onePercent6Month = value16Month / 100;
+      result6Month = between6Month / onePercent6Month;
+      ethereum6Month = result6Month;
 
       lCap = a.ethereumCap.length - 1;
       value1Cap = a.ethereumCap[0][1];
@@ -703,6 +786,22 @@ let last6Month: number | Date | any = new Date();
         resultYear = betweenYear / onePercentYear;
         litecoinYear = resultYear;
 
+        l3Month = a.litecoin3Month.length - 1;
+       value13Month = a.litecoin3Month[0][1];
+       value23Month = a.litecoin3Month[l3Month][1];
+       between3Month = value23Month - value13Month;
+       onePercent3Month = value13Month / 100;
+      result3Month = between3Month / onePercent3Month;
+      litecoin3Month = result3Month;
+
+       l6Month = a.litecoin6Month.length - 1;
+       value16Month = a.litecoin6Month[0][1];
+       value26Month = a.litecoin6Month[l6Month][1];
+       between6Month = value26Month - value16Month;
+       onePercent6Month = value16Month / 100;
+      result6Month = between6Month / onePercent6Month;
+      litecoin6Month = result6Month;
+
         lCap = a.litecoinCap.length - 1;
       value1Cap = a.litecoinCap[0][1];
        value2Cap = a.litecoinCap[lCap][1];
@@ -735,6 +834,22 @@ let last6Month: number | Date | any = new Date();
         resultYear = betweenYear / onePercentYear;
         neoYear = resultYear;
 
+        l3Month = a.neo3Month.length - 1;
+       value13Month = a.neo3Month[0][1];
+       value23Month = a.neo3Month[l3Month][1];
+       between3Month = value23Month - value13Month;
+       onePercent3Month = value13Month / 100;
+      result3Month = between3Month / onePercent3Month;
+      neo3Month = result3Month;
+
+       l6Month = a.neo6Month.length - 1;
+       value16Month = a.neo6Month[0][1];
+       value26Month = a.neo6Month[l6Month][1];
+       between6Month = value26Month - value16Month;
+       onePercent6Month = value16Month / 100;
+      result6Month = between6Month / onePercent6Month;
+      neo6Month = result6Month;
+
         lCap = a.neoCap.length - 1;
       value1Cap = a.neoCap[0][1];
       
@@ -755,30 +870,40 @@ let last6Month: number | Date | any = new Date();
         ripple: {
           week: rippleWeek,
           month: rippleMonth,
+          month3: ripple3Month,
+          month6: ripple6Month,
           year: rippleYear,
           cap: rippleCap,
         },
         bitcoin: {
           week: bitcoinWeek,
           month: bitcoinMonth,
+          month3: bitcoin3Month,
+          month6: bitcoin6Month,
           year: bitcoinYear,
           cap: bitcoinCap,
         },
         ethereum: {
           week: ethereumWeek,
           month: ethereumMonth,
+          month3: ethereum3Month,
+          month6: ethereum6Month,
           year: ethereumYear,
           cap: ethereumCap,
         },
         litecoin: {
           week: litecoinWeek,
           month: litecoinMonth,
+          month3: litecoin3Month,
+          month6: litecoin6Month,
           year: litecoinYear,
           cap: litecoinCap,
         },
         neo: {
           week: neoWeek,
           month: neoMonth,
+          month3: neo3Month,
+          month6: neo6Month,
           year: neoYear,
           cap: neoCap,
         },
@@ -799,6 +924,7 @@ let last6Month: number | Date | any = new Date();
             <Dashboard />
             <Market />
             <Portfolio />
+            
            </div>
 </>
 }

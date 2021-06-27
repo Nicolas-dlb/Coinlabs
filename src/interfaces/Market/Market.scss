@@ -96,6 +96,7 @@
 						font-family: Karla;
 						width: 100%;
 						font-size: 18px;
+						caret-color: #1baa63;
 						&::-webkit-outer-spin-button,
 						&::-webkit-inner-spin-button {
 							-webkit-appearance: none;
@@ -128,13 +129,16 @@
 					margin-top: 1vh;
 				}
 				.wallet {
-					font-size: 15px;
+					font-size: 14px;
 					font-weight: bold;
 					margin: 1.5vh 0;
+					position: relative;
+					top: 3px;
 					display: flex;
 					p:first-child {
 						position: relative;
 						bottom: 7px;
+						margin-right: 1px;
 					}
 				}
 				.date {

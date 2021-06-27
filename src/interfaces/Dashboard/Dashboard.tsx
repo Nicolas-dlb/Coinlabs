@@ -30,11 +30,11 @@ function Dashboard() {
             </div>
             <p className="title">Market</p>
             <div className="infobox_market">
-                <InfoBoxM data={history.bitcoinMonth} name="Bitcoin" price={market.bitcoin?.usd} variation={variation.bitcoin.month} />
-                <InfoBoxM data={history.ethereumMonth} name="Ethereum" price={market.ethereum?.usd} variation={variation.ethereum.month} />
-                <InfoBoxM data={history.litecoinMonth} name="Litecoin" price={market.litecoin?.usd} variation={variation.litecoin.month} />
-                <InfoBoxM data={history.rippleMonth} name="Ripple" price={market.ripple?.usd} variation={variation.litecoin.month} />
-                <InfoBoxM data={history.neoMonth} name="Neo" price={market.neo?.usd} variation={variation.neo.month} />
+                <InfoBoxM data={history.bitcoinWeek} name="Bitcoin" price={market.bitcoin?.usd} variation={variation.bitcoin.week} />
+                <InfoBoxM data={history.ethereumWeek} name="Ethereum" price={market.ethereum?.usd} variation={variation.ethereum.week} />
+                <InfoBoxM data={history.litecoinWeek} name="Litecoin" price={market.litecoin?.usd} variation={variation.litecoin.week} />
+                <InfoBoxM data={history.rippleWeek} name="Ripple" price={market.ripple?.usd} variation={variation.litecoin.week} />
+                <InfoBoxM data={history.neoWeek} name="Neo" price={market.neo?.usd} variation={variation.neo.week} />
             </div>
            <div id="growth" className="dashboard_bottom">
             <div className="growth_container">

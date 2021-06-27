@@ -46,12 +46,15 @@
 		}
 		.infobox_left_bottom {
 			font-size: 20px;
-			width: 100%;
+			width: 100px;
 			display: flex;
 			align-items: center;
 			justify-content: flex-start;
 			position: relative;
 			top: 1.3vh;
+			p:first-child {
+				margin-right: 5px;
+			}
 		}
 	}
 	.infobox_right {
