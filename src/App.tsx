@@ -52,7 +52,7 @@ import {
 } from "redux/reducers/userSlice";
 import { auth, db } from "firebaseConfig";
 import Portfolio from 'interfaces/Portfolio/Portfolio';
-import SearchPage from 'interfaces/SearchPage/SearchPage';
+
 function App() {
 const a = useSelector(selectHistory);
   

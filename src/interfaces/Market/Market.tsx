@@ -11,6 +11,7 @@ import Select from "components/Select/Select";
 import $ from "jquery"
 import SelectExchange from "components/SelectExchange/SelectExchange";
 import { getNumberFixed, numberWithSpaces } from 'utils/utils';
+
 function Market() {
     const history = useSelector(selectHistory);
     const market = useSelector(selectMarket);
@@ -21,7 +22,6 @@ function Market() {
     const [selectedCrypto, setSelectedCrypto] = useState("All");
     const balanceHistory = useSelector(selectBalanceHistory);
     const [data, setData] = useState([{tokens: 0,Price: 0,  timestamp: 3227632}]);
-
 
 
  //Exchange
@@ -229,6 +229,7 @@ dispatch(setExpensesHistory({
                 <div id="select-c" onClick={() => {
                     document.getElementById('select-c')!.classList.toggle("toggle-select");
                 }} className="tabs_right">
+                 
                     <Select items="crypto" setCryptoSelected={setSelectedCrypto}/>
                 </div>
             </div>

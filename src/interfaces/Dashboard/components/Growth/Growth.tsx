@@ -38,6 +38,7 @@ const [data, setData] = useState([{tokens: 0, Price: 0, timestamp: 3227632}])
                 <span onClick={() => setActive("1y")} className={active === "1y" ? "btn_growth btn_growth_active" : "btn_growth"}>1y</span>
                 </div>
                 <div className="tabs_right">
+                   
                    <Select items="currency" setCurrencySelected={setGrowthSelected} />
                 </div>
             </div>

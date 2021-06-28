@@ -28,6 +28,11 @@
 	rotate: 90deg;
 	pointer-events: none;
 }
+@media only screen and (max-height: 600px) {
+	.grid {
+		bottom: 12px !important;
+	}
+}
 
 @media only screen and (min-width: 992px) {
 	.grid_vertical {

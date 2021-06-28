@@ -28,7 +28,7 @@ function Dashboard() {
                 <InfoBoxD title="Crypto" />
                </div>
             </div>
-            <p className="title">Market</p>
+            <p className="title title_market">Market</p>
             <div className="infobox_market">
                 <InfoBoxM data={history.bitcoinWeek} name="Bitcoin" price={market.bitcoin?.usd} variation={variation.bitcoin.week} />
                 <InfoBoxM data={history.ethereumWeek} name="Ethereum" price={market.ethereum?.usd} variation={variation.ethereum.week} />

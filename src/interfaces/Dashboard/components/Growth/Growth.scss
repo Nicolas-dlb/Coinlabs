@@ -90,6 +90,13 @@
 		}
 	}
 }
+@media only screen and (max-height: 600px) {
+	.growth {
+		.graph {
+			top: 0;
+		}
+	}
+}
 @media only screen and (min-width: 992px) {
 	.growth {
 		width: 99%;

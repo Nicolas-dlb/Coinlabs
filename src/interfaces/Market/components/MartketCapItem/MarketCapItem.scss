@@ -45,6 +45,23 @@
 	}
 }
 
+@media only screen and (max-height: 600px) {
+	.market_cap_item {
+		width: 94%;
+		padding-top: 2.3vh;
+		.item_variation {
+			margin-left: 4% !important;
+			margin-right: 4% !important;
+			width: 55px;
+		}
+		.item_volume {
+			p:last-child {
+				font-size: 13px !important;
+			}
+		}
+	}
+}
+
 @media only screen and (min-width: 992px) {
 	.market_cap_item {
 		padding-top: 2.1vh;

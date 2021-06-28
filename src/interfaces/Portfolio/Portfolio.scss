@@ -80,7 +80,7 @@
 		.infoboxD {
 			margin-right: 10px;
 			.infobox_bottom {
-				font-size: 23px;
+				font-size: 20px;
 			}
 		}
 		.balance_top {
@@ -91,6 +91,19 @@
 			&:first-of-type {
 				margin-bottom: 1vh;
 			}
+		}
+	}
+}
+
+@media only screen and (max-height: 600px) {
+	.portfolio {
+		bottom: 261vh;
+		.infobox_bottom,
+		input {
+			font-size: 16px !important;
+		}
+		.portfolio_item {
+			padding-top: 7.3vh;
 		}
 	}
 }

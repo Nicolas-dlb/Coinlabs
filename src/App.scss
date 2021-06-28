@@ -4,6 +4,9 @@
 	overflow: hidden;
 	padding-right: 0.5vw;
 }
+* {
+	-webkit-tap-highlight-color: transparent;
+}
 
 .shadow {
 	background: #100d22;
@@ -33,6 +36,11 @@
 .container {
 	transition: all 0.5s ease;
 	height: 119vh;
+}
+@media only screen and (max-height: 600px) {
+	.container {
+		height: 130vh;
+	}
 }
 
 .active_window {

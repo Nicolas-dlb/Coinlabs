@@ -32,8 +32,6 @@
 	align-items: center;
 	overflow: hidden;
 	position: absolute;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
 	transition: all 0.2s ease;
 	color: var(--primary-font-color);
 	.coinlabs {
@@ -50,6 +48,7 @@
 			margin-left: 5px;
 		}
 	}
+
 	.login {
 		display: flex;
 		flex-direction: column;
@@ -65,7 +64,7 @@
 		border-radius: 15px;
 
 		.welcome {
-			color: var(--third-font-color);
+			color: var(--secondary-font-color);
 		}
 		h3 {
 			color: var(--primary-font-color);
@@ -153,7 +152,8 @@
 					caret-color: #1baa63;
 					color: var(--primary-font-color);
 					&::placeholder {
-						color: var(--third-font-color);
+						color: var(--secondary-font-color);
+						opacity: 0.3;
 						font-family: Karla;
 						font-size: 12px;
 					}
@@ -194,7 +194,7 @@
 		}
 
 		.not_register {
-			color: var(--third-font-color);
+			color: var(--secondary-font-color);
 			display: flex;
 			font-size: 14px;
 			.to_register {
@@ -246,7 +246,24 @@
 		color: rgb(192, 106, 106) !important;
 	}
 }
-
+@media only screen and (max-height: 700px) {
+	.login,
+	.register {
+		h3 {
+			font-size: 16px !important;
+		}
+		padding: 15px !important;
+		input {
+			width: 180px !important;
+		}
+		.button {
+			margin-top: 10px !important;
+		}
+	}
+	.register {
+		transform: scale(0.83);
+	}
+}
 @keyframes badInput {
 	0% {
 		border: 1px solid var(--primary-color);

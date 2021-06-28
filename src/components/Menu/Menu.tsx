@@ -3,18 +3,18 @@ import market from 'assets/pictures/Market.png';
 import { useState } from 'react';
 import john from 'assets/pictures/John.svg';
 import { useSelector } from 'react-redux';
-import { selectUserEmail, selectUserName } from 'redux/reducers/userSlice';
+import { selectProfilPic, selectUserEmail, selectUserName } from 'redux/reducers/userSlice';
 import $ from 'jquery';
 function Menu() {
     const [active, setActive] = useState("dashboard");
     const username = useSelector(selectUserName);
     const email = useSelector(selectUserEmail);
-    
+    const profilPic = useSelector(selectProfilPic)
     return (
         <div id="menu" className="menu">
             <div className="user">
                 
-                     <img className="user_icon" src="https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/119068627_10214566640554345_3311555602242066403_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=TD0JJun6_n0AX-RSVVr&_nc_ht=scontent-cdt1-1.xx&oh=6b73a5f5d399a29725277e3263783179&oe=60CC92DE" alt="" />
+                     <img className="user_icon" src={profilPic || "https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"} alt="" />
                 
                 <div className="user_name">
                     <p>{username}</p>
