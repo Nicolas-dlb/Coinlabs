@@ -5,7 +5,6 @@
 import { setWallets } from "redux/reducers/walletsSlice";
 import { auth, db } from "firebaseConfig";
 
-
 export function getNumberFixed(v: any, d: number): any {
   return (Math.floor(v * Math.pow(10, d)) / Math.pow(10, d)).toFixed(d);
 }
@@ -74,7 +73,7 @@ export const updateUserWallet = (wallet: any, user: any) => {
       ripple: wallet.ripple,
       litecoin: wallet.litecoin,
       expenses: wallet.expenses,
-      income: wallet.income
+      income: wallet.income,
     },
     { merge: true }
   );
@@ -112,7 +111,6 @@ export const updateWalletHistory = (
     );
 };
 
-
 export const fetchWallet = (dispatch: any) => {
   db.collection("users")
     .doc(auth.currentUser?.uid)
@@ -120,7 +118,6 @@ export const fetchWallet = (dispatch: any) => {
     .then((doc: any) => doc.data())
     .then((data: any) => {
       if (data) {
-        
         dispatch(setWallets(data));
       }
     });

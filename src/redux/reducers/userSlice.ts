@@ -32,11 +32,6 @@ const userSlice = createSlice({
 export const selectUserName = (state: any) => state.user.userName;
 export const selectUserEmail = (state: any) => state.user.userEmail;
 export const selectProfilPic = (state: any) => state.user.profilPic;
-export const {
-  login,
-  logout,
-  setUsername,
-  setProfilPic,
-  resetProfilPic,
-} = userSlice.actions;
+export const { login, logout, setUsername, setProfilPic, resetProfilPic } =
+  userSlice.actions;
 export default userSlice.reducer;

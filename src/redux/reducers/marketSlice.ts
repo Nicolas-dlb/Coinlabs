@@ -36,10 +36,6 @@ export const selectMarket = (state: any) => state.market.market;
 export const selectHistory = (state: any) => state.market.history;
 export const selectVariation = (state: any) => state.market.variation;
 export const selectTime = (state: any) => state.market.time;
-export const {
-  loadCrypto,
-  loadHistory,
-  setVariation,
-  setTime,
-} = marketSlice.actions;
+export const { loadCrypto, loadHistory, setVariation, setTime } =
+  marketSlice.actions;
 export default marketSlice.reducer;

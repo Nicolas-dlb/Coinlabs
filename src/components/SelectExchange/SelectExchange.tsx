@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -6,7 +5,6 @@
 import { useEffect } from "react";
 import "./SelectExchange.scss";
 import $ from "jquery";
-
 
 type SelectProps = {
   items: string;
@@ -19,7 +17,6 @@ function Select({
   setCryptoSelected = false,
   setCurrencySelected = false,
 }: SelectProps) {
-
   const langArray: any = [];
   let array = langArray;
   let type: string = "sell";
@@ -34,7 +31,7 @@ function Select({
     arrow = "select-buy-arrow";
     firstValue = "Bitcoin";
   } else if (items === "add") {
- const langArray3: any = [];
+    const langArray3: any = [];
     array = langArray3;
     type = "add";
     secondType = "";
@@ -42,11 +39,9 @@ function Select({
     firstValue = "Bitcoin";
   }
 
-
   useEffect(() => {
     // load array with items
     $(`.${type} option`).each(function loadItems() {
-     
       const value = $(this).text();
       const item = `<li><p>${value}</p></li>`;
       array.push(item);
@@ -60,34 +55,46 @@ function Select({
 
     // change button stuff on click
     $(`#${type}-items li`).click(function selectItem(e) {
-      
       const value: any = $(this).text();
       const item = `<li><p>${value}</p></li>`;
       $(`.btn-${type}`).html(item);
       $(`.btn-${type}`).attr("value", value);
-   const sell = $(`#select-sell`).text();
-  const add = $(`#select-add`).text();
-  if (setCryptoSelected) {
+      const sell = $(`#select-sell`).text();
+      const add = $(`#select-add`).text();
+      if (setCryptoSelected) {
+        if (items === "add") {
+          setCryptoSelected(add);
+          return;
+        }
+        const result =
+          sell === "BTC"
+            ? "bitcoin"
+            : sell === "ETH"
+            ? "ethereum"
+            : sell === "XRP"
+            ? "ripple"
+            : sell === "LTC"
+            ? "litecoin"
+            : "neo";
+        setCryptoSelected(result);
+      }
 
-    if (items === "add") {
-      setCryptoSelected(add);
-      return;
-    }
-     const result = sell === "BTC" ? "bitcoin" : sell === "ETH" ? "ethereum" : sell === "XRP" ? "ripple" : sell === "LTC" ? "litecoin" : "neo";
-    setCryptoSelected(result);
-    
-  }
+      const buy = $(`#select-buy`).text();
 
-   const buy = $(`#select-buy`).text();
-  
-  if (setCurrencySelected) {
-    const result = buy === "BTC" ? "bitcoin" : buy === "ETH" ? "ethereum" : buy === "XRP" ? "ripple" : buy === "LTC" ? "litecoin" : "neo";
-    setCurrencySelected(result);
+      if (setCurrencySelected) {
+        const result =
+          buy === "BTC"
+            ? "bitcoin"
+            : buy === "ETH"
+            ? "ethereum"
+            : buy === "XRP"
+            ? "ripple"
+            : buy === "LTC"
+            ? "litecoin"
+            : "neo";
+        setCurrencySelected(result);
+      }
 
-    
-  }
-
-   
       $(`.${type}-list`).removeClass(`${type}-list-active`);
       $("#select-c").removeClass("toggle-select");
       e.stopPropagation();
@@ -96,8 +103,7 @@ function Select({
     $(`.btn-${type}, .${arrow}`).click((e) => {
       $(`.${secondType}-list`).removeClass(`${secondType}-list-active`);
       $(`.${type}-list`).toggleClass(`${type}-list-active`);
-     
-      
+
       e.stopPropagation();
     });
     // close options panel when click outside
@@ -106,47 +112,29 @@ function Select({
       $("#select-c").removeClass("toggle-select");
     });
   }, []);
- 
 
   return (
     <>
       <div>
         <select className={`${type} exchange_element`}>
-         
-            <option
-                className="option exchange_element"
-                label="BTC"
-                value="BTC"
-                
-              >BTC</option>
-              <option
-                className="option exchange_element"
-                label="ETH"
-                value="ETH"
-                
-              >ETH</option>
-              
-              <option
-                className="option exchange_element"
-                label="XRP"
-                value="XRP"
-                
-              >XRP</option>
-              <option
-                className="option exchange_element"
-                label="LTC"
-                value="LTC"
-                
-              >LTC</option>
-              <option
-                className="option exchange_element"
-                label="NEO"
-                value="NEO"
-                
-              >NEO</option>    
+          <option className="option exchange_element" label="BTC" value="BTC">
+            BTC
+          </option>
+          <option className="option exchange_element" label="ETH" value="ETH">
+            ETH
+          </option>
+
+          <option className="option exchange_element" label="XRP" value="XRP">
+            XRP
+          </option>
+          <option className="option exchange_element" label="LTC" value="LTC">
+            LTC
+          </option>
+          <option className="option exchange_element" label="NEO" value="NEO">
+            NEO
+          </option>
         </select>
-        <div
-          className={`${type}-select exchange_element`}>
+        <div className={`${type}-select exchange_element`}>
           <svg
             className={`select-${type}-arrow exchange_element`}
             xmlns="http://www.w3.org/2000/svg"
@@ -165,12 +153,8 @@ function Select({
             className={`btn-${type} exchange_element`}
             value=""
           />
-          <div
-            className={`${type}-list exchange_element`}
-          >
-            <ul
-              id={`${type}-items`}
-            />
+          <div className={`${type}-list exchange_element`}>
+            <ul id={`${type}-items`} />
           </div>
         </div>
       </div>

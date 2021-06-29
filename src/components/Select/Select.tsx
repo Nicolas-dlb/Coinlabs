@@ -1,10 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 /* eslint-disable no-nested-ternary */
 import { useEffect } from "react";
 import "./Select.scss";
 import $ from "jquery";
-
 
 type SelectProps = {
   items: string;
@@ -17,7 +14,6 @@ function Select({
   setCryptoSelected = false,
   setCurrencySelected = false,
 }: SelectProps) {
-  
   const langArray: any = [];
   let array = langArray;
   let type: string = "crypto";
@@ -33,11 +29,9 @@ function Select({
     firstValue = "Balance";
   }
 
-
   useEffect(() => {
     // load array with items
     $(`.${type} option`).each(function loadItems() {
-     
       const value = $(this).text();
       const item = `<li><p>${value}</p></li>`;
       array.push(item);
@@ -51,17 +45,16 @@ function Select({
 
     // change button stuff on click
     $(`#${type}-items li`).click(function selectItem(e) {
-      
       const value: any = $(this).find("p").text();
       const item = `<li><p>${value}</p></li>`;
       $(`.btn-${type}`).html(item);
       $(`.btn-${type}`).attr("value", value);
-   if (setCryptoSelected) {
-    setCryptoSelected(value);
-  } else if (setCurrencySelected) {
-    setCurrencySelected(value);
-  }
-   
+      if (setCryptoSelected) {
+        setCryptoSelected(value);
+      } else if (setCurrencySelected) {
+        setCurrencySelected(value);
+      }
+
       $(`.${type}-list`).removeClass(`${type}-list-active`);
       $("#select-c").removeClass("toggle-select");
       e.stopPropagation();
@@ -70,8 +63,7 @@ function Select({
     $(`.btn-${type}, .${arrow}`).click((e) => {
       $(`.${secondType}-list`).removeClass(`${secondType}-list-active`);
       $(`.${type}-list`).toggleClass(`${type}-list-active`);
-     
-      
+
       e.stopPropagation();
     });
     // close options panel when click outside
@@ -80,9 +72,6 @@ function Select({
       $("#select-c").removeClass("toggle-select");
     });
   }, []);
-  
-  
-
 
   return (
     <>
@@ -90,46 +79,49 @@ function Select({
         <select className={`${type} exchange_element`}>
           {items === "crypto" ? (
             <>
-            <option
+              <option
                 className="option exchange_element"
                 label="All"
                 value="All"
-                
-              >All</option>
-            <option
+              >
+                All
+              </option>
+              <option
                 className="option exchange_element"
                 label="Bitcoin"
                 value="Bitcoin"
-                
-              >Bitcoin</option>
+              >
+                Bitcoin
+              </option>
               <option
                 className="option exchange_element"
                 label="Ethereum"
                 value="Ethereum"
-                
-              >Ethereum</option>
-              
+              >
+                Ethereum
+              </option>
+
               <option
                 className="option exchange_element"
                 label="Ripple"
                 value="Ripple"
-                
-              >Ripple</option>
+              >
+                Ripple
+              </option>
               <option
                 className="option exchange_element"
                 label="Litecoin"
                 value="Litecoin"
-                
-              >Litecoin</option>
+              >
+                Litecoin
+              </option>
               <option
                 className="option exchange_element"
                 label="Neo"
                 value="Neo"
-                
-              >Neo</option>
-             
-
-             
+              >
+                Neo
+              </option>
             </>
           ) : (
             <>
@@ -137,28 +129,34 @@ function Select({
                 className="option exchange_element"
                 label="Balance"
                 value="Balance"
-              >Balance</option>
+              >
+                Balance
+              </option>
               <option
                 className="option exchange_element"
                 label="Income"
                 value="Income"
-              >Income</option>
+              >
+                Income
+              </option>
               <option
                 className="option exchange_element"
                 label="Expenses"
                 value="Expenses"
-              >Expenses</option>
+              >
+                Expenses
+              </option>
               <option
                 className="option exchange_element"
                 label="Crypto"
                 value="Crypto"
-              >Crypto</option>
+              >
+                Crypto
+              </option>
             </>
           )}
         </select>
-        <div
-          className={`${type}-select exchange_element`}
-        >
+        <div className={`${type}-select exchange_element`}>
           <svg
             className={`select-${type}-arrow exchange_element`}
             xmlns="http://www.w3.org/2000/svg"
@@ -177,12 +175,8 @@ function Select({
             className={`btn-${type} exchange_element`}
             value=""
           />
-          <div
-            className={`${type}-list exchange_element`}
-          >
-            <ul
-              id={`${type}-items`}
-            />
+          <div className={`${type}-list exchange_element`}>
+            <ul id={`${type}-items`} />
           </div>
         </div>
       </div>

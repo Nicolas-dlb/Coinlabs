@@ -1,56 +1,56 @@
 .grid {
-	display: flex;
-	pointer-events: none;
-	height: 100%;
-	width: 100px;
-	position: relative;
-	right: 30px;
-	bottom: -6px;
-	.grid_card {
-		opacity: 0.07;
-		border-left: 1px solid lightgrey;
-		border-right: 1px solid lightgrey;
-		height: 9vh;
-		width: 18px;
-		position: relative;
-		bottom: 10vh;
-		left: 14px;
-		pointer-events: none;
-	}
+  display: flex;
+  pointer-events: none;
+  height: 100%;
+  width: 100px;
+  position: relative;
+  right: 30px;
+  bottom: -6px;
+  .grid_card {
+    opacity: 0.07;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    height: 9vh;
+    width: 18px;
+    position: relative;
+    bottom: 10vh;
+    left: 14px;
+    pointer-events: none;
+  }
 }
 
 @media only screen and (max-height: 600px) {
-	.grid {
-		bottom: 12px !important;
-	}
+  .grid {
+    bottom: 12px !important;
+  }
 }
 
 .grid-container {
-	position: relative;
-	bottom: 44vh;
-	width: 100%;
-	pointer-events: none;
+  position: relative;
+  bottom: 44vh;
+  width: 100%;
+  pointer-events: none;
 }
 .grid2 {
-	position: relative;
-	width: 110%;
-	height: 2vh;
-	left: 3vw;
+  position: relative;
+  width: 110%;
+  height: 2vh;
+  left: 3vw;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: 3vh;
-	pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3vh;
+  pointer-events: none;
 
-	line {
-		opacity: 0;
-		margin-top: 20px;
-		pointer-events: none;
-	}
-	.line2 {
-		position: relative;
-		top: 2vh;
-		pointer-events: none;
-	}
+  line {
+    opacity: 0;
+    margin-top: 20px;
+    pointer-events: none;
+  }
+  .line2 {
+    position: relative;
+    top: 2vh;
+    pointer-events: none;
+  }
 }

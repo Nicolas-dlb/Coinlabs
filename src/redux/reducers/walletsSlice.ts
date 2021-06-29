@@ -131,17 +131,17 @@ const walletsSlice = createSlice({
     resetExpensesHistory: (state: WalletsState) => {
       state.expensesHistory = [];
     },
-    
   },
 });
 
 export const selectWallets = (state: any) => state.wallets.wallets;
 export const selectBalanceHistory = (state: any) =>
   state.wallets.balanceHistory;
-  export const selectWalletHistory = (state: any) => state.wallets.walletHistory;
+export const selectWalletHistory = (state: any) => state.wallets.walletHistory;
 export const selectCryptoHistory = (state: any) => state.wallets.cryptoHistory;
 export const selectIncomeHistory = (state: any) => state.wallets.incomeHistory;
-export const selectExpensesHistory = (state: any) => state.wallets.expensesHistory;
+export const selectExpensesHistory = (state: any) =>
+  state.wallets.expensesHistory;
 export const {
   loadWallets,
   setWallets,

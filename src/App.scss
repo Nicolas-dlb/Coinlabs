@@ -1,74 +1,74 @@
 .app {
-	font-family: Karla;
-	color: #f2f1f5;
-	overflow: hidden;
-	padding-right: 0.5vw;
+  font-family: Karla;
+  color: #f2f1f5;
+  overflow: hidden;
+  padding-right: 0.5vw;
 }
 * {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .shadow {
-	background: #100d22;
-	width: 100vw;
-	height: 102vh;
-	padding-top: 10vh;
-	border-radius: 30px;
-	position: absolute;
-	top: 5vh;
-	right: 6vw;
-	z-index: -1;
-	transition: all 0.47s ease;
-	rotate: -1deg;
-	opacity: 0;
-	transform: scale(0.9);
+  background: #100d22;
+  width: 100vw;
+  height: 102vh;
+  padding-top: 10vh;
+  border-radius: 30px;
+  position: absolute;
+  top: 5vh;
+  right: 6vw;
+  z-index: -1;
+  transition: all 0.47s ease;
+  rotate: -1deg;
+  opacity: 0;
+  transform: scale(0.9);
 }
 .shadow_active {
-	transform: translateX(44vw) scale(0.7) translateY(-5vh);
+  transform: translateX(44vw) scale(0.7) translateY(-5vh);
 }
 .container_active {
-	transform: translateX(44vw) scale(0.7) translateY(-5vh);
+  transform: translateX(44vw) scale(0.7) translateY(-5vh);
 }
 .opacity {
-	opacity: 1;
+  opacity: 1;
 }
 
 .container {
-	transition: all 0.5s ease;
-	height: 119vh;
+  transition: all 0.5s ease;
+  height: 119vh;
 }
 @media only screen and (max-height: 600px) {
-	.container {
-		height: 130vh;
-	}
+  .container {
+    height: 130vh;
+  }
 }
 
 .active_window {
-	opacity: 1 !important;
-	pointer-events: all !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
 }
 .page-title {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom: 15px;
-	margin-left: 5%;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-left: 5%;
 }
 .title {
-	font-size: 18px;
-	margin-left: 5%;
-	margin-top: 3vh;
-	margin-bottom: 2vh;
-	color: #e8e8e9;
+  font-size: 18px;
+  margin-left: 5%;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  color: #e8e8e9;
 }
 
 @media only screen and (min-width: 992px) {
-	.shadow {
-		display: none;
-	}
-	.app {
-		scrollbar-width: none;
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+  .shadow {
+    display: none;
+  }
+  .app {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
