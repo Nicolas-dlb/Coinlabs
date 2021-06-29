@@ -661,8 +661,7 @@ function Login() {
       return;
     }
     loginAnimation();
-    /* document.getElementById("login_container")!.style.transform =
-      "translateY(-100%)"; */
+    
     setUserList({
       ...userList,
       [userName]: {

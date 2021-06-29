@@ -238,6 +238,13 @@
 
 					.graph {
 						left: 1vw;
+						&::after {
+							top: -7vh;
+							width: 93%;
+						}
+						.grid {
+							display: none;
+						}
 						.recharts-responsive-container {
 							position: relative;
 							right: 1.5vw;

@@ -1,11 +1,10 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-properties */
 
 import { setWallets } from "redux/reducers/walletsSlice";
 import { auth, db } from "firebaseConfig";
 
-/* eslint-disable no-restricted-properties */
 
 export function getNumberFixed(v: any, d: number): any {
   return (Math.floor(v * Math.pow(10, d)) / Math.pow(10, d)).toFixed(d);
@@ -113,32 +112,13 @@ export const updateWalletHistory = (
     );
 };
 
-/* const getData = (dispatch: any, data: any, market: any) => {
-  if (data && market.ripple) {
-    dispatch(
-      setWallets({
-        ...data,
-        ripplePrice: data.ripple * market?.ripple?.usd,
-        ethereumPrice: data.ethereum * market?.ethereum?.usd,
-        bitcoinPrice: data.bitcoin * market?.bitcoin?.usd,
-        TotalCrypto:
-          data.ripple * market?.ripple?.usd +
-          data.ethereum * market?.ethereum?.usd +
-          data.bitcoin * market?.bitcoin?.usd,
-      })
-    );
-  } else {
-    console.log(market);
-    setTimeout(() => getData(dispatch, data, market), 1000);
-  }
-}; */
 
 export const fetchWallet = (dispatch: any) => {
   db.collection("users")
     .doc(auth.currentUser?.uid)
     .get()
-    .then((doc) => doc.data())
-    .then((data) => {
+    .then((doc: any) => doc.data())
+    .then((data: any) => {
       if (data) {
         
         dispatch(setWallets(data));

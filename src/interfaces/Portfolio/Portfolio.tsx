@@ -1,7 +1,5 @@
-
 import './Portfolio.scss';
 import PortfolioItem from './PortfolioItem/PortfolioItem';
-
 import InfoBox from 'interfaces/Dashboard/components/InfoBoxD/InfoBoxD';
 
 function Portfolio() {

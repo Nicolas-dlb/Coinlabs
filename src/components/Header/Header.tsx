@@ -8,10 +8,7 @@ function Header() {
   const [menuActive, setMenuActive] = useState(false);
   const username = useSelector(selectUserName);
   const profilPic = useSelector(selectProfilPic);
-    /*<div id="menu_stick1" className="stick1"></div>
-                <div id="menu_stick2" className="stick2"></div>
-                <div id="menu_stick3" className="stick1"></div> */
-
+   
      
         const logoutColor = menuActive ? "#787878" : "#FFF";
     return (

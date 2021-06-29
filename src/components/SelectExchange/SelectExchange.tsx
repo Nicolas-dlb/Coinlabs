@@ -19,36 +19,7 @@ function Select({
   setCryptoSelected = false,
   setCurrencySelected = false,
 }: SelectProps) {
-  /* useEffect(() => {
-     Test for rewrite Jquery script in pure JS 
 
-    const array: any = [];
-    const options = [...document.getElementsByClassName("option")];
-    const btn = document.querySelector(".select-sell")!;
-    const cryptoList = document.querySelector(".crypto-list")!;
-    const cryptoItems = document.getElementById("crypto-items")!;
-    const liItems = cryptoItems.querySelectorAll("li")!;
-
-    options.forEach((option) => {
-      const img = option.getAttribute("data-thumbnail");
-      const value = option.getAttribute("value");
-      const item = `<li value="${value}" src="${img}" onClick="selectItem()" class="select"><img class="select" src="${img}" alt="" value="${value}"/></li>`;
-      array.push(item);
-    });
-
-    cryptoItems.innerHTML = array.join("");
-    // Set the button value to the first el of the array
-    btn.innerHTML = array[0];
-    btn.setAttribute("value", "ethereum");
-
-    // change button stuff on click
-
-    document.addEventListener("click", (e: any) => {
-      if (!e.target.classList.contains("select")) {
-        setSelectCrypto(false);
-      }
-    }); 
-  }, []); */
   const langArray: any = [];
   let array = langArray;
   let type: string = "sell";

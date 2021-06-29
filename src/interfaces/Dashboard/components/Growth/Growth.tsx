@@ -42,7 +42,7 @@ const [data, setData] = useState([{tokens: 0, Price: 0, timestamp: 3227632}])
                    <Select items="currency" setCurrencySelected={setGrowthSelected} />
                 </div>
             </div>
-            <Graph data={data} color="Green" width={0} height={200} tooltip/>
+            <Graph data={data} color="Green" width={0} height={180} tooltip/>
         </div>
     )
 }

@@ -398,7 +398,7 @@ let last6Month: number | Date | any = new Date();
   }, [expensesHistory]);
  
   useEffect(() => {
-    auth.onAuthStateChanged((userAuth) => {
+    auth.onAuthStateChanged((userAuth: any) => {
     
       if (userAuth) {
          if (auth.currentUser) {
@@ -406,8 +406,8 @@ let last6Month: number | Date | any = new Date();
       db.collection("users")
         .doc(auth.currentUser?.uid)
         .get()
-        .then((doc) => doc.data())
-        .then((data) => {
+        .then((doc: any) => doc.data())
+        .then((data: any) => {
           if (data) {
             dispatch(loadBalanceHistory(data.balanceHistory));
             dispatch(loadWalletHistory(data.walletHistory));
@@ -451,36 +451,13 @@ let last6Month: number | Date | any = new Date();
         setTimeout(() => {
           dispatch(resetProfilPic());
           dispatch(resetTime());
-          
         }, 1000);
-        
-        
         dispatch(logout());
-
-        
         dispatch(resetWalletHistory());
         dispatch(resetBalanceHistory);
-       
       }
     });
   }, []);
-  /* const checkMarketForFetchWallet = () => {
-    if (
-      market.ethereum.usd === undefined ||
-      market.ripple.usd === undefined ||
-      market.bitcoin.usd === undefined ||
-      market.ethereum.usd === 0 ||
-      market.ripple.usd === 0 ||
-      market.bitcoin.usd === 0 ||
-      wallet.usd === 0
-    ) {
-      console.log("remake");
-      setTimeout(() => checkMarketForFetchWallet(), 10);
-    } else {
-      console.log("fetch");
-      fetchWallet(dispatch, wallet, market);
-    }
-  }; */
 
    useEffect(() => {
     if (
@@ -537,7 +514,6 @@ let last6Month: number | Date | any = new Date();
   }, [wallet.TotalCrypto])
   
   
-
   useEffect(() => {
     if (user !== null && auth?.currentUser) {
       updateUserWallet(wallet, auth.currentUser?.uid);

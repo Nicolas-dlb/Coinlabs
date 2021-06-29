@@ -18,39 +18,13 @@
 		pointer-events: none;
 	}
 }
-.grid_vertical {
-	pointer-events: none;
-	position: relative;
-	bottom: 69vh;
-	left: 16.5vw;
-	width: 400px;
-	height: 30vh;
-	rotate: 90deg;
-	pointer-events: none;
-}
+
 @media only screen and (max-height: 600px) {
 	.grid {
 		bottom: 12px !important;
 	}
 }
 
-@media only screen and (min-width: 992px) {
-	.grid_vertical {
-		bottom: 71vh;
-	}
-}
-.grid_v {
-	opacity: 0;
-	position: relative;
-	width: 340px;
-	height: 5%;
-	left: 4vw;
-	pointer-events: none;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: 3vw;
-}
 .grid-container {
 	position: relative;
 	bottom: 44vh;
@@ -79,43 +53,4 @@
 		top: 2vh;
 		pointer-events: none;
 	}
-}
-.grid6 {
-	position: absolute;
-	top: 2vh;
-	opacity: 0.1;
-	left: 4vw;
-	width: 110%;
-}
-.grid5 {
-	position: relative;
-	top: -36vh;
-	opacity: 0.1;
-	left: 4%;
-	width: 320px;
-	rotate: 90deg;
-}
-.grid8 {
-	position: relative;
-	top: -67vh;
-	opacity: 0.1;
-	left: -2vw;
-	width: 320px;
-	rotate: 90deg;
-}
-.grid3 {
-	@extend .grid2;
-	position: absolute;
-	top: 21.1vh;
-	left: 5.6vw;
-
-	width: 200%;
-}
-
-.grid_div {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	height: 3vh;
-	width: 100%;
 }

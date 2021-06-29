@@ -3,21 +3,6 @@
 	display: none;
 }
 
-#crypto-items img,
-.btn-crypto img,
-#currency-items img,
-.btn-currency img {
-	width: 15px;
-	height: 15px;
-	position: relative;
-	left: 25%;
-}
-
-.btn-crypto img,
-.btn-currency img {
-	margin-right: 30px;
-}
-
 #crypto-items li,
 #currency-items li {
 	list-style: none;
@@ -28,11 +13,6 @@
 #crypto-items li:hover,
 #currency-items li:hover {
 	background: #312d49;
-}
-
-#crypto-items > li > img,
-#currency-items > li > img {
-	margin: 5px;
 }
 
 #crypto-items > li > span,

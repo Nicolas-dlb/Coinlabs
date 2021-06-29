@@ -51,28 +51,7 @@ useEffect(() => {
 
 
     
-    /* if (currency === "eur") {
-      price = getNumberFixed(payload[0]?.value * 0.82366545, 0);
-      if (name === "ripple") {
-        price = getNumberFixed(payload[0]?.value * 0.82366545, 2);
-      }
-    } else if (currency === "usd") {
-      price = payload[0]?.value;
-      price = getNumberFixed(payload[0]?.value, 0);
-      if (name === "ripple") {
-        price = getNumberFixed(payload[0]?.value, 2);
-      }
-    } else if (currency === "gbp") {
-      price = getNumberFixed(payload[0]?.value * 0.710764, 0);
-      if (name === "ripple") {
-        price = getNumberFixed(payload[0]?.value * 0.710764, 2);
-      }
-    } else if (currency === "mxn") {
-      price = getNumberFixed(payload[0]?.value * 19.945724, 0);
-      if (name === "ripple") {
-        price = getNumberFixed(payload[0]?.value * 19.945724, 2);
-      }
-    } */
+  
 let angle;
 if (payload) {
   angle = payload[0]?.value > 0 ? "140deg" : "215deg";
@@ -108,17 +87,16 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
     
     const wrapperStyle = {
         borderRadius: "15px",
-        background: number === 0 ? "linear-gradient(20deg, rgba(11,171,81,1) 0%, rgba(30,171,155,1) 100%)" : number === 1 ? "#4689b6" : number === 2 ? "#db9a67" : number === 4 ? "#a075b9" : "#4a9cc0",
+        background: number === 0 ? "linear-gradient(20deg, rgba(11,171,81,1) 0%, rgba(30,171,155,1) 100%)" : number === 1 ? "linear-gradient(292deg, rgba(105,162,200,1) 0%, rgba(72,140,185,1) 100%)" : number === 2 ? "linear-gradient(233deg, rgba(203,161,128,1) 0%, rgba(219,154,103,1) 100%)" : number === 4 ? "linear-gradient(225deg, rgba(170,134,190,1) 0%, rgba(160,117,185,1) 30%)" : "linear-gradient(233deg, rgba(117,174,218,1) 0%, rgba(74,156,192,1) 40%)",
         border: "none",
         color: "#fff",
         padding: "10px",
         paddingTop: "12px",
-       BoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
-    WebkitBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
-    MozBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
-    
-       alignItems: "space-evenly",
-       justifyContent: "center",
+        BoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
+        WebkitBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
+        MozBoxShadow: "0px 6px 18px -6px rgba(0,0,0,0.49)",
+        alignItems: "space-evenly",
+        justifyContent: "center",
         zIndex: 1000,
     };
 
@@ -135,14 +113,10 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
                                 <stop offset="0%" stopColor="#2aac63" stopOpacity={0.17} />
                                 <stop offset="100%" stopColor="#2aac63" stopOpacity={0} />
                             </linearGradient>
-                             
-                           
-                            
                             <linearGradient id="White" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stopColor="#fff" stopOpacity={0} />
                                 <stop offset="100%" stopColor="#fff" stopOpacity={0} />
-                            </linearGradient>
-                            
+                            </linearGradient>   
                            <linearGradient id="Blue" x1="1" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stopColor="#4689b6" stopOpacity={0.17} />
                                 <stop offset="100%" stopColor="#4689b6" stopOpacity={0} />
@@ -151,12 +125,10 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
                                 <stop offset="0%" stopColor="#a075b9" stopOpacity={0.17} />
                                 <stop offset="100%" stopColor="#a075b9" stopOpacity={0} />
                             </linearGradient>
-                            
                             <linearGradient id="Orange" x1="1" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stopColor="#db9a67" stopOpacity={0.17} />
                                 <stop offset="100%" stopColor="#db9a67" stopOpacity={0} />
                             </linearGradient>
-                          
                             <linearGradient id="Blue2" x1="1" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stopColor="#4a9cc0" stopOpacity={0.17} />
                                 <stop offset="100%" stopColor="#4a9cc0" stopOpacity={0} />
@@ -179,7 +151,7 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
                                 wrapperStyle={wrapperStyle}
                                 itemStyle={{ color: "rgb(11,171,81)" }}
                                 cursor={{ stroke: number === 0 ? "rgb(11,171,81)" : number === 1 ? "#4689b6" : number === 2 ? "#db9a67" : number === 4 ? "#a075b9" : "#4a9cc0", strokeWidth: 1.8, strokeDasharray: 10}}
-                                labelFormatter={(value) => `Tokens: ${value}`}
+                                labelFormatter={(value: any) => `Tokens: ${value}`}
                             />
                         )}
                         <Area
@@ -283,7 +255,7 @@ const divise = number === 0 ? 1 : number === 1 ? 11 : number === 2 ? 100 : numbe
                       
                     </AreaChart>
                 </ResponsiveContainer>
-                <Grid tooltip={tooltip && true} />
+                <Grid />
             </div>
         </div>
     );

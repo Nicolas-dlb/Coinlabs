@@ -61,25 +61,13 @@
 			}
 		}
 	}
-	/*	.graph {
-		overflow: hidden;
-		&::after {
-			bottom: 60vh;
-			top: -4vh;
-			left: 2.8%;
-			right: 8%;
-		}
-	}
-	.grid-container {
-		bottom: 29vh !important;
-	}
-	.grid_vertical {
-		bottom: 62vh;
-	} */
 
 	.graph {
 		position: relative;
 		top: 127px;
+		.grid {
+			display: none !important;
+		}
 		&::after {
 			top: -16vh;
 			left: 2%;
@@ -93,7 +81,7 @@
 @media only screen and (max-height: 600px) {
 	.growth {
 		.graph {
-			top: 0;
+			top: 30px;
 		}
 	}
 }
@@ -101,7 +89,10 @@
 	.growth {
 		width: 99%;
 		margin-left: 0;
-
+		.graph::after {
+			bottom: 5vh;
+			width: 95.2%;
+		}
 		.tabs_left {
 			.btn_growth {
 				border-radius: 4px;
