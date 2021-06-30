@@ -2,6 +2,7 @@ import "./Menu.scss";
 import market from "assets/pictures/Market.png";
 import { useState } from "react";
 import john from "assets/pictures/John.svg";
+import actuality from "assets/pictures/pastee.svg";
 import { useSelector } from "react-redux";
 import {
   selectProfilPic,
@@ -41,14 +42,18 @@ function Menu() {
           onKeyDown={() => {
             setActive("dashboard");
             $("#dashboard").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#portfolio").removeClass("active_window");
             $("#market").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           onClick={() => {
             setActive("dashboard");
             $("#dashboard").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#portfolio").removeClass("active_window");
             $("#market").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           className={
             active === "dashboard" ? "menu_item is_active" : "menu_item"
@@ -74,15 +79,19 @@ function Menu() {
           onKeyDown={() => {
             setActive("market");
             $("#market").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#portfolio").removeClass("active_window");
             $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           role="button"
           onClick={() => {
             setActive("market");
             $("#market").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#portfolio").removeClass("active_window");
             $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           className={active === "market" ? "menu_item is_active" : "menu_item"}
         >
@@ -99,14 +108,18 @@ function Menu() {
           onKeyDown={() => {
             setActive("portfolio");
             $("#portfolio").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#market").removeClass("active_window");
             $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           onClick={() => {
             setActive("portfolio");
             $("#portfolio").addClass("active_window");
+            $("#actuality").removeClass("active_window");
             $("#market").removeClass("active_window");
             $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
           }}
           className={
             active === "portfolio" ? "menu_item is_active" : "menu_item"
@@ -167,12 +180,62 @@ function Menu() {
           </div>
           <p>Portfolio</p>
         </div>
+
+        <div
+          tabIndex={0}
+          onKeyDown={() => {
+            setActive("actuality");
+            $("#actuality").addClass("active_window");
+            $("#market").removeClass("active_window");
+            $("#portfolio").removeClass("active_window");
+            $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
+          }}
+          role="button"
+          onClick={() => {
+            setActive("actuality");
+            $("#actuality").addClass("active_window");
+            $("#market").removeClass("active_window");
+            $("#portfolio").removeClass("active_window");
+            $("#dashboard").removeClass("active_window");
+            $("#changelog").removeClass("active_window");
+          }}
+          className={
+            active === "actuality" ? "menu_item is_active" : "menu_item"
+          }
+        >
+          <div className="menu_item_icon">
+            <img src={actuality} alt="" />
+          </div>
+          <p>Actuality</p>
+        </div>
       </nav>
       <div className="john">
         <img src={john} alt="" />
         <p>Newest version soon available!</p>
-        <p>More info version 1.2</p>
-        <span>Update</span>
+        <p>More info version 1.1</p>
+        <span
+          role="button"
+          tabIndex={0}
+          onKeyDown={() => {
+            setActive("changelog");
+            $("#actuality").removeClass("active_window");
+            $("#portfolio").removeClass("active_window");
+            $("#market").removeClass("active_window");
+            $("#dashboard").removeClass("active_window");
+            $("#changelog").addClass("active_window");
+          }}
+          onClick={() => {
+            setActive("changelog");
+            $("#actuality").removeClass("active_window");
+            $("#portfolio").removeClass("active_window");
+            $("#market").removeClass("active_window");
+            $("#dashboard").removeClass("active_window");
+            $("#changelog").addClass("active_window");
+          }}
+        >
+          Read
+        </span>
       </div>
     </div>
   );

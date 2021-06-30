@@ -10,6 +10,7 @@ function Transactions() {
     <div className="transactions">
       {history?.map((item: any) => (
         <Transaction
+          key={Math.random()}
           name={item.name}
           status={item.status}
           price={Number(item.price)}

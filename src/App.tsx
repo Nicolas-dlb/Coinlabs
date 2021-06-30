@@ -49,6 +49,8 @@ import {
 } from "redux/reducers/userSlice";
 import { auth, db } from "firebaseConfig";
 import Portfolio from "interfaces/Portfolio/Portfolio";
+import Changelog from "interfaces/Changelog/Changelog";
+import Actuality from "interfaces/Actuality/Actuality";
 
 function App() {
   const a = useSelector(selectHistory);
@@ -869,6 +871,8 @@ function App() {
             <Dashboard />
             <Market />
             <Portfolio />
+            <Actuality />
+            <Changelog />
           </div>
         </>
       )}

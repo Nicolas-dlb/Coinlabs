@@ -1,0 +1,93 @@
+.changelog {
+  padding-left: 19px;
+  padding-bottom: 3vh;
+  border-radius: 30px;
+  z-index: 50;
+  background: var(--secondary-bg-color);
+  padding-top: 10vh;
+  opacity: 0;
+  pointer-events: none;
+  margin-top: 1vh;
+  overflow: hidden;
+  position: relative;
+  bottom: 477vh;
+  height: 100%;
+  width: 100%;
+  .change_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 30px 0;
+    .added,
+    .updated,
+    .fixed {
+      width: 70px;
+      height: 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      margin-right: 10px;
+      font-size: 13px;
+    }
+    .added {
+      background: #1baa63;
+    }
+    .updated {
+      background: #4689b6;
+    }
+    .fixed {
+      background: #db9a67;
+    }
+    .added::after {
+      content: "Added";
+    }
+    .updated::after {
+      content: "Updated";
+    }
+    .fixed::after {
+      content: "Fixed";
+    }
+  }
+  .note_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 30px 0;
+    .point {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: grey;
+    }
+    .added,
+    .updated,
+    .fixed {
+      font-weight: bold;
+      font-size: 16px;
+      color: grey;
+      margin: 0 10px;
+    }
+    .added::after {
+      content: "Added";
+    }
+    .updated::after {
+      content: "Updated";
+    }
+    .fixed::after {
+      content: "Fixed";
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .changelog {
+    padding-left: 208px;
+    bottom: 425vh;
+    .title,
+    .page-title {
+      margin-left: 1%;
+    }
+  }
+}
