@@ -36,6 +36,20 @@ function Header() {
       document.documentElement.style.setProperty("--third-bg-color", "#221e34");
     }
   };
+
+  const animeLogo = () => {
+    document.getElementById("logo_stick1")!.style.animation =
+      "load 1s 0s linear";
+    document.getElementById("logo_stick2")!.style.animation =
+      "load3 1s 0.2s linear";
+    document.getElementById("logo_stick3")!.style.animation =
+      "load4 1s 0.4s linear";
+    setTimeout(() => {
+      document.getElementById("logo_stick1")!.style.animation = "none";
+      document.getElementById("logo_stick2")!.style.animation = "none";
+      document.getElementById("logo_stick3")!.style.animation = "none";
+    }, 1600);
+  };
   return (
     <div className="header">
       <div
@@ -56,7 +70,7 @@ function Header() {
         </button>
       </div>
       <div className="header_content">
-        <div className="header_logo">
+        <div onMouseEnter={animeLogo} id="header_logo" className="header_logo">
           <div className="header_logo_container">
             <div id="logo_stick1" className="stick1" />
             <div id="logo_stick2" className="stick2" />

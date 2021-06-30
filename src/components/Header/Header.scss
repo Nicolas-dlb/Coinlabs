@@ -23,6 +23,7 @@
     align-items: flex-end;
     justify-content: center;
     margin-left: 30px;
+    cursor: pointer;
     .header_logo_container {
       display: flex;
       align-items: flex-end;
@@ -39,7 +40,7 @@
     .stick1 {
       border-radius: 20px;
       width: 3.5px;
-      height: 18px;
+      height: 20px;
 
       margin-right: 4px;
     }
@@ -49,7 +50,7 @@
     }
     .stick3 {
       @extend .stick1;
-      height: 13px;
+      height: 15px;
     }
     #logo_stick1 {
       background: #71ce98;

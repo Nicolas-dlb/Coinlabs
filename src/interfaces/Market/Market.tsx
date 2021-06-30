@@ -471,6 +471,8 @@ function Market() {
             <MarketCapItem name="Bitcoin" />
             <MarketCapItem name="Ethereum" />
             <MarketCapItem name="Ripple" />
+            <MarketCapItem name="Litecoin" />
+            <MarketCapItem name="Neo" />
           </div>
         </div>
       </div>
