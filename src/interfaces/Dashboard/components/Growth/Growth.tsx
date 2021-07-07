@@ -1,5 +1,5 @@
 import Graph from "components/Graph/Graph";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   selectBalanceHistory,
@@ -13,9 +13,7 @@ import Select from "components/Select/Select";
 function Growth() {
   const [active, setActive] = useState("1m");
   const balanceHistory = useSelector(selectBalanceHistory);
-  const [data, setData] = useState([
-    { tokens: 0, Price: 0, timestamp: 3227632 },
-  ]);
+  const [data, setData] = useState([{ tokens: 0, Price: 0, timestamp: 0 }]);
   const [growthSelected, setGrowthSelected] = useState("Balance");
   const incomeHistory = useSelector(selectIncomeHistory);
   const cryptoHistory = useSelector(selectCryptoHistory);
@@ -36,6 +34,18 @@ function Growth() {
           tokens: x,
           Price: timeline.slice(-101)[x]?.total,
           timestamp: timeline.slice(-101)[x]?.timestamp,
+        }))
+      );
+    } else {
+      setData(
+        [...Array(25).keys()].map((x) => ({
+          tokens: x,
+          Price: 0,
+          ethereum: 0,
+          ripple: 0,
+          litecoin: 0,
+          neo: 0,
+          timestamp: 0,
         }))
       );
     }

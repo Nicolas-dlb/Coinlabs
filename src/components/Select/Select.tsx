@@ -1,18 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-nested-ternary */
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Select.scss";
 import $ from "jquery";
 
 type SelectProps = {
   items: string;
-  setCryptoSelected?: any;
-  setCurrencySelected?: any;
+  setCryptoSelected?: (name: string) => void;
+  setCurrencySelected?: (name: string) => void;
 };
 
 function Select({
   items,
-  setCryptoSelected = false,
-  setCurrencySelected = false,
+  setCryptoSelected = undefined,
+  setCurrencySelected = undefined,
 }: SelectProps) {
   const langArray: any = [];
   let array = langArray;
@@ -73,6 +74,13 @@ function Select({
     });
   }, []);
 
+  $(`.btn-${type}, .${arrow}`).click((e) => {
+    $(`.${secondType}-list`).removeClass(`${secondType}-list-active`);
+    $(`.${type}-list`).toggleClass(`${type}-list-active`);
+
+    e.stopPropagation();
+  });
+
   return (
     <>
       <div>
@@ -129,6 +137,7 @@ function Select({
                 className="option exchange_element"
                 label="Balance"
                 value="Balance"
+                id="growth_balance"
               >
                 Balance
               </option>
@@ -136,6 +145,7 @@ function Select({
                 className="option exchange_element"
                 label="Income"
                 value="Income"
+                id="growth_income"
               >
                 Income
               </option>
@@ -143,6 +153,7 @@ function Select({
                 className="option exchange_element"
                 label="Expenses"
                 value="Expenses"
+                id="growth_Expenses"
               >
                 Expenses
               </option>
@@ -150,6 +161,7 @@ function Select({
                 className="option exchange_element"
                 label="Crypto"
                 value="Crypto"
+                id="growth_Crypto"
               >
                 Crypto
               </option>
@@ -173,7 +185,7 @@ function Select({
             aria-label="btn-select"
             type="button"
             className={`btn-${type} exchange_element`}
-            value=""
+            value="All"
           />
           <div className={`${type}-list exchange_element`}>
             <ul id={`${type}-items`} />

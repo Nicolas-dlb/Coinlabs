@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoBoxM should render correctly 1`] = `
+<InfoBox
+  data={
+    Array [
+      Object {
+        "price": 0,
+        "timestamp": 0,
+        "tokens": 0,
+      },
+    ]
+  }
+  name="Bitcoin"
+  price={25}
+  variation={10}
+>
+  <div
+    className="infoboxM"
+  >
+    <div
+      className="infobox_left"
+    >
+      <div
+        className="infobox_left_top"
+      >
+        <p
+          id="infoBoxM_name"
+        >
+          Bitcoin
+        </p>
+        <svg
+          fill="#37bb77"
+          style={
+            Object {
+              "transform": "rotate(140deg)",
+            }
+          }
+          viewBox="0 0 492 492"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M464.3 207.4l0.8 0.2H135.9l103.5-103.7c5.1-5.1 7.8-11.9 7.8-19.1 0-7.2-2.8-14-7.8-19.1L223.3 49.5c-5.1-5.1-11.8-7.9-19-7.9 -7.2 0-14 2.8-19 7.8L7.8 226.9C2.8 232 0 238.8 0 246c0 7.2 2.8 14 7.8 19.1l177.4 177.4c5.1 5.1 11.8 7.8 19 7.8 7.2 0 13.9-2.8 19-7.8l16.1-16.1c5.1-5.1 7.8-11.8 7.8-19 0-7.2-2.8-13.6-7.8-18.7L134.7 284.4h330c14.8 0 27.3-12.8 27.3-27.6v-22.8C492 219.2 479.2 207.4 464.3 207.4z"
+          />
+        </svg>
+      </div>
+      <div
+        className="infobox_left_bottom"
+      >
+        <p>
+          $
+        </p>
+        <p
+          id="infoboxM_price"
+        >
+          25
+        </p>
+      </div>
+    </div>
+    <div
+      className="infobox_right"
+    >
+      <Graph
+        color="White"
+        data={
+          Array [
+            Object {
+              "Price": undefined,
+              "timestamp": undefined,
+              "tokens": 0,
+            },
+          ]
+        }
+        height={90}
+        width={115}
+      >
+        <div
+          className="graph_container"
+        >
+          <div
+            className="graph"
+          >
+            <ResponsiveContainer
+              debounce={0}
+              height={90}
+              width={115}
+            >
+              <ResizeDetector
+                handleHeight={true}
+                handleWidth={true}
+                onResize={[Function]}
+                targetRef={
+                  Object {
+                    "current": <div
+                      class="recharts-responsive-container"
+                      style="width: 115px; height: 90px;"
+                    >
+                      <div
+                        class="recharts-wrapper"
+                        style="position: relative; cursor: default; width: 115px; height: 90px;"
+                      >
+                        <svg
+                          class="recharts-surface"
+                          height="90"
+                          version="1.1"
+                          viewBox="0 0 115 90"
+                          width="115"
+                        >
+                          <defs>
+                            <clippath
+                              id="recharts1-clip"
+                            >
+                              <rect
+                                height="80"
+                                width="105"
+                                x="5"
+                                y="5"
+                              />
+                            </clippath>
+                          </defs>
+                          <defs>
+                            <lineargradient
+                              id="Green"
+                              x1="1"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#2aac63"
+                                stop-opacity="0.17"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#2aac63"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                            <lineargradient
+                              id="White"
+                              x1="0"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#fff"
+                                stop-opacity="0"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#fff"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                            <lineargradient
+                              id="Blue"
+                              x1="1"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#4689b6"
+                                stop-opacity="0.17"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#4689b6"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                            <lineargradient
+                              id="Pink"
+                              x1="1"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#a075b9"
+                                stop-opacity="0.17"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#a075b9"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                            <lineargradient
+                              id="Orange"
+                              x1="1"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#db9a67"
+                                stop-opacity="0.17"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#db9a67"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                            <lineargradient
+                              id="Blue2"
+                              x1="1"
+                              x2="0"
+                              y1="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#4a9cc0"
+                                stop-opacity="0.17"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#4a9cc0"
+                                stop-opacity="0"
+                              />
+                            </lineargradient>
+                          </defs>
+                          <g
+                            class="recharts-layer recharts-area"
+                          >
+                            <g
+                              class="recharts-layer recharts-area-dots"
+                            />
+                          </g>
+                          <g
+                            class="recharts-layer recharts-area"
+                          >
+                            <g
+                              class="recharts-layer recharts-area-dots"
+                            />
+                          </g>
+                          <g
+                            class="recharts-layer recharts-area"
+                          >
+                            <g
+                              class="recharts-layer recharts-area-dots"
+                            />
+                          </g>
+                          <g
+                            class="recharts-layer recharts-area"
+                          >
+                            <g
+                              class="recharts-layer recharts-area-dots"
+                            />
+                          </g>
+                          <g
+                            class="recharts-layer recharts-area"
+                          >
+                            <g
+                              class="recharts-layer recharts-area-dots"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                    </div>,
+                  }
+                }
+              >
+                <div
+                  className="recharts-responsive-container"
+                  style={
+                    Object {
+                      "height": 90,
+                      "maxHeight": undefined,
+                      "minHeight": undefined,
+                      "minWidth": undefined,
+                      "width": 115,
+                    }
+                  }
+                />
+              </ResizeDetector>
+            </ResponsiveContainer>
+            <Grid>
+              <div
+                className="grid"
+              >
+                <span
+                  className="grid_card"
+                />
+                <span
+                  className="grid_card"
+                />
+                <span
+                  className="grid_card"
+                />
+                <span
+                  className="grid_card"
+                />
+                <span
+                  className="grid_card"
+                />
+              </div>
+            </Grid>
+          </div>
+        </div>
+      </Graph>
+    </div>
+  </div>
+</InfoBox>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should render Grid component 1`] = `
+<div
+  className="grid"
+>
+  <span
+    className="grid_card"
+  />
+  <span
+    className="grid_card"
+  />
+  <span
+    className="grid_card"
+  />
+  <span
+    className="grid_card"
+  />
+  <span
+    className="grid_card"
+  />
+</div>
+`;

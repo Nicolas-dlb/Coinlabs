@@ -22,6 +22,11 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: Karla;
+  src: url("assets/fonts/Karla-Regular.ttf") format("truetype");
+}
+
 @media only screen and (min-width: 992px) {
   body {
     transition: background-color 0.3s ease;

@@ -1,0 +1,31 @@
+.settings_theme {
+  width: 85%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--third-bg-color);
+  margin-top: 2vh;
+  .settings_theme_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    .btn_theme_active {
+      background: var(--primary-font-color) !important;
+      color: black !important;
+    }
+    .btn-theme {
+      background: #2b263f;
+      padding: 8px 14px;
+      border-radius: 5px;
+      border: none;
+      color: var(--primary-font-color);
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+}

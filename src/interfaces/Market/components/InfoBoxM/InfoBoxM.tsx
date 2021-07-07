@@ -1,6 +1,7 @@
 import "./InfoBoxM.scss";
 import Graph from "components/Graph/Graph";
 import { numberWithSpaces } from "utils/utils";
+import React from "react";
 
 type InfoBoxProps = {
   name: string;
@@ -14,7 +15,7 @@ function InfoBox({ name, price, variation, data }: InfoBoxProps) {
 
   let timelineData = [...Array(110).keys()].map((x) => ({
     tokens: x,
-    Price: 20000,
+    Price: 0,
     timestamp: 37364728,
   }));
   if (data) {
@@ -32,7 +33,7 @@ function InfoBox({ name, price, variation, data }: InfoBoxProps) {
         }
       >
         <div className="infobox_left_top">
-          <p>{name}</p>
+          <p id="infoBoxM_name">{name}</p>
           <svg
             style={{ transform: `rotate(${angle})` }}
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +45,7 @@ function InfoBox({ name, price, variation, data }: InfoBoxProps) {
         </div>
         <div className="infobox_left_bottom">
           <p>$</p>
-          <p>{numberWithSpaces(price)}</p>
+          <p id="infoboxM_price">{numberWithSpaces(price)}</p>
         </div>
       </div>
       <div className="infobox_right">

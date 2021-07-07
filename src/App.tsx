@@ -6,7 +6,9 @@ import Market from "interfaces/Market/Market";
 import Dashboard from "interfaces/Dashboard/Dashboard";
 import Menu from "components/Menu/Menu";
 import Login from "interfaces/Login/Login";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { pure } from "recompose";
+import Settings from "interfaces/Settings/Settings";
 import getData, { getHistoricalData } from "utils/api/api";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,18 +19,15 @@ import {
   setVariation,
 } from "redux/reducers/marketSlice";
 import {
-  setTime,
-  setCrypto,
-  setCurrency,
-  resetTime,
-} from "redux/reducers/appSlice";
-import {
   loadBalanceHistory,
   loadCryptoHistory,
   loadExpensesHistory,
   loadIncomeHistory,
   loadWalletHistory,
   resetBalanceHistory,
+  resetCryptoHistory,
+  resetExpensesHistory,
+  resetIncomeHistory,
   resetWalletHistory,
   selectBalanceHistory,
   selectCryptoHistory,
@@ -50,7 +49,6 @@ import {
 import { auth, db } from "firebaseConfig";
 import Portfolio from "interfaces/Portfolio/Portfolio";
 import Changelog from "interfaces/Changelog/Changelog";
-import Actuality from "interfaces/Actuality/Actuality";
 
 function App() {
   const a = useSelector(selectHistory);
@@ -64,6 +62,7 @@ function App() {
   const expensesHistory = useSelector(selectExpensesHistory);
   const incomeHistory = useSelector(selectIncomeHistory);
   const cryptoHistory = useSelector(selectCryptoHistory);
+
   function checkVariation() {
     let ethereumMonth1: number;
     let ethereum3Month1: number;
@@ -280,7 +279,12 @@ function App() {
         ethereumWeek1 &&
         rippleWeek1 &&
         litecoinWeek1 &&
-        neoWeek1
+        neoWeek1 &&
+        bitcoinCap1 &&
+        ethereumCap1 &&
+        rippleCap1 &&
+        litecoinCap1 &&
+        neoCap1
       ) {
         dispatch(
           loadHistory({
@@ -394,30 +398,21 @@ function App() {
             .then((data: any) => {
               if (data) {
                 dispatch(loadBalanceHistory(data.balanceHistory));
-                dispatch(loadWalletHistory(data.walletHistory));
                 dispatch(loadCryptoHistory(data.cryptoHistory));
                 dispatch(loadIncomeHistory(data.incomeHistory));
                 dispatch(loadExpensesHistory(data.expensesHistory));
-                const n =
-                  data.currency === "Dollar"
-                    ? "usd"
-                    : data.currency === "Euro"
-                    ? "eur"
-                    : data.currency === "Livre"
-                    ? "gbp"
-                    : "mxn";
-                dispatch(setCurrency(n));
-                if (data.time) {
-                  dispatch(setTime(data.time));
-                }
-                if (data.crypto) {
-                  dispatch(setCrypto(data.crypto));
-                }
+                dispatch(loadWalletHistory(data.walletHistory));
                 if (data.profilPic) {
                   dispatch(setProfilPic(data.profilPic));
                 }
               }
             });
+        } else {
+          dispatch(resetBalanceHistory());
+          dispatch(resetCryptoHistory());
+          dispatch(resetIncomeHistory());
+          dispatch(resetExpensesHistory());
+          dispatch(resetWalletHistory());
         }
 
         setTimeout(() => {
@@ -431,31 +426,28 @@ function App() {
       } else {
         setTimeout(() => {
           dispatch(resetProfilPic());
-          dispatch(resetTime());
         }, 1000);
         dispatch(logout());
-        dispatch(resetWalletHistory());
-        dispatch(resetBalanceHistory);
       }
     });
   }, []);
 
   useEffect(() => {
     if (
-      market.ethereum?.usd !== undefined ||
-      market.ripple?.usd !== undefined ||
-      market.bitcoin?.usd !== undefined ||
-      market.litecoin?.usd !== undefined ||
-      market.neo?.usd !== undefined ||
-      market.ethereum?.usd !== 0 ||
-      market.ripple?.usd !== 0 ||
-      market.bitcoin?.usd !== 0 ||
-      market.litecoin?.usd !== 0 ||
-      market.neo?.usd !== 0 ||
-      market.ethereum !== undefined ||
-      market.bitcoin !== undefined ||
-      market.ripple !== undefined ||
-      market.litecoin !== undefined ||
+      market.ethereum?.usd !== undefined &&
+      market.ripple?.usd !== undefined &&
+      market.bitcoin?.usd !== undefined &&
+      market.litecoin?.usd !== undefined &&
+      market.neo?.usd !== undefined &&
+      market.ethereum?.usd !== 0 &&
+      market.ripple?.usd !== 0 &&
+      market.bitcoin?.usd !== 0 &&
+      market.litecoin?.usd !== 0 &&
+      market.neo?.usd !== 0 &&
+      market.ethereum !== undefined &&
+      market.bitcoin !== undefined &&
+      market.ripple !== undefined &&
+      market.litecoin !== undefined &&
       market.neo !== undefined
     ) {
       dispatch(
@@ -812,50 +804,52 @@ function App() {
 
   useEffect(() => {
     check();
-    dispatch(
-      setVariation({
-        ripple: {
-          week: rippleWeek,
-          month: rippleMonth,
-          month3: ripple3Month,
-          month6: ripple6Month,
-          year: rippleYear,
-          cap: rippleCap,
-        },
-        bitcoin: {
-          week: bitcoinWeek,
-          month: bitcoinMonth,
-          month3: bitcoin3Month,
-          month6: bitcoin6Month,
-          year: bitcoinYear,
-          cap: bitcoinCap,
-        },
-        ethereum: {
-          week: ethereumWeek,
-          month: ethereumMonth,
-          month3: ethereum3Month,
-          month6: ethereum6Month,
-          year: ethereumYear,
-          cap: ethereumCap,
-        },
-        litecoin: {
-          week: litecoinWeek,
-          month: litecoinMonth,
-          month3: litecoin3Month,
-          month6: litecoin6Month,
-          year: litecoinYear,
-          cap: litecoinCap,
-        },
-        neo: {
-          week: neoWeek,
-          month: neoMonth,
-          month3: neo3Month,
-          month6: neo6Month,
-          year: neoYear,
-          cap: neoCap,
-        },
-      })
-    );
+    if (rippleWeek) {
+      dispatch(
+        setVariation({
+          ripple: {
+            week: rippleWeek,
+            month: rippleMonth,
+            month3: ripple3Month,
+            month6: ripple6Month,
+            year: rippleYear,
+            cap: rippleCap,
+          },
+          bitcoin: {
+            week: bitcoinWeek,
+            month: bitcoinMonth,
+            month3: bitcoin3Month,
+            month6: bitcoin6Month,
+            year: bitcoinYear,
+            cap: bitcoinCap,
+          },
+          ethereum: {
+            week: ethereumWeek,
+            month: ethereumMonth,
+            month3: ethereum3Month,
+            month6: ethereum6Month,
+            year: ethereumYear,
+            cap: ethereumCap,
+          },
+          litecoin: {
+            week: litecoinWeek,
+            month: litecoinMonth,
+            month3: litecoin3Month,
+            month6: litecoin6Month,
+            year: litecoinYear,
+            cap: litecoinCap,
+          },
+          neo: {
+            week: neoWeek,
+            month: neoMonth,
+            month3: neo3Month,
+            month6: neo6Month,
+            year: neoYear,
+            cap: neoCap,
+          },
+        })
+      );
+    }
   }, [a]);
 
   return (
@@ -871,8 +865,9 @@ function App() {
             <Dashboard />
             <Market />
             <Portfolio />
-            <Actuality />
+
             <Changelog />
+            <Settings />
           </div>
         </>
       )}
@@ -880,4 +875,4 @@ function App() {
   );
 }
 
-export default App;
+export default pure(App);

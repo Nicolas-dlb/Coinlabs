@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly 1`] = `
+<Select
+  items="sell"
+>
+  <div>
+    <select
+      className="sell exchange_element"
+    >
+      <option
+        className="option exchange_element"
+        label="BTC"
+        value="BTC"
+      >
+        BTC
+      </option>
+      <option
+        className="option exchange_element"
+        label="ETH"
+        value="ETH"
+      >
+        ETH
+      </option>
+      <option
+        className="option exchange_element"
+        label="XRP"
+        value="XRP"
+      >
+        XRP
+      </option>
+      <option
+        className="option exchange_element"
+        label="LTC"
+        value="LTC"
+      >
+        LTC
+      </option>
+      <option
+        className="option exchange_element"
+        label="NEO"
+        value="NEO"
+      >
+        NEO
+      </option>
+    </select>
+    <div
+      className="sell-select exchange_element"
+    >
+      <svg
+        className="select-sell-arrow exchange_element"
+        fill="#605b95"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+        />
+      </svg>
+      <button
+        aria-label="select-sell"
+        className="btn-sell exchange_element"
+        id="select-sell"
+        type="button"
+        value=""
+      />
+      <div
+        className="sell-list exchange_element"
+      >
+        <ul
+          id="sell-items"
+        />
+      </div>
+    </div>
+  </div>
+</Select>
+`;

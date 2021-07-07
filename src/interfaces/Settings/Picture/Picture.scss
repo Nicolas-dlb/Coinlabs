@@ -1,0 +1,35 @@
+.settings_picture {
+  width: 85%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--third-bg-color);
+  margin-top: 2vh;
+  padding-bottom: 25px !important;
+  .settings_picture_container {
+    display: flex;
+    align-items: center;
+    .settings_picture_message {
+      margin-left: 10px;
+      color: var(--third-font-color);
+    }
+  }
+  h3 {
+    margin-bottom: 3vh;
+  }
+
+  .set_profil_picture {
+    background: #2b263f;
+    border-radius: 5px;
+    padding: 7px 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: var(--primary-font-color);
+    font-family: inherit;
+  }
+}

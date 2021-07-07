@@ -1,0 +1,138 @@
+.exchange {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--third-bg-color);
+
+  width: 93%;
+
+  .exchange-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh 0;
+    width: 80vw;
+
+    .exchange_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      color: var(--third-font-color);
+      width: 65%;
+
+      p {
+        align-self: flex-start;
+        color: #c4c3c9;
+      }
+      .input {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--third-font-color);
+        padding-bottom: 1.3vh;
+        width: 100%;
+        margin-top: 1vh;
+        height: 25px;
+        &:first-of-type {
+          margin-bottom: 20px;
+        }
+
+        input {
+          background-color: var(--third-bg-color);
+          color: var(--primary-font-color);
+          outline: none;
+          border: none;
+          font-family: Karla;
+          width: 100%;
+          font-size: 18px;
+          caret-color: #1baa63;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
+        }
+      }
+    }
+    .exchange_right {
+      background: linear-gradient(
+        137deg,
+        rgba(10, 171, 81, 1) 0%,
+        rgba(30, 169, 156, 1) 100%
+      );
+      pointer-events: none;
+      border-radius: 20px;
+      height: 140px;
+      padding-left: 12px;
+      padding-top: 1.5vh;
+      width: 90px;
+      svg {
+        width: 30px;
+      }
+      p:first-of-type {
+        font-size: 14px;
+        margin-top: 1vh;
+      }
+      .wallet {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 1.5vh 0;
+        position: relative;
+        top: 3px;
+        display: flex;
+        p:first-child {
+          position: relative;
+          bottom: 7px;
+          margin-right: 1px;
+        }
+      }
+      .date {
+        font-size: 14px;
+      }
+    }
+  }
+  .btn-exchange {
+    padding: 12px 8px;
+    border-radius: 10px;
+    color: var(--primary-font-color);
+    background: #373447;
+    outline: none;
+    border: none;
+    width: 85%;
+    font-size: 16px;
+    font-family: Karla;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-height: 600px) {
+  .input {
+    margin-top: 0.7vh !important;
+  }
+  .exchange_right {
+    height: 125px !important;
+  }
+  .btn-exchange {
+    padding: 8px 15px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .exchange-top {
+    width: 330px !important;
+    .exchange_right {
+      width: 100px !important;
+      .wallet {
+        font-size: 16px !important;
+      }
+    }
+  }
+}

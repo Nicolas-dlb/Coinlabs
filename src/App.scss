@@ -29,6 +29,9 @@
 .container_active {
   transform: translateX(44vw) scale(0.7) translateY(-5vh);
 }
+.disable_scroll {
+  height: 100vh;
+}
 .opacity {
   opacity: 1;
 }

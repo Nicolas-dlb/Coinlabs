@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`settings should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Settings>
+    <div
+      className="settings"
+      id="settings"
+    >
+      <p
+        className="page-title"
+      >
+        Settings
+      </p>
+      <div
+        className="settings_top"
+      >
+        <div
+          className="settings_top_left"
+        >
+          <Account>
+            <div
+              className="settings_account"
+            >
+              <h3
+                className="account"
+              >
+                Account
+              </h3>
+              <div
+                className="user_card"
+              >
+                <div
+                  className="user_card_img"
+                >
+                  <img
+                    alt=""
+                    src="https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
+                  />
+                  <div
+                    className="point"
+                  />
+                </div>
+                <div
+                  className="user_card_info"
+                >
+                  <h3 />
+                  <h5 />
+                  <div
+                    className="change_user"
+                  >
+                    <p>
+                      Not you?
+                    </p>
+                    <span
+                      className="change"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      Change User
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Account>
+        </div>
+        <div
+          className="settings_top_right"
+        >
+          <Theme>
+            <div
+              className="settings_theme"
+            >
+              <h3>
+                Theme
+              </h3>
+              <div
+                className="settings_theme_container"
+              >
+                <button
+                  className="btn-theme btn_theme_active"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Dark
+                </button>
+                <button
+                  className="btn-theme"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Grey
+                </button>
+              </div>
+            </div>
+          </Theme>
+        </div>
+      </div>
+      <Picture
+        setPicture={[Function]}
+      >
+        <div
+          className="settings_picture"
+        >
+          <h3>
+            Profil picture
+          </h3>
+          <div
+            className="settings_picture_container"
+          >
+            <div
+              className="settings_picture_input"
+            >
+              <button
+                className="set_profil_picture"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Select file
+              </button>
+              <input
+                accept="image/jpeg"
+                id="picture-input"
+                onChange={[Function]}
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                }
+                type="file"
+              />
+            </div>
+            <div
+              className="settings_picture_message"
+              id="set_picture_message"
+            >
+              <p>
+                Any file selected
+              </p>
+            </div>
+          </div>
+        </div>
+      </Picture>
+      <Username
+        onClick={[Function]}
+      >
+        <div
+          className="settings_username"
+        >
+          <h3>
+            Username
+          </h3>
+          <div
+            className="settings_username_input"
+          >
+            <div
+              className="input"
+            >
+              <p>
+                @
+              </p>
+              <input
+                autoComplete="off"
+                className="username_element"
+                id="change_username"
+                placeholder="Enter username"
+                spellCheck="false"
+                type="text"
+              />
+            </div>
+            <button
+              className="btn_settings"
+              onClick={[Function]}
+              type="button"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </Username>
+      <Email
+        setEmail={[Function]}
+      >
+        <div
+          className="settings_email"
+        >
+          <h3>
+            Email
+          </h3>
+          <div
+            className="settings_email_input"
+          >
+            <div
+              className="input input_settings"
+            >
+              <svg
+                className="email_icon"
+                height="489"
+                viewBox="0 0 489.2 489.2"
+                width="489"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="0 386.6 143.5 214.9 0 99.6 "
+                />
+                <polygon
+                  points="489.2 386.6 489.2 99.6 345.6 214.9 "
+                />
+                <polygon
+                  points="487.9 398.7 489.2 398.7 489.2 397.7 "
+                />
+                <polygon
+                  points="0 398.7 1.2 398.7 0 397.7 "
+                />
+                <polygon
+                  points="480.8 398.7 479.9 397.7 334.6 223.7 244.6 296.1 154.6 223.7 9.2 397.7 8.4 398.7 "
+                />
+                <polygon
+                  points="152.6 204 158.1 208.5 163.6 212.9 244.6 277.9 325.5 212.9 331 208.5 336.5 204 477.9 90.5 11.3 90.5 "
+                />
+              </svg>
+              <input
+                id="set_email"
+                onChange={[Function]}
+                placeholder="Enter new email"
+                type="text"
+              />
+            </div>
+            <button
+              className="btn_settings"
+              type="button"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </Email>
+      <Founds>
+        <div
+          className="settings_founds"
+        >
+          <h3>
+            Founds
+          </h3>
+          <div
+            className="settings_founds_input"
+          >
+            <div
+              className="input"
+            >
+              <p>
+                $
+              </p>
+              <input
+                id="add_founds"
+                min="0"
+                onChange={[Function]}
+                placeholder="Enter amount"
+                type="number"
+              />
+            </div>
+            <button
+              className="btn_settings"
+              onClick={[Function]}
+              type="button"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </Founds>
+      <Theme>
+        <div
+          className="settings_theme"
+        >
+          <h3>
+            Theme
+          </h3>
+          <div
+            className="settings_theme_container"
+          >
+            <button
+              className="btn-theme btn_theme_active"
+              onClick={[Function]}
+              type="button"
+            >
+              Dark
+            </button>
+            <button
+              className="btn-theme"
+              onClick={[Function]}
+              type="button"
+            >
+              Grey
+            </button>
+          </div>
+        </div>
+      </Theme>
+    </div>
+  </Settings>
+</Provider>
+`;

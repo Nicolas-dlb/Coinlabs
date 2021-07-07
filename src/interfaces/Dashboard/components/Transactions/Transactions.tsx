@@ -1,6 +1,7 @@
 import "./Transactions.scss";
 import { useSelector } from "react-redux";
 import { selectWalletHistory } from "redux/reducers/walletsSlice";
+import React from "react";
 import Transaction from "./Transaction/Transaction";
 
 function Transactions() {

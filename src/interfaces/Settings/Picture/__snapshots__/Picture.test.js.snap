@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picture should render correctly 1`] = `
+<div
+  class="settings_picture"
+>
+  <h3>
+    Profil picture
+  </h3>
+  <div
+    class="settings_picture_container"
+  >
+    <div
+      class="settings_picture_input"
+    >
+      <button
+        class="set_profil_picture"
+        tabindex="0"
+        type="button"
+      >
+        Select file
+      </button>
+      <input
+        accept="image/jpeg"
+        id="picture-input"
+        style="display:none"
+        type="file"
+      />
+    </div>
+    <div
+      class="settings_picture_message"
+      id="set_picture_message"
+    >
+      <p>
+        Any file selected
+      </p>
+    </div>
+  </div>
+</div>
+`;

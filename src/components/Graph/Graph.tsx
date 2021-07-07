@@ -7,9 +7,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./Graph.scss";
-import Grid from "components/Graph/Grid/Grid";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getNumberFixed, numberWithSpaces } from "utils/utils";
+import Grid from "./Grid/Grid";
 
 type GraphProps = {
   data: Array<Object>;
@@ -26,7 +26,6 @@ function Graph({
   width,
   height,
   tooltip = undefined,
-
   selected = "",
 }: GraphProps) {
   const [number, setNumber] = useState(0);
@@ -80,7 +79,7 @@ function Graph({
           </div>
           <div className="tooltip-bottom">
             <p>$</p>
-            <p id="tooltip_price">
+            <p className="tooltip_price" id="tooltip_price">
               {numberWithSpaces(getNumberFixed(price, 2))}
             </p>
           </div>

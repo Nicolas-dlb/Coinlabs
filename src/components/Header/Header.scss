@@ -121,6 +121,7 @@
     border-radius: 8px;
     padding: 9px;
     margin-left: 50px;
+
     input {
       border: none;
       outline: none;
@@ -138,6 +139,8 @@
     svg {
       margin-left: 10px;
       height: 15px;
+      width: 15px;
+      padding: 0 5px;
       fill: var(--primary-font-color);
       cursor: pointer;
     }

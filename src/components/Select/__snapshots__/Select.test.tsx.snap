@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly 1`] = `
+<Select
+  items="currency"
+>
+  <div>
+    <select
+      className="currency exchange_element"
+    >
+      <option
+        className="option exchange_element"
+        id="growth_balance"
+        label="Balance"
+        value="Balance"
+      >
+        Balance
+      </option>
+      <option
+        className="option exchange_element"
+        id="growth_income"
+        label="Income"
+        value="Income"
+      >
+        Income
+      </option>
+      <option
+        className="option exchange_element"
+        id="growth_Expenses"
+        label="Expenses"
+        value="Expenses"
+      >
+        Expenses
+      </option>
+      <option
+        className="option exchange_element"
+        id="growth_Crypto"
+        label="Crypto"
+        value="Crypto"
+      >
+        Crypto
+      </option>
+    </select>
+    <div
+      className="currency-select exchange_element"
+    >
+      <svg
+        className="select-currency-arrow exchange_element"
+        fill="#605b95"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+        />
+      </svg>
+      <button
+        aria-label="btn-select"
+        className="btn-currency exchange_element"
+        id="btn-select"
+        type="button"
+        value="All"
+      />
+      <div
+        className="currency-list exchange_element"
+      >
+        <ul
+          id="currency-items"
+        />
+      </div>
+    </div>
+  </div>
+</Select>
+`;

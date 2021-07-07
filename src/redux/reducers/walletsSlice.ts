@@ -1,12 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+type Wallet = {
+  usd: number;
+  eur: number;
+  gbp: number;
+  mxn: number;
+  ethereum: number;
+  ethereumPrice: number;
+  neo: number;
+  income: number;
+  expenses: number;
+  neoPrice: number;
+  litecoin: number;
+  litecoinPrice: number;
+  bitcoin: number;
+  bitcoinPrice: number;
+  ripple: number;
+  ripplePrice: number;
+  TotalCrypto: number;
+  total: number;
+};
 type WalletsState = {
-  wallets: any;
-  balanceHistory: any;
-  walletHistory: any;
-  cryptoHistory: any;
-  incomeHistory: any;
-  expensesHistory: any;
+  wallets: Wallet;
+  balanceHistory: Array<Object>;
+  walletHistory: Array<Object>;
+  cryptoHistory: Array<Object>;
+  incomeHistory: Array<Object>;
+  expensesHistory: Array<Object>;
+  lastUpdate: string;
 };
 const initialState: WalletsState = {
   wallets: {
@@ -14,6 +35,8 @@ const initialState: WalletsState = {
     eur: 0,
     gbp: 0,
     mxn: 0,
+    income: 0,
+    expenses: 0,
     ethereum: 0,
     ethereumPrice: 0,
     neo: 0,
@@ -32,6 +55,7 @@ const initialState: WalletsState = {
   cryptoHistory: [],
   incomeHistory: [],
   expensesHistory: [],
+  lastUpdate: "00/00",
 };
 
 function isIterable(value: any) {
@@ -131,18 +155,23 @@ const walletsSlice = createSlice({
     resetExpensesHistory: (state: WalletsState) => {
       state.expensesHistory = [];
     },
+    setLastUpdate: (state: WalletsState, action: any) => {
+      state.lastUpdate = action.payload;
+    },
   },
 });
 
 export const selectWallets = (state: any) => state.wallets.wallets;
 export const selectBalanceHistory = (state: any) =>
   state.wallets.balanceHistory;
+export const selectLastUpdate = (state: any) => state.wallets.lastUpdate;
 export const selectWalletHistory = (state: any) => state.wallets.walletHistory;
 export const selectCryptoHistory = (state: any) => state.wallets.cryptoHistory;
 export const selectIncomeHistory = (state: any) => state.wallets.incomeHistory;
 export const selectExpensesHistory = (state: any) =>
   state.wallets.expensesHistory;
 export const {
+  setLastUpdate,
   loadWallets,
   setWallets,
   setBalanceHistory,

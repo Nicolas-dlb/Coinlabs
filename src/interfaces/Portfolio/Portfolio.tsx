@@ -1,5 +1,6 @@
 import "./Portfolio.scss";
 import InfoBox from "interfaces/Dashboard/components/InfoBoxD/InfoBoxD";
+import React from "react";
 import PortfolioItem from "./PortfolioItem/PortfolioItem";
 
 function Portfolio() {
@@ -10,7 +11,7 @@ function Portfolio() {
       <div className="portfolio_top">
         <div className="balance_container">
           <div className="balance_top">
-            <InfoBox title="Balance" input />
+            <InfoBox title="Balance" />
             <InfoBox title="Crypto" />
           </div>
           <div className="balance_top">

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Founds should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Founds>
+    <div
+      className="settings_founds"
+    >
+      <h3>
+        Founds
+      </h3>
+      <div
+        className="settings_founds_input"
+      >
+        <div
+          className="input"
+        >
+          <p>
+            $
+          </p>
+          <input
+            id="add_founds"
+            min="0"
+            onChange={[Function]}
+            placeholder="Enter amount"
+            type="number"
+          />
+        </div>
+        <button
+          className="btn_settings"
+          onClick={[Function]}
+          type="button"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </Founds>
+</Provider>
+`;

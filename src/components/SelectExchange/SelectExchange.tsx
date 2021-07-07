@@ -2,20 +2,20 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-nested-ternary */
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./SelectExchange.scss";
 import $ from "jquery";
 
 type SelectProps = {
   items: string;
-  setCryptoSelected?: any;
-  setCurrencySelected?: any;
+  setCryptoSelected?: (name: string) => void;
+  setCurrencySelected?: (name: string) => void;
 };
 
 function Select({
   items,
-  setCryptoSelected = false,
-  setCurrencySelected = false,
+  setCryptoSelected = undefined,
+  setCurrencySelected = undefined,
 }: SelectProps) {
   const langArray: any = [];
   let array = langArray;

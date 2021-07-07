@@ -8,6 +8,7 @@ import {
   selectMarket,
   selectVariation,
 } from "redux/reducers/marketSlice";
+import React from "react";
 import Transactions from "./components/Transactions/Transactions";
 import Growth from "./components/Growth/Growth";
 

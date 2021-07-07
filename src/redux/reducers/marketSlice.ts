@@ -7,9 +7,36 @@ type CryptoState = {
   time: string;
 };
 const initialState: CryptoState = {
-  market: {},
+  market: {
+    bitcoin: {
+      usd: "0.00",
+      usd_market_cap: 0,
+    },
+    ripple: {
+      usd: "0.00",
+      usd_market_cap: 0,
+    },
+    litecoin: {
+      usd: "0.00",
+      usd_market_cap: 0,
+    },
+    neo: {
+      usd: "0.00",
+      usd_market_cap: 0,
+    },
+    ethereum: {
+      usd: "0.00",
+      usd_market_cap: 0,
+    },
+  },
   history: {},
-  variation: { ethereum: 0, bitcoin: 0, ripple: 0, litecoin: 0, neo: 0 },
+  variation: {
+    ethereum: { cap: 0, week: 0 },
+    bitcoin: { cap: 0, week: 0 },
+    ripple: { cap: 0, week: 0 },
+    litecoin: { cap: 0, week: 0 },
+    neo: { cap: 0, week: 0 },
+  },
   time: "month",
 };
 

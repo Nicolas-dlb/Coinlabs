@@ -3,7 +3,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.scss";
 import { login, logout, setProfilPic } from "redux/reducers/userSlice";
 import { useDispatch } from "react-redux";
@@ -12,9 +12,15 @@ import {
   loadCryptoHistory,
   loadExpensesHistory,
   loadIncomeHistory,
+  setLastUpdate,
   setWallets,
 } from "redux/reducers/walletsSlice";
-import { changeTypeTextToPassword, resetLoginInputValue } from "utils/utils";
+import {
+  changeTypeTextToPassword,
+  lastUpdate,
+  resetLoginInputValue,
+  selectProfilPicture,
+} from "utils/utils";
 import { auth, db } from "firebaseConfig";
 
 function Login() {
@@ -74,7 +80,7 @@ function Login() {
         });
       });
   }, [length]);
-
+  // let baseEmail: any;
   const handleLogin = () => {
     let thisUsername: string = "name";
     Object.entries(userList).forEach((thisUser: any) => {
@@ -126,6 +132,17 @@ function Login() {
       loginAnimation();
 
       if (email.includes("@")) {
+        // db.collection("users")
+        //   .get()
+        //   .then((querySnapshot: any) => {
+        //     querySnapshot.forEach((User: any) => {
+        //       if (User.data().email === email) {
+
+        //         baseEmail = User.data().baseEmail;
+        //          console.log(baseEmail);
+        //       }
+        //     });
+        //   });
         auth
           .signInWithEmailAndPassword(email, password)
           .catch((error: Error) => alert(error));
@@ -695,6 +712,7 @@ function Login() {
                 expenses: 0,
               })
             );
+            lastUpdate(dispatch);
             dispatch(setProfilPic(picture));
             dispatch(
               login({
@@ -709,6 +727,7 @@ function Login() {
                 username: userName,
                 password,
                 email,
+                // baseEmail: email,
                 time: "Month",
                 currency: "Dollar",
                 profilPic: picture,
@@ -794,7 +813,7 @@ function Login() {
           <button type="button" onClick={handleLogin}>
             Login
           </button>
-          <button onClick={handleDemoLogin} type="button">
+          <button id="btn-demo-login" onClick={handleDemoLogin} type="button">
             Demo Login
           </button>
         </div>
@@ -892,33 +911,10 @@ function Login() {
               <input
                 id="file-input"
                 type="file"
-                name="name"
                 accept="image/jpeg"
-                onChange={(e) => {
-                  const file = e.target.files![0];
-                  if (file.type.includes("image")) {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
-
-                    // here we tell the reader what to do when it's done reading...
-                    reader.onload = (readerEvent) => {
-                      const content = readerEvent.target!.result; // this is the content!
-
-                      setPicture(content);
-                      document.getElementById("file_error")!.style.opacity =
-                        "0";
-                      const color = getComputedStyle(
-                        document.documentElement
-                      ).getPropertyValue("--third-font-color");
-                      document.getElementById(
-                        "profil_pic"
-                      )!.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="${color}" viewBox="0 0 408 408"><path d="M332 121.9H184.8l-29.3-34.8c-1-1.2-2.5-1.8-4-1.8H32.8C14.6 85.5 0 100.2 0 118.3v214c0 18.2 14.8 32.9 33 33H332c18.2 0 32.9-14.8 33-33v-177.5C364.9 136.7 350.2 121.9 332 121.9z"/><path d="M375.2 79.3H228l-29.3-34.8c-1-1.2-2.5-1.8-4-1.8H76c-16.5 0-30.4 12.2-32.6 28.5h108.3c5.7 0 11.1 2.5 14.7 6.8l25 29.7H332c26 0 47.1 21.1 47.1 47.1v167.5c16.5-2.1 28.9-16.1 28.9-32.7v-177.5C408 94.1 393.3 79.4 375.2 79.3z"/></svg>`;
-                    };
-                  } else {
-                    document.getElementById("file_error")!.style.opacity = "1";
-                    document.getElementById("profil_pic")!.innerHTML = "+";
-                  }
-                }}
+                onChange={(e) =>
+                  selectProfilPicture(e, setPicture, "file_error")
+                }
                 style={{ display: "none" }}
               />
             </div>

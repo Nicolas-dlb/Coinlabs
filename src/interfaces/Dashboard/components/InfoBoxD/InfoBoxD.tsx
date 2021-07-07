@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectWallets, setWallets } from "redux/reducers/walletsSlice";
-import { getNumberFixed, numberWithSpaces } from "utils/utils";
+import { getNumberFixed, lastUpdate, numberWithSpaces } from "utils/utils";
 import "./InfoBoxD.scss";
 import $ from "jquery";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 type InfoBoxProps = {
   title: string;
@@ -24,13 +24,12 @@ function InfoBox({ title, variation, input }: InfoBoxProps) {
 
   const setBalance = () => {
     const value = $("#balance").val();
-
     dispatch(
       setWallets({
         usd: Number(value),
       })
     );
-
+    lastUpdate(dispatch);
     $("#balance").val(getNumberFixed(value, 2));
   };
 

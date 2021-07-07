@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectHistory, selectVariation } from "redux/reducers/marketSlice";
 import { selectWallets } from "redux/reducers/walletsSlice";
@@ -116,6 +116,13 @@ function Portfolio({ name }: PortfolioItemProps) {
         [...Array(history[timeline].length).keys()].map((x) => ({
           tokens: x,
           Price: history[timeline][x][1],
+        }))
+      );
+    } else {
+      setData(
+        [...Array(24).keys()].map((x) => ({
+          tokens: x,
+          Price: 0,
         }))
       );
     }

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItem should render correctly 1`] = `
+<div
+  className="menu_item is_active menu_market"
+  id="menu_market"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+  tabIndex={0}
+>
+  <div
+    className="menu_item_icon"
+  >
+    <span
+      className="fix_market_icon"
+    />
+    <img
+      alt=""
+      className="market_icon"
+      src={
+        Object {
+          "canInstrument": true,
+          "createTransformer": [Function],
+          "getCacheKey": [Function],
+          "process": [Function],
+        }
+      }
+    />
+  </div>
+  <p>
+    Market
+  </p>
+</div>
+`;

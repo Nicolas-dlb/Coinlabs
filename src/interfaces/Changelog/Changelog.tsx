@@ -1,4 +1,5 @@
 import "./Changelog.scss";
+import React from "react";
 
 function Changelog() {
   return (
@@ -40,7 +41,7 @@ function Changelog() {
         <div className="note_container">
           <div className="point" />
           <p className="added" />
-          <p>Incrase Tests number</p>
+          <p>Improve tests coverage</p>
         </div>
         <div className="note_container">
           <div className="point" />

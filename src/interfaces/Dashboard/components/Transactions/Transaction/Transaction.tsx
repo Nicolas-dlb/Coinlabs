@@ -1,5 +1,6 @@
 import { numberWithSpaces } from "utils/utils";
 import "./Transaction.scss";
+import React from "react";
 
 type TransactionProps = {
   name: string;
@@ -27,7 +28,7 @@ function Card({ name, status, price }: TransactionProps) {
         </g>
       </svg>
     ) : name === "Bitcoin" ? (
-      <svg xmlns="http://www.w3.org/2000/svg">
+      <svg className="icon_bitcoin" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fillRule="evenodd">
           <circle cx="16" cy="16" r="16" fill="#2a4245" />
           <path

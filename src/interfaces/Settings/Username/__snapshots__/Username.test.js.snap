@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Username should render correctly 1`] = `
+<div
+  class="settings_username"
+>
+  <h3>
+    Username
+  </h3>
+  <div
+    class="settings_username_input"
+  >
+    <div
+      class="input"
+    >
+      <p>
+        @
+      </p>
+      <input
+        autocomplete="off"
+        class="username_element"
+        id="change_username"
+        placeholder="Enter username"
+        spellcheck="false"
+        type="text"
+      />
+    </div>
+    <button
+      class="btn_settings"
+      type="button"
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;

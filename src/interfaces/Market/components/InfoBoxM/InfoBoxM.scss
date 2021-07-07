@@ -1,86 +1,86 @@
 .infoboxM {
-	border-radius: 12px;
-	background-color: var(--third-bg-color);
-	width: 250px;
-	height: 7vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 20px;
-	margin: 8px;
-	padding-right: 29px;
+  border-radius: 12px;
+  background-color: var(--third-bg-color);
+  width: 250px;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 8px;
+  padding-right: 29px;
 
-	transition: all 0.5s ease;
-	transition: background-color 0.3s ease;
-	.graph {
-		&::after {
-			display: none;
-		}
-	}
+  transition: all 0.5s ease;
+  transition: background-color 0.3s ease;
+  .graph {
+    &::after {
+      display: none;
+    }
+  }
 
-	.fix_ethereum {
-		margin-left: 10px;
-		padding-right: 15px !important;
-	}
-	.infobox_left {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		width: fit-content;
-		padding-right: 25px;
+  .fix_ethereum {
+    margin-left: 10px;
+    padding-right: 15px !important;
+  }
+  .infobox_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    padding-right: 25px;
 
-		.infobox_left_top {
-			display: flex;
-			width: fit-content;
-			align-items: center;
-			justify-content: flex-start;
+    .infobox_left_top {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      justify-content: flex-start;
 
-			p {
-				color: #c4c3c9;
-				margin-right: 10px;
-			}
-			svg {
-				height: 15px;
-			}
-		}
-		.infobox_left_bottom {
-			font-size: 20px;
-			width: 100px;
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			position: relative;
-			top: 1.3vh;
-			p:first-child {
-				margin-right: 5px;
-			}
-		}
-	}
-	.infobox_right {
-		width: 15vw;
-		padding-left: 35px;
+      p {
+        color: #c4c3c9;
+        margin-right: 10px;
+      }
+      svg {
+        height: 15px;
+      }
+    }
+    .infobox_left_bottom {
+      font-size: 20px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      top: 1.3vh;
+      p:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+  .infobox_right {
+    width: 15vw;
+    padding-left: 35px;
 
-		.graph {
-			.recharts-responsive-container {
-				position: relative;
-				top: 25px;
-				right: 12px;
-			}
-		}
-	}
+    .graph {
+      .recharts-responsive-container {
+        position: relative;
+        top: 35px;
+        right: 12px;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 992px) {
-	.infoboxM {
-		padding-right: 0px;
-		width: 225px;
-		padding-left: 25px;
-		&:first-child {
-			margin-left: 0;
-		}
-		.infobox_right {
-			padding-left: 0px;
-		}
-	}
+  .infoboxM {
+    padding-right: 0px;
+    width: 225px;
+    padding-left: 25px;
+    &:first-child {
+      margin-left: 0;
+    }
+    .infobox_right {
+      padding-left: 0px;
+    }
+  }
 }

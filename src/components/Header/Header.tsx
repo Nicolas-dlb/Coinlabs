@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 import { auth } from "firebaseConfig";
 import { useSelector } from "react-redux";
 import { selectProfilPic, selectUserName } from "redux/reducers/userSlice";
+import john from "assets/pictures/john.png";
 
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
@@ -35,6 +36,7 @@ function Header() {
       );
       document.documentElement.style.setProperty("--third-bg-color", "#221e34");
     }
+    document.getElementById("app")!.classList.toggle("disable_scroll");
   };
 
   const animeLogo = () => {
@@ -78,7 +80,20 @@ function Header() {
           </div>
           <p>Coinlabs</p>
         </div>
+        <div className="header_input">
+          <input type="text" placeholder="Search for something here" />
+          <svg
+            fill="#000000"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 50 50"
+            width="50px"
+            height="50px"
+          >
+            <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+          </svg>
+        </div>
       </div>
+
       <div className="header_right">
         <svg
           onClick={() => {
@@ -104,30 +119,9 @@ function Header() {
           <path d="M505.7 240.9L376.4 113.3c-8.3-8.2-21.8-8.1-30.1 0.2s-8.2 21.8 0.2 30.1l92.4 91.2H191.4c-11.8 0-21.3 9.5-21.3 21.3 0 11.8 9.5 21.3 21.3 21.3h247.6l-92.4 91.2c-8.4 8.3-8.4 21.7-0.2 30.1 4.2 4.2 9.7 6.3 15.1 6.3 5.4 0 10.8-2 14.9-6.1l129.3-127.6c4-4 6.3-9.4 6.3-15.1C512 250.3 509.7 244.9 505.7 240.9z" />
         </svg>
 
-        <img
-          className="header_user_icon"
-          src={
-            profilPic ||
-            "https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
-          }
-          alt=""
-        />
+        <img className="header_user_icon" src={profilPic || john} alt="" />
 
-        <div
-          role="button"
-          tabIndex={0}
-          onKeyDown={() => {
-            document
-              .getElementById("header_user_logout")!
-              .classList.toggle("header_user_active");
-          }}
-          onClick={() => {
-            document
-              .getElementById("header_user_logout")!
-              .classList.toggle("header_user_active");
-          }}
-          className="header_user_name"
-        >
+        <div role="button" tabIndex={0} className="header_user_name">
           <p className="username">{username}</p>
           <svg
             className="header_arrow"
@@ -140,6 +134,7 @@ function Header() {
           </svg>
           <div id="header_user_logout" className="header_user_logout">
             <span
+              id="btn-logout"
               tabIndex={0}
               role="button"
               onKeyDown={() => auth.signOut()}

@@ -16,4 +16,12 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+// const admin = require("firebase-admin");
+
+// const serviceAccount = require("./serviceAccountKey.json");
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+// });
+
 export { auth, db };

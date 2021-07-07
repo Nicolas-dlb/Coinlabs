@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Account>
+    <div
+      className="settings_account"
+    >
+      <h3
+        className="account"
+      >
+        Account
+      </h3>
+      <div
+        className="user_card"
+      >
+        <div
+          className="user_card_img"
+        >
+          <img
+            alt=""
+            src="https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
+          />
+          <div
+            className="point"
+          />
+        </div>
+        <div
+          className="user_card_info"
+        >
+          <h3 />
+          <h5 />
+          <div
+            className="change_user"
+          >
+            <p>
+              Not you?
+            </p>
+            <span
+              className="change"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              Change User
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Account>
+</Provider>
+`;

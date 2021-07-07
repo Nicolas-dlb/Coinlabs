@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Theme should render correctly 1`] = `
+<div
+  class="settings_theme"
+>
+  <h3>
+    Theme
+  </h3>
+  <div
+    class="settings_theme_container"
+  >
+    <button
+      class="btn-theme btn_theme_active"
+      type="button"
+    >
+      Dark
+    </button>
+    <button
+      class="btn-theme"
+      type="button"
+    >
+      Grey
+    </button>
+  </div>
+</div>
+`;

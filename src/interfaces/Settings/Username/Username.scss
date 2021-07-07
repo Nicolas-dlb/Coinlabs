@@ -1,0 +1,60 @@
+.settings_username {
+  margin-bottom: 2vh;
+  width: 85%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--third-bg-color);
+
+  margin-top: 2vh;
+  .intro_change {
+    margin-top: 2vh;
+    color: var(--third-font-color);
+  }
+  h3 {
+    margin: 0vh 0;
+  }
+  .settings_username_input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    button {
+      margin-top: 13px;
+      margin-left: 15px;
+    }
+  }
+  .input {
+    display: flex;
+    margin-top: 2vh;
+    border: 1px solid var(--third-font-color);
+    border-radius: 10px;
+    height: 35px;
+    padding-left: 10px;
+    width: 59%;
+    align-items: center;
+    p {
+      font-size: 18px;
+    }
+    input {
+      background: var(--third-bg-color);
+      border: none;
+      outline: none;
+      color: var(--primary-font-color);
+      caret-color: #1baa63;
+      border-radius: 10px;
+      font-family: inherit;
+      padding: 8px;
+      width: 100px;
+      font-size: 16px;
+      &::placeholder {
+        font-family: inherit;
+        color: #484558;
+        font-size: 12px;
+      }
+    }
+  }
+}
