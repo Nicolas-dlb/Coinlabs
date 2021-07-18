@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { auth } from "firebaseConfig";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectProfilPic, selectUserName } from "redux/reducers/userSlice";
 import john from "assets/pictures/john.png";
+import $ from "jquery";
+import { setSearch } from "redux/reducers/appSlice";
+import disableScroll from "disable-scroll";
 
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
@@ -16,7 +19,9 @@ function Header() {
     document.getElementById("toggleMenu")!.classList.toggle("is-active");
     document.getElementById("menu")!.classList.toggle("toggle_menu");
     document.getElementById("container")!.classList.toggle("container_active");
-
+    document
+      .getElementById("btn_search_mobile")
+      ?.classList.toggle("btn_menu_active");
     document.getElementById("shadow")!.classList.toggle("shadow_active");
     document.getElementById("shadow")!.classList.toggle("opacity");
     setMenuActive(!menuActive);
@@ -36,7 +41,15 @@ function Header() {
       );
       document.documentElement.style.setProperty("--third-bg-color", "#221e34");
     }
-    document.getElementById("app")!.classList.toggle("disable_scroll");
+    if (!menuActive) {
+      disableScroll.on();
+      document.getElementById("search-bar")!.style.backgroundColor =
+        "transparent";
+    } else {
+      disableScroll.off();
+      document.getElementById("search-bar")!.style.backgroundColor =
+        "var(--app-bg)";
+    }
   };
 
   const animeLogo = () => {
@@ -52,6 +65,78 @@ function Header() {
       document.getElementById("logo_stick3")!.style.animation = "none";
     }, 1600);
   };
+
+  const dispatch = useDispatch();
+  const search = (searchId: string) => {
+    const result: any = $(searchId).val();
+    if (
+      result.toString().toLowerCase() === "bitcoin" ||
+      result.toString().toLowerCase() === "ethereum" ||
+      result.toString().toLowerCase() === "ripple" ||
+      result.toString().toLowerCase() === "litecoin" ||
+      result.toString().toLowerCase() === "neo"
+    ) {
+      dispatch(setSearch(result.toString()));
+      $("#search").addClass("active_window");
+      $("#input_search").val("");
+      $("#no_results").removeClass("active_window");
+      $(".menu_item").removeClass("is_active");
+      $(".search_icon").addClass("search_icon_active");
+      $("#search-bar").blur();
+    } else {
+      $("#search").addClass("active_window");
+      $("#input_search").val("");
+      $(".search_icon").addClass("search_icon_active");
+      $(".no_results_found").addClass("active_window");
+      $(".menu_item").removeClass("is_active");
+      $("#search-bar").blur();
+    }
+  };
+
+  const searchField = $(".search_header");
+  const searchInput = $("#search_input");
+
+  const checkSearch = () => {
+    const contents: any = searchInput.val()!;
+    if (contents.length !== 0) {
+      searchField.addClass("full");
+    } else {
+      searchField.removeClass("full");
+    }
+  };
+
+  $("#search_btn")
+    .focus(() => {
+      searchField.addClass("isActive");
+    })
+    .blur(() => {
+      searchField.removeClass("isActive");
+      checkSearch();
+    });
+
+  useEffect(() => {
+    if (
+      document.getElementById("search_header") !== null &&
+      document.getElementById("header_logout") !== null
+    ) {
+      if (menuActive) {
+        document
+          .getElementById("search_header")!
+          .classList.add("disable_event");
+        document
+          .getElementById("header_logout")!
+          .classList.add("disable_event");
+      } else {
+        document
+          .getElementById("search_header")!
+          .classList.remove("disable_event");
+        document
+          .getElementById("header_logout")!
+          .classList.remove("disable_event");
+      }
+    }
+  }, [menuActive]);
+
   return (
     <div className="header">
       <div
@@ -81,20 +166,111 @@ function Header() {
           <p>Coinlabs</p>
         </div>
         <div className="header_input">
-          <input type="text" placeholder="Search for something here" />
-          <svg
-            fill="#000000"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 50 50"
-            width="50px"
-            height="50px"
-          >
-            <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
-          </svg>
+          <input
+            spellCheck="false"
+            id="input_search"
+            type="text"
+            onKeyDown={(e: any) => {
+              if (e.key === "Enter") {
+                search("#input_search");
+              }
+            }}
+            onChange={(e: any) => {
+              if (e.target.value === "") {
+                $(".no_results_found").removeClass("active_window");
+              }
+            }}
+            // onChange={(e) => {
+            //   if (!e.target.value) {
+            //     $("#search").removeClass("active_window");
+            //   }
+            //   if (
+            //     e.target.value.charAt(0) === "b" ||
+            //     e.target.value.charAt(0) === "B"
+            //   ) {
+            //     dispatch(setSearch("Bitcoin"));
+            //     $("#search").addClass("active_window");
+            //   } else if (
+            //     e.target.value.charAt(0) === "E" ||
+            //     e.target.value.charAt(0) === "e"
+            //   ) {
+            //     dispatch(setSearch("Ethereum"));
+            //     $("#search").addClass("active_window");
+            //   } else if (
+            //     e.target.value.charAt(0) === "r" ||
+            //     e.target.value.charAt(0) === "R"
+            //   ) {
+            //     dispatch(setSearch("Ripple"));
+            //     $("#search").addClass("active_window");
+            //   } else if (
+            //     e.target.value.charAt(0) === "L" ||
+            //     e.target.value.charAt(0) === "l"
+            //   ) {
+            //     dispatch(setSearch("Litecoin"));
+            //     $("#search").addClass("active_window");
+            //   } else if (
+            //     e.target.value.charAt(0) === "n" ||
+            //     e.target.value.charAt(0) === "N"
+            //   ) {
+            //     dispatch(setSearch("Neo"));
+            //     $("#search").addClass("active_window");
+            //   }
+            // }}
+            autoComplete="off"
+            placeholder="Search for crypto here"
+          />
+          <div className="search_icon">
+            <svg
+              id="btn_search"
+              onClick={() => search("#input_search")}
+              fill="#000000"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 50 50"
+              width="50px"
+              height="50px"
+            >
+              <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+            </svg>
+          </div>
         </div>
       </div>
 
       <div className="header_right">
+        <div id="search_header" className="search_header">
+          <label htmlFor="search">
+            <input
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  search("#search-bar");
+                  $("#search-bar").val("");
+                }
+              }}
+              onClick={() => {
+                document.getElementById("btn_search_mobile")!.style.opacity =
+                  "0";
+              }}
+              onBlur={() => {
+                setTimeout(() => {
+                  document.getElementById("btn_search_mobile")!.style.opacity =
+                    "1";
+                  $("#search-bar").val("");
+                }, 200);
+              }}
+              type="text"
+              id="search-bar"
+            />
+            <svg
+              id="btn_search_mobile"
+              fill="#000000"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 50 50"
+              width="50px"
+              height="50px"
+            >
+              <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+            </svg>
+          </label>
+        </div>
         <svg
           onClick={() => {
             document.documentElement.style.setProperty(
@@ -110,6 +286,7 @@ function Header() {
             auth.signOut();
           }}
           className="header_logout"
+          id="header_logout"
           height="20px"
           fill={logoutColor}
           xmlns="http://www.w3.org/2000/svg"

@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./PortfolioStats.scss";
 import Graph from "components/Graph/Graph";
-import { selectBalanceHistory } from "redux/reducers/walletsSlice";
 import Select from "components/Select/Select";
 import { useSelector } from "react-redux";
 import { selectHistory } from "redux/reducers/marketSlice";
+import { pure } from "recompose";
 
-function PortfolioStats() {
+type PortfolioStatsProps = {
+  search?: string | undefined;
+};
+function PortfolioStats({ search }: PortfolioStatsProps) {
   const history = useSelector(selectHistory);
 
   const [active, setActive] = useState("Month");
   const [selectedCrypto, setSelectedCrypto] = useState("All");
-  const balanceHistory = useSelector(selectBalanceHistory);
-  const [data, setData] = useState([
-    { tokens: 0, Price: 0, timestamp: 3227632 },
-  ]);
+  const [data, setData] = useState([{ tokens: 0, Price: 0 }]);
+
+  useEffect(() => {
+    if (search) {
+      setSelectedCrypto(search);
+    }
+  }, [search]);
 
   const bitcoin = `bitcoin${active}`;
   const ethereum = `ethereum${active}`;
@@ -52,7 +58,6 @@ function PortfolioStats() {
           ripple: history[ripple].slice(l)[x][1] * 5000,
           litecoin: history[litecoin].slice(l)[x][1] * 100,
           neo: history[neo].slice(l)[x][1] * 200,
-          timestamp: balanceHistory.slice(l)[x]?.timestamp,
         }))
       );
     } else {
@@ -71,7 +76,7 @@ function PortfolioStats() {
   }, [history, active]);
   return (
     <div className="portfolio_stats">
-      <p className="title">Portfolio stats</p>
+      <p className="title">{search ? "Stats" : "Portfolio stats"}</p>
       <div className="portfolio_graph_container">
         <div className="tabs">
           <div className="tabs_left">
@@ -141,24 +146,26 @@ function PortfolioStats() {
               1y
             </span>
           </div>
-          <div
-            role="button"
-            tabIndex={0}
-            onKeyDown={() => {
-              document
-                .getElementById("select-c")!
-                .classList.toggle("toggle-select");
-            }}
-            id="select-c"
-            onClick={() => {
-              document
-                .getElementById("select-c")!
-                .classList.toggle("toggle-select");
-            }}
-            className="tabs_right"
-          >
-            <Select items="crypto" setCryptoSelected={setSelectedCrypto} />
-          </div>
+          {!search && (
+            <div
+              role="button"
+              tabIndex={0}
+              onKeyDown={() => {
+                document
+                  .getElementById("select-c")!
+                  .classList.toggle("toggle-select");
+              }}
+              id="select-c"
+              onClick={() => {
+                document
+                  .getElementById("select-c")!
+                  .classList.toggle("toggle-select");
+              }}
+              className="tabs_right"
+            >
+              <Select items="crypto" setCryptoSelected={setSelectedCrypto} />
+            </div>
+          )}
         </div>
         <Graph
           selected={selectedCrypto}
@@ -173,4 +180,4 @@ function PortfolioStats() {
   );
 }
 
-export default PortfolioStats;
+export default pure(PortfolioStats);

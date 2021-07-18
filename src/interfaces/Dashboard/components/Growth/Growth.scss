@@ -85,13 +85,20 @@
     }
   }
 }
+
 @media only screen and (min-width: 992px) {
   .growth {
     width: 99%;
     margin-left: 0;
+    .graph_container {
+      width: 97%;
+      position: relative;
+      top: 4vh;
+    }
     .graph::after {
-      bottom: 5vh;
-      width: 95.2%;
+      top: -4vh;
+      bottom: -5vh;
+      width: 98.2%;
     }
     .tabs_left {
       .btn_growth {

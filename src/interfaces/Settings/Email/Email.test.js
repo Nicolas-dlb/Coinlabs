@@ -1,13 +1,19 @@
 import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
+import store from "redux/store";
+import { Provider } from "react-redux";
 import Email from "./Email";
 
 describe("Email", () => {
   let EmailComponent;
   beforeEach(async () => {
     await act(async () => {
-      EmailComponent = mount(<Email />);
+      EmailComponent = await mount(
+        <Provider store={store}>
+          <Email />
+        </Provider>
+      );
     });
   });
   it("should render correctly", () => {

@@ -1,0 +1,106 @@
+.variation {
+  border-radius: 12px;
+  background-color: var(--third-bg-color);
+  width: 250px;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 8px;
+  padding-right: 29px;
+
+  transition: all 0.5s ease;
+  transition: background-color 0.3s ease;
+  .graph {
+    &::after {
+      display: none;
+    }
+  }
+
+  .variation_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: fit-content;
+    padding-right: 12px;
+    .variation_top {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title {
+      color: #c4c3c9;
+      font-size: 16px;
+      margin: 0;
+      width: 61.5px;
+      margin-bottom: 10px;
+      margin-right: 5px;
+    }
+    .variation_container {
+      font-size: 13.5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      bottom: 5px;
+      p:first-child {
+        margin-right: 5px;
+      }
+      svg {
+        height: 11px;
+      }
+      .variation_number {
+        margin: 0 5px;
+      }
+    }
+    .variation_bottom {
+      display: flex;
+      justify-content: flex-start;
+      width: 100px;
+      p:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+  .recharts-surface {
+    position: relative;
+    top: 10px !important;
+    right: 12px !important;
+  }
+  .fix {
+    .recharts-surface {
+      position: relative;
+      top: 40px !important;
+    }
+  }
+  .variation_right {
+    width: 15vw;
+    padding-left: 15px;
+
+    .graph {
+      .recharts-responsive-container {
+        position: relative;
+        top: 0px;
+        right: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .variation {
+    padding-right: 0px;
+    width: 225px;
+    padding-left: 25px;
+    &:first-child {
+      margin-left: 0;
+    }
+    .variation_right {
+      padding-left: 0px;
+    }
+  }
+}

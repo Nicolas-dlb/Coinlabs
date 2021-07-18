@@ -4,7 +4,6 @@ type CryptoState = {
   market: object;
   history: any;
   variation: object;
-  time: string;
 };
 const initialState: CryptoState = {
   market: {
@@ -37,7 +36,6 @@ const initialState: CryptoState = {
     litecoin: { cap: 0, week: 0 },
     neo: { cap: 0, week: 0 },
   },
-  time: "month",
 };
 
 const marketSlice = createSlice({
@@ -53,9 +51,6 @@ const marketSlice = createSlice({
     setVariation: (state: CryptoState, action: any) => {
       state.variation = { ...state.variation, ...action.payload };
     },
-    setTime: (state: CryptoState, action: any) => {
-      state.time = action.payload;
-    },
   },
 });
 
@@ -63,6 +58,5 @@ export const selectMarket = (state: any) => state.market.market;
 export const selectHistory = (state: any) => state.market.history;
 export const selectVariation = (state: any) => state.market.variation;
 export const selectTime = (state: any) => state.market.time;
-export const { loadCrypto, loadHistory, setVariation, setTime } =
-  marketSlice.actions;
+export const { loadCrypto, loadHistory, setVariation } = marketSlice.actions;
 export default marketSlice.reducer;

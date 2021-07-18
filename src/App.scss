@@ -2,7 +2,6 @@
   font-family: Karla;
   color: #f2f1f5;
   overflow: hidden;
-  padding-right: 0.5vw;
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -11,7 +10,7 @@
 .shadow {
   background: #100d22;
   width: 100vw;
-  height: 102vh;
+  height: 104vh;
   padding-top: 10vh;
   border-radius: 30px;
   position: absolute;
@@ -24,13 +23,18 @@
   transform: scale(0.9);
 }
 .shadow_active {
-  transform: translateX(44vw) scale(0.7) translateY(-5vh);
+  transform: translateX(44vw) scale(0.7) translateY(-9vh);
 }
 .container_active {
-  transform: translateX(44vw) scale(0.7) translateY(-5vh);
+  transform: translateX(44vw) scale(0.7) translateY(-9vh);
 }
 .disable_scroll {
-  height: 100vh;
+  height: 100vh !important;
+  overflow: hidden;
+  scrollbar-width: none !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .opacity {
   opacity: 1;

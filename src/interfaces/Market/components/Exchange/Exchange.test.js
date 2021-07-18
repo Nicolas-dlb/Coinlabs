@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import { act } from "react-test-renderer";
+import { act } from "react-dom/test-utils";
 import store from "redux/store";
 import { Provider } from "react-redux";
 import { setWallets } from "redux/reducers/walletsSlice";
@@ -10,7 +10,7 @@ describe("Exchange", () => {
   let ExchangeComponent;
   beforeEach(async () => {
     await act(async () => {
-      ExchangeComponent = mount(
+      ExchangeComponent = await mount(
         <Provider store={store}>
           <Exchange />
         </Provider>

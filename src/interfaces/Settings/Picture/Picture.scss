@@ -9,12 +9,15 @@
   border-radius: 15px;
   background: var(--third-bg-color);
   margin-top: 2vh;
+  transition: background-color 0.3s ease;
   padding-bottom: 25px !important;
   .settings_picture_container {
     display: flex;
     align-items: center;
+
     .settings_picture_message {
       margin-left: 10px;
+
       color: var(--third-font-color);
     }
   }

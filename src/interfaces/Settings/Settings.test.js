@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, render } from "enzyme";
+import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import store from "redux/store";
 import { Provider } from "react-redux";
@@ -9,7 +9,7 @@ describe("settings", () => {
   let SettingsComponent;
   beforeEach(async () => {
     await act(async () => {
-      SettingsComponent = mount(
+      SettingsComponent = await mount(
         <Provider store={store}>
           <Settings />
         </Provider>

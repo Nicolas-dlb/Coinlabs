@@ -9,7 +9,7 @@ describe("Account", () => {
   let AccountComponent;
   beforeEach(async () => {
     await act(async () => {
-      AccountComponent = mount(
+      AccountComponent = await mount(
         <Provider store={store}>
           <Account />
         </Provider>

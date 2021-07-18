@@ -80,209 +80,1430 @@ exports[`InfoBoxM should render correctly 1`] = `
           <div
             className="graph"
           >
-            <ResponsiveContainer
-              debounce={0}
+            <AreaChart
+              barCategoryGap="10%"
+              barGap={4}
+              data={
+                Array [
+                  Object {
+                    "Price": undefined,
+                    "timestamp": undefined,
+                    "tokens": 0,
+                  },
+                ]
+              }
               height={90}
+              layout="horizontal"
+              margin={
+                Object {
+                  "bottom": 5,
+                  "left": 5,
+                  "right": 5,
+                  "top": 5,
+                }
+              }
+              reverseStackOrder={false}
+              stackOffset="none"
+              syncMethod="index"
               width={115}
             >
-              <ResizeDetector
-                handleHeight={true}
-                handleWidth={true}
-                onResize={[Function]}
-                targetRef={
+              <div
+                className="recharts-wrapper"
+                style={
                   Object {
-                    "current": <div
-                      class="recharts-responsive-container"
-                      style="width: 115px; height: 90px;"
-                    >
-                      <div
-                        class="recharts-wrapper"
-                        style="position: relative; cursor: default; width: 115px; height: 90px;"
-                      >
-                        <svg
-                          class="recharts-surface"
-                          height="90"
-                          version="1.1"
-                          viewBox="0 0 115 90"
-                          width="115"
-                        >
-                          <defs>
-                            <clippath
-                              id="recharts1-clip"
-                            >
-                              <rect
-                                height="80"
-                                width="105"
-                                x="5"
-                                y="5"
-                              />
-                            </clippath>
-                          </defs>
-                          <defs>
-                            <lineargradient
-                              id="Green"
-                              x1="1"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#2aac63"
-                                stop-opacity="0.17"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#2aac63"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                            <lineargradient
-                              id="White"
-                              x1="0"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#fff"
-                                stop-opacity="0"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#fff"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                            <lineargradient
-                              id="Blue"
-                              x1="1"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#4689b6"
-                                stop-opacity="0.17"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#4689b6"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                            <lineargradient
-                              id="Pink"
-                              x1="1"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#a075b9"
-                                stop-opacity="0.17"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#a075b9"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                            <lineargradient
-                              id="Orange"
-                              x1="1"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#db9a67"
-                                stop-opacity="0.17"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#db9a67"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                            <lineargradient
-                              id="Blue2"
-                              x1="1"
-                              x2="0"
-                              y1="0"
-                              y2="1"
-                            >
-                              <stop
-                                offset="0%"
-                                stop-color="#4a9cc0"
-                                stop-opacity="0.17"
-                              />
-                              <stop
-                                offset="100%"
-                                stop-color="#4a9cc0"
-                                stop-opacity="0"
-                              />
-                            </lineargradient>
-                          </defs>
-                          <g
-                            class="recharts-layer recharts-area"
-                          >
-                            <g
-                              class="recharts-layer recharts-area-dots"
-                            />
-                          </g>
-                          <g
-                            class="recharts-layer recharts-area"
-                          >
-                            <g
-                              class="recharts-layer recharts-area-dots"
-                            />
-                          </g>
-                          <g
-                            class="recharts-layer recharts-area"
-                          >
-                            <g
-                              class="recharts-layer recharts-area-dots"
-                            />
-                          </g>
-                          <g
-                            class="recharts-layer recharts-area"
-                          >
-                            <g
-                              class="recharts-layer recharts-area-dots"
-                            />
-                          </g>
-                          <g
-                            class="recharts-layer recharts-area"
-                          >
-                            <g
-                              class="recharts-layer recharts-area-dots"
-                            />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>,
+                    "cursor": "default",
+                    "height": 90,
+                    "position": "relative",
+                    "width": 115,
                   }
                 }
               >
-                <div
-                  className="recharts-responsive-container"
-                  style={
-                    Object {
-                      "height": 90,
-                      "maxHeight": undefined,
-                      "minHeight": undefined,
-                      "minWidth": undefined,
-                      "width": 115,
-                    }
-                  }
-                />
-              </ResizeDetector>
-            </ResponsiveContainer>
+                <Surface
+                  height={90}
+                  width={115}
+                >
+                  <svg
+                    className="recharts-surface"
+                    height={90}
+                    version="1.1"
+                    viewBox="0 0 115 90"
+                    width={115}
+                  >
+                    <defs>
+                      <clipPath
+                        id="recharts1-clip"
+                      >
+                        <rect
+                          height={80}
+                          width={105}
+                          x={5}
+                          y={5}
+                        />
+                      </clipPath>
+                    </defs>
+                    <defs>
+                      <linearGradient
+                        id="Green"
+                        x1="1"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#2aac63"
+                          stopOpacity={0.17}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#2aac63"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="White"
+                        x1="0"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#fff"
+                          stopOpacity={0}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#fff"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="Blue"
+                        x1="1"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#4689b6"
+                          stopOpacity={0.17}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#4689b6"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="Pink"
+                        x1="1"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#a075b9"
+                          stopOpacity={0.17}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#a075b9"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="Orange"
+                        x1="1"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#db9a67"
+                          stopOpacity={0.17}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#db9a67"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="Blue2"
+                        x1="1"
+                        x2="0"
+                        y1="0"
+                        y2="1"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#4a9cc0"
+                          stopOpacity={0.17}
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#4a9cc0"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                    </defs>
+                    <CartesianAxis
+                      allowDataOverflow={false}
+                      allowDecimals={true}
+                      allowDuplicatedCategory={true}
+                      axisLine={false}
+                      axisType="xAxis"
+                      bandSize={0}
+                      categoricalDomain={
+                        Array [
+                          0,
+                        ]
+                      }
+                      className="recharts-xAxis xAxis"
+                      dataKey="tokens"
+                      domain={
+                        Array [
+                          0,
+                          0,
+                        ]
+                      }
+                      height={30}
+                      hide={true}
+                      interval="preserveStartEnd"
+                      isCategorical={true}
+                      key="XAxis-1"
+                      layout="horizontal"
+                      minTickGap={5}
+                      mirror={false}
+                      niceTicks={
+                        Array [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                        ]
+                      }
+                      orientation="bottom"
+                      originalDomain={
+                        Array [
+                          0,
+                          "auto",
+                        ]
+                      }
+                      padding={
+                        Object {
+                          "left": 0,
+                          "right": 0,
+                        }
+                      }
+                      realScaleType="linear"
+                      reversed={false}
+                      scale={[Function]}
+                      stroke="#666"
+                      tick={true}
+                      tickCount={5}
+                      tickLine={true}
+                      tickMargin={25}
+                      tickSize={6}
+                      ticks={Array []}
+                      ticksGenerator={[Function]}
+                      type="number"
+                      viewBox={
+                        Object {
+                          "height": 90,
+                          "width": 115,
+                          "x": 0,
+                          "y": 0,
+                        }
+                      }
+                      width={105}
+                      x={5}
+                      xAxisId={0}
+                      y={85}
+                    />
+                    <CartesianAxis
+                      allowDataOverflow={false}
+                      allowDecimals={true}
+                      allowDuplicatedCategory={true}
+                      axisLine={false}
+                      axisType="yAxis"
+                      bandSize={0}
+                      className="recharts-yAxis yAxis"
+                      domain={
+                        Array [
+                          0,
+                          -Infinity,
+                        ]
+                      }
+                      height={80}
+                      hide={true}
+                      interval="preserveEnd"
+                      isCategorical={false}
+                      key="YAxis-2"
+                      layout="horizontal"
+                      minTickGap={5}
+                      mirror={false}
+                      niceTicks={
+                        Array [
+                          0,
+                          -Infinity,
+                          -Infinity,
+                          -Infinity,
+                          -Infinity,
+                        ]
+                      }
+                      orientation="left"
+                      originalDomain={
+                        Array [
+                          0,
+                          "auto",
+                        ]
+                      }
+                      padding={
+                        Object {
+                          "bottom": 0,
+                          "top": 0,
+                        }
+                      }
+                      realScaleType="linear"
+                      reversed={false}
+                      scale={[Function]}
+                      stroke="#666"
+                      tick={true}
+                      tickCount={5}
+                      tickLine={true}
+                      tickMargin={25}
+                      tickSize={6}
+                      ticks={Array []}
+                      ticksGenerator={[Function]}
+                      type="number"
+                      viewBox={
+                        Object {
+                          "height": 90,
+                          "width": 115,
+                          "x": 0,
+                          "y": 0,
+                        }
+                      }
+                      width={60}
+                      x={-55}
+                      y={5}
+                      yAxisId={0}
+                    />
+                    <Area
+                      activeDot={
+                        Object {
+                          "fill": "#26ae5f",
+                          "r": 5,
+                          "stroke": "#fff",
+                          "strokeWidth": 3,
+                        }
+                      }
+                      animationBegin={0}
+                      animationDuration={1500}
+                      animationEasing="ease"
+                      animationId={0}
+                      baseLine={NaN}
+                      bottom={5}
+                      brushBottom={5}
+                      connectNulls={false}
+                      dataKey="Price"
+                      dot={false}
+                      fill="url(#White)"
+                      fillOpacity={1}
+                      height={80}
+                      hide={false}
+                      isAnimationActive={true}
+                      isRange={false}
+                      key="item-0"
+                      layout="horizontal"
+                      left={5}
+                      legendType="line"
+                      onMouseOver={[Function]}
+                      points={
+                        Array [
+                          Object {
+                            "payload": Object {
+                              "Price": undefined,
+                              "timestamp": undefined,
+                              "tokens": 0,
+                            },
+                            "value": Array [
+                              0,
+                              undefined,
+                            ],
+                            "x": 5,
+                            "y": null,
+                          },
+                        ]
+                      }
+                      right={5}
+                      stroke="#fff"
+                      strokeWidth={1}
+                      top={5}
+                      type="monotone"
+                      width={105}
+                      xAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "xAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": Array [
+                            0,
+                          ],
+                          "dataKey": "tokens",
+                          "domain": Array [
+                            0,
+                            0,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 30,
+                          "hide": true,
+                          "interval": "preserveStartEnd",
+                          "isCategorical": true,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                          ],
+                          "orientation": "bottom",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "left": 0,
+                            "right": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 105,
+                          "x": 5,
+                          "xAxisId": 0,
+                          "y": 85,
+                        }
+                      }
+                      xAxisId={0}
+                      yAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "yAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": undefined,
+                          "domain": Array [
+                            0,
+                            -Infinity,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 80,
+                          "hide": true,
+                          "isCategorical": false,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                          ],
+                          "orientation": "left",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "bottom": 0,
+                            "top": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 60,
+                          "x": -55,
+                          "y": 5,
+                          "yAxisId": 0,
+                        }
+                      }
+                      yAxisId={0}
+                    >
+                      <Layer
+                        className="recharts-area"
+                      >
+                        <g
+                          className="recharts-layer recharts-area"
+                        >
+                          <Layer
+                            className="recharts-area-dots"
+                            clipPath={null}
+                          >
+                            <g
+                              className="recharts-layer recharts-area-dots"
+                              clipPath={null}
+                            >
+                              <Dot
+                                className="recharts-area-dot"
+                                cx={5}
+                                cy={null}
+                                dataKey="Price"
+                                fill="url(#White)"
+                                fillOpacity={1}
+                                height={80}
+                                index={0}
+                                key="dot-0"
+                                payload={
+                                  Object {
+                                    "Price": undefined,
+                                    "timestamp": undefined,
+                                    "tokens": 0,
+                                  }
+                                }
+                                points={
+                                  Array [
+                                    Object {
+                                      "payload": Object {
+                                        "Price": undefined,
+                                        "timestamp": undefined,
+                                        "tokens": 0,
+                                      },
+                                      "value": Array [
+                                        0,
+                                        undefined,
+                                      ],
+                                      "x": 5,
+                                      "y": null,
+                                    },
+                                  ]
+                                }
+                                r={3}
+                                stroke="#fff"
+                                strokeWidth={1}
+                                type="monotone"
+                                value={
+                                  Array [
+                                    0,
+                                    undefined,
+                                  ]
+                                }
+                                width={105}
+                              />
+                            </g>
+                          </Layer>
+                        </g>
+                      </Layer>
+                    </Area>
+                    <Area
+                      activeDot={
+                        Object {
+                          "fill": "#4689b6",
+                          "r": 0,
+                          "stroke": "#fff",
+                          "strokeWidth": 0,
+                        }
+                      }
+                      animationBegin={0}
+                      animationDuration={1500}
+                      animationEasing="ease"
+                      animationId={0}
+                      baseLine={NaN}
+                      bottom={5}
+                      brushBottom={5}
+                      connectNulls={false}
+                      dataKey="ethereum"
+                      dot={false}
+                      fill="none"
+                      fillOpacity={1}
+                      height={80}
+                      hide={false}
+                      isAnimationActive={true}
+                      isRange={false}
+                      key="item-1"
+                      layout="horizontal"
+                      left={5}
+                      legendType="line"
+                      onMouseOver={[Function]}
+                      points={
+                        Array [
+                          Object {
+                            "payload": Object {
+                              "Price": undefined,
+                              "timestamp": undefined,
+                              "tokens": 0,
+                            },
+                            "value": Array [
+                              0,
+                              undefined,
+                            ],
+                            "x": 5,
+                            "y": null,
+                          },
+                        ]
+                      }
+                      right={5}
+                      stroke="#4689b6"
+                      strokeWidth={0}
+                      top={5}
+                      type="monotone"
+                      width={105}
+                      xAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "xAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": Array [
+                            0,
+                          ],
+                          "dataKey": "tokens",
+                          "domain": Array [
+                            0,
+                            0,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 30,
+                          "hide": true,
+                          "interval": "preserveStartEnd",
+                          "isCategorical": true,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                          ],
+                          "orientation": "bottom",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "left": 0,
+                            "right": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 105,
+                          "x": 5,
+                          "xAxisId": 0,
+                          "y": 85,
+                        }
+                      }
+                      xAxisId={0}
+                      yAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "yAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": undefined,
+                          "domain": Array [
+                            0,
+                            -Infinity,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 80,
+                          "hide": true,
+                          "isCategorical": false,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                          ],
+                          "orientation": "left",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "bottom": 0,
+                            "top": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 60,
+                          "x": -55,
+                          "y": 5,
+                          "yAxisId": 0,
+                        }
+                      }
+                      yAxisId={0}
+                    >
+                      <Layer
+                        className="recharts-area"
+                      >
+                        <g
+                          className="recharts-layer recharts-area"
+                        >
+                          <Layer
+                            className="recharts-area-dots"
+                            clipPath={null}
+                          >
+                            <g
+                              className="recharts-layer recharts-area-dots"
+                              clipPath={null}
+                            >
+                              <Dot
+                                className="recharts-area-dot"
+                                cx={5}
+                                cy={null}
+                                dataKey="ethereum"
+                                fill="none"
+                                fillOpacity={1}
+                                height={80}
+                                index={0}
+                                key="dot-0"
+                                payload={
+                                  Object {
+                                    "Price": undefined,
+                                    "timestamp": undefined,
+                                    "tokens": 0,
+                                  }
+                                }
+                                points={
+                                  Array [
+                                    Object {
+                                      "payload": Object {
+                                        "Price": undefined,
+                                        "timestamp": undefined,
+                                        "tokens": 0,
+                                      },
+                                      "value": Array [
+                                        0,
+                                        undefined,
+                                      ],
+                                      "x": 5,
+                                      "y": null,
+                                    },
+                                  ]
+                                }
+                                r={3}
+                                stroke="#4689b6"
+                                strokeWidth={0}
+                                type="monotone"
+                                value={
+                                  Array [
+                                    0,
+                                    undefined,
+                                  ]
+                                }
+                                width={105}
+                              />
+                            </g>
+                          </Layer>
+                        </g>
+                      </Layer>
+                    </Area>
+                    <Area
+                      activeDot={
+                        Object {
+                          "fill": "#db9a67",
+                          "r": 0,
+                          "stroke": "#fff",
+                          "strokeWidth": 0,
+                        }
+                      }
+                      animationBegin={0}
+                      animationDuration={1500}
+                      animationEasing="ease"
+                      animationId={0}
+                      baseLine={NaN}
+                      bottom={5}
+                      brushBottom={5}
+                      connectNulls={false}
+                      dataKey="litecoin"
+                      dot={false}
+                      fill="none"
+                      fillOpacity={1}
+                      height={80}
+                      hide={false}
+                      isAnimationActive={true}
+                      isRange={false}
+                      key="item-2"
+                      layout="horizontal"
+                      left={5}
+                      legendType="line"
+                      onMouseOver={[Function]}
+                      points={
+                        Array [
+                          Object {
+                            "payload": Object {
+                              "Price": undefined,
+                              "timestamp": undefined,
+                              "tokens": 0,
+                            },
+                            "value": Array [
+                              0,
+                              undefined,
+                            ],
+                            "x": 5,
+                            "y": null,
+                          },
+                        ]
+                      }
+                      right={5}
+                      stroke="#db9a67"
+                      strokeWidth={0}
+                      top={5}
+                      type="monotone"
+                      width={105}
+                      xAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "xAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": Array [
+                            0,
+                          ],
+                          "dataKey": "tokens",
+                          "domain": Array [
+                            0,
+                            0,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 30,
+                          "hide": true,
+                          "interval": "preserveStartEnd",
+                          "isCategorical": true,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                          ],
+                          "orientation": "bottom",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "left": 0,
+                            "right": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 105,
+                          "x": 5,
+                          "xAxisId": 0,
+                          "y": 85,
+                        }
+                      }
+                      xAxisId={0}
+                      yAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "yAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": undefined,
+                          "domain": Array [
+                            0,
+                            -Infinity,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 80,
+                          "hide": true,
+                          "isCategorical": false,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                          ],
+                          "orientation": "left",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "bottom": 0,
+                            "top": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 60,
+                          "x": -55,
+                          "y": 5,
+                          "yAxisId": 0,
+                        }
+                      }
+                      yAxisId={0}
+                    >
+                      <Layer
+                        className="recharts-area"
+                      >
+                        <g
+                          className="recharts-layer recharts-area"
+                        >
+                          <Layer
+                            className="recharts-area-dots"
+                            clipPath={null}
+                          >
+                            <g
+                              className="recharts-layer recharts-area-dots"
+                              clipPath={null}
+                            >
+                              <Dot
+                                className="recharts-area-dot"
+                                cx={5}
+                                cy={null}
+                                dataKey="litecoin"
+                                fill="none"
+                                fillOpacity={1}
+                                height={80}
+                                index={0}
+                                key="dot-0"
+                                payload={
+                                  Object {
+                                    "Price": undefined,
+                                    "timestamp": undefined,
+                                    "tokens": 0,
+                                  }
+                                }
+                                points={
+                                  Array [
+                                    Object {
+                                      "payload": Object {
+                                        "Price": undefined,
+                                        "timestamp": undefined,
+                                        "tokens": 0,
+                                      },
+                                      "value": Array [
+                                        0,
+                                        undefined,
+                                      ],
+                                      "x": 5,
+                                      "y": null,
+                                    },
+                                  ]
+                                }
+                                r={3}
+                                stroke="#db9a67"
+                                strokeWidth={0}
+                                type="monotone"
+                                value={
+                                  Array [
+                                    0,
+                                    undefined,
+                                  ]
+                                }
+                                width={105}
+                              />
+                            </g>
+                          </Layer>
+                        </g>
+                      </Layer>
+                    </Area>
+                    <Area
+                      activeDot={
+                        Object {
+                          "fill": "#4a9cc0",
+                          "r": 0,
+                          "stroke": "#fff",
+                          "strokeWidth": 0,
+                        }
+                      }
+                      animationBegin={0}
+                      animationDuration={1500}
+                      animationEasing="ease"
+                      animationId={0}
+                      baseLine={NaN}
+                      bottom={5}
+                      brushBottom={5}
+                      connectNulls={false}
+                      dataKey="neo"
+                      dot={false}
+                      fill="none"
+                      fillOpacity={1}
+                      height={80}
+                      hide={false}
+                      isAnimationActive={true}
+                      isRange={false}
+                      key="item-3"
+                      layout="horizontal"
+                      left={5}
+                      legendType="line"
+                      onMouseOver={[Function]}
+                      points={
+                        Array [
+                          Object {
+                            "payload": Object {
+                              "Price": undefined,
+                              "timestamp": undefined,
+                              "tokens": 0,
+                            },
+                            "value": Array [
+                              0,
+                              undefined,
+                            ],
+                            "x": 5,
+                            "y": null,
+                          },
+                        ]
+                      }
+                      right={5}
+                      stroke="#4a9cc0"
+                      strokeWidth={0}
+                      top={5}
+                      type="monotone"
+                      width={105}
+                      xAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "xAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": Array [
+                            0,
+                          ],
+                          "dataKey": "tokens",
+                          "domain": Array [
+                            0,
+                            0,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 30,
+                          "hide": true,
+                          "interval": "preserveStartEnd",
+                          "isCategorical": true,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                          ],
+                          "orientation": "bottom",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "left": 0,
+                            "right": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 105,
+                          "x": 5,
+                          "xAxisId": 0,
+                          "y": 85,
+                        }
+                      }
+                      xAxisId={0}
+                      yAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "yAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": undefined,
+                          "domain": Array [
+                            0,
+                            -Infinity,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 80,
+                          "hide": true,
+                          "isCategorical": false,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                          ],
+                          "orientation": "left",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "bottom": 0,
+                            "top": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 60,
+                          "x": -55,
+                          "y": 5,
+                          "yAxisId": 0,
+                        }
+                      }
+                      yAxisId={0}
+                    >
+                      <Layer
+                        className="recharts-area"
+                      >
+                        <g
+                          className="recharts-layer recharts-area"
+                        >
+                          <Layer
+                            className="recharts-area-dots"
+                            clipPath={null}
+                          >
+                            <g
+                              className="recharts-layer recharts-area-dots"
+                              clipPath={null}
+                            >
+                              <Dot
+                                className="recharts-area-dot"
+                                cx={5}
+                                cy={null}
+                                dataKey="neo"
+                                fill="none"
+                                fillOpacity={1}
+                                height={80}
+                                index={0}
+                                key="dot-0"
+                                payload={
+                                  Object {
+                                    "Price": undefined,
+                                    "timestamp": undefined,
+                                    "tokens": 0,
+                                  }
+                                }
+                                points={
+                                  Array [
+                                    Object {
+                                      "payload": Object {
+                                        "Price": undefined,
+                                        "timestamp": undefined,
+                                        "tokens": 0,
+                                      },
+                                      "value": Array [
+                                        0,
+                                        undefined,
+                                      ],
+                                      "x": 5,
+                                      "y": null,
+                                    },
+                                  ]
+                                }
+                                r={3}
+                                stroke="#4a9cc0"
+                                strokeWidth={0}
+                                type="monotone"
+                                value={
+                                  Array [
+                                    0,
+                                    undefined,
+                                  ]
+                                }
+                                width={105}
+                              />
+                            </g>
+                          </Layer>
+                        </g>
+                      </Layer>
+                    </Area>
+                    <Area
+                      activeDot={
+                        Object {
+                          "fill": "#a075b9",
+                          "r": 0,
+                          "stroke": "#fff",
+                          "strokeWidth": 0,
+                        }
+                      }
+                      animationBegin={0}
+                      animationDuration={1500}
+                      animationEasing="ease"
+                      animationId={0}
+                      baseLine={NaN}
+                      bottom={5}
+                      brushBottom={5}
+                      connectNulls={false}
+                      dataKey="ripple"
+                      dot={false}
+                      fill="none"
+                      fillOpacity={1}
+                      height={80}
+                      hide={false}
+                      isAnimationActive={true}
+                      isRange={false}
+                      key="item-4"
+                      layout="horizontal"
+                      left={5}
+                      legendType="line"
+                      onMouseOver={[Function]}
+                      points={
+                        Array [
+                          Object {
+                            "payload": Object {
+                              "Price": undefined,
+                              "timestamp": undefined,
+                              "tokens": 0,
+                            },
+                            "value": Array [
+                              0,
+                              undefined,
+                            ],
+                            "x": 5,
+                            "y": null,
+                          },
+                        ]
+                      }
+                      right={5}
+                      stroke="#a075b9"
+                      strokeWidth={0}
+                      top={5}
+                      type="monotone"
+                      width={105}
+                      xAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "xAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": Array [
+                            0,
+                          ],
+                          "dataKey": "tokens",
+                          "domain": Array [
+                            0,
+                            0,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 30,
+                          "hide": true,
+                          "interval": "preserveStartEnd",
+                          "isCategorical": true,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                          ],
+                          "orientation": "bottom",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "left": 0,
+                            "right": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 105,
+                          "x": 5,
+                          "xAxisId": 0,
+                          "y": 85,
+                        }
+                      }
+                      xAxisId={0}
+                      yAxis={
+                        Object {
+                          "allowDataOverflow": false,
+                          "allowDecimals": true,
+                          "allowDuplicatedCategory": true,
+                          "axisLine": false,
+                          "axisType": "yAxis",
+                          "bandSize": 0,
+                          "categoricalDomain": undefined,
+                          "domain": Array [
+                            0,
+                            -Infinity,
+                          ],
+                          "duplicateDomain": undefined,
+                          "height": 80,
+                          "hide": true,
+                          "isCategorical": false,
+                          "layout": "horizontal",
+                          "mirror": false,
+                          "niceTicks": Array [
+                            0,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                            -Infinity,
+                          ],
+                          "orientation": "left",
+                          "originalDomain": Array [
+                            0,
+                            "auto",
+                          ],
+                          "padding": Object {
+                            "bottom": 0,
+                            "top": 0,
+                          },
+                          "realScaleType": "linear",
+                          "reversed": false,
+                          "scale": [Function],
+                          "tickCount": 5,
+                          "tickLine": true,
+                          "tickMargin": 25,
+                          "type": "number",
+                          "width": 60,
+                          "x": -55,
+                          "y": 5,
+                          "yAxisId": 0,
+                        }
+                      }
+                      yAxisId={0}
+                    >
+                      <Layer
+                        className="recharts-area"
+                      >
+                        <g
+                          className="recharts-layer recharts-area"
+                        >
+                          <Layer
+                            className="recharts-area-dots"
+                            clipPath={null}
+                          >
+                            <g
+                              className="recharts-layer recharts-area-dots"
+                              clipPath={null}
+                            >
+                              <Dot
+                                className="recharts-area-dot"
+                                cx={5}
+                                cy={null}
+                                dataKey="ripple"
+                                fill="none"
+                                fillOpacity={1}
+                                height={80}
+                                index={0}
+                                key="dot-0"
+                                payload={
+                                  Object {
+                                    "Price": undefined,
+                                    "timestamp": undefined,
+                                    "tokens": 0,
+                                  }
+                                }
+                                points={
+                                  Array [
+                                    Object {
+                                      "payload": Object {
+                                        "Price": undefined,
+                                        "timestamp": undefined,
+                                        "tokens": 0,
+                                      },
+                                      "value": Array [
+                                        0,
+                                        undefined,
+                                      ],
+                                      "x": 5,
+                                      "y": null,
+                                    },
+                                  ]
+                                }
+                                r={3}
+                                stroke="#a075b9"
+                                strokeWidth={0}
+                                type="monotone"
+                                value={
+                                  Array [
+                                    0,
+                                    undefined,
+                                  ]
+                                }
+                                width={105}
+                              />
+                            </g>
+                          </Layer>
+                        </g>
+                      </Layer>
+                    </Area>
+                  </svg>
+                </Surface>
+              </div>
+            </AreaChart>
             <Grid>
               <div
                 className="grid"

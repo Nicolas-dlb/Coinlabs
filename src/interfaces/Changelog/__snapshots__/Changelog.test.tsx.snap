@@ -50,7 +50,7 @@ exports[`Changelog should render correctly 1`] = `
         className="fixed"
       />
       <p>
-        Improve app load time
+        Improve load time
       </p>
     </div>
     <div
@@ -104,7 +104,7 @@ exports[`Changelog should render correctly 1`] = `
         className="added"
       />
       <p>
-        Improve tests coverage
+        Increase tests coverage
       </p>
     </div>
     <div

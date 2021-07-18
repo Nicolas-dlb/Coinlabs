@@ -1,5 +1,6 @@
 .settings_theme {
   width: 85%;
+
   align-self: flex-end;
   display: flex;
   flex-direction: column;
@@ -9,6 +10,7 @@
   border-radius: 15px;
   background: var(--third-bg-color);
   margin-top: 2vh;
+  transition: background-color 0.3s ease;
   .settings_theme_container {
     display: flex;
     align-items: center;

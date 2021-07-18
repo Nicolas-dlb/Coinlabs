@@ -21,7 +21,7 @@ function Changelog() {
         </div>
         <div className="change_container">
           <p className="fixed" />
-          <p>Improve app load time</p>
+          <p>Improve load time</p>
         </div>
         <div className="change_container">
           <p className="fixed" />
@@ -41,7 +41,7 @@ function Changelog() {
         <div className="note_container">
           <div className="point" />
           <p className="added" />
-          <p>Improve tests coverage</p>
+          <p>Increase tests coverage</p>
         </div>
         <div className="note_container">
           <div className="point" />

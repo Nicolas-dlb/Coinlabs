@@ -7,7 +7,6 @@ import Dashboard from "interfaces/Dashboard/Dashboard";
 import Menu from "components/Menu/Menu";
 import Login from "interfaces/Login/Login";
 import React, { useEffect } from "react";
-import { pure } from "recompose";
 import Settings from "interfaces/Settings/Settings";
 import getData, { getHistoricalData } from "utils/api/api";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,6 +48,8 @@ import {
 import { auth, db } from "firebaseConfig";
 import Portfolio from "interfaces/Portfolio/Portfolio";
 import Changelog from "interfaces/Changelog/Changelog";
+
+import Search from "interfaces/Search/Search";
 
 function App() {
   const a = useSelector(selectHistory);
@@ -340,7 +341,7 @@ function App() {
         { merge: true }
       );
     }
-  }, [balanceHistory]);
+  }, [balanceHistory, user]);
 
   useEffect(() => {
     if (user !== null && auth.currentUser && walletHistory?.length > 0) {
@@ -351,7 +352,7 @@ function App() {
         { merge: true }
       );
     }
-  }, [walletHistory]);
+  }, [walletHistory, user]);
 
   useEffect(() => {
     if (user !== null && auth.currentUser && cryptoHistory?.length > 0) {
@@ -362,7 +363,7 @@ function App() {
         { merge: true }
       );
     }
-  }, [cryptoHistory]);
+  }, [cryptoHistory, user]);
 
   useEffect(() => {
     if (user !== null && auth.currentUser && incomeHistory?.length > 0) {
@@ -373,7 +374,7 @@ function App() {
         { merge: true }
       );
     }
-  }, [incomeHistory]);
+  }, [incomeHistory, user]);
 
   useEffect(() => {
     if (user !== null && auth.currentUser && expensesHistory?.length > 0) {
@@ -384,7 +385,7 @@ function App() {
         { merge: true }
       );
     }
-  }, [expensesHistory]);
+  }, [expensesHistory, user]);
 
   useEffect(() => {
     auth.onAuthStateChanged((userAuth: any) => {
@@ -865,9 +866,9 @@ function App() {
             <Dashboard />
             <Market />
             <Portfolio />
-
             <Changelog />
             <Settings />
+            <Search />
           </div>
         </>
       )}
@@ -875,4 +876,4 @@ function App() {
   );
 }
 
-export default pure(App);
+export default App;

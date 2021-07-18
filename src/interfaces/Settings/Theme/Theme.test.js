@@ -7,7 +7,7 @@ describe("Theme", () => {
   let ThemeComponent;
   beforeEach(async () => {
     await act(async () => {
-      ThemeComponent = render(<Theme />);
+      ThemeComponent = await render(<Theme />);
     });
   });
   it("should render correctly", () => {

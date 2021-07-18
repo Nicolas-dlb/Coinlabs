@@ -24,6 +24,7 @@ exports[`Graph should render correctly 1`] = `
             },
           ]
         }
+        height={10}
         layout="horizontal"
         margin={
           Object {
@@ -36,6 +37,7 @@ exports[`Graph should render correctly 1`] = `
         reverseStackOrder={false}
         stackOffset="none"
         syncMethod="index"
+        width={10}
       >
         <defs>
           <linearGradient

@@ -12,247 +12,248 @@ exports[`Portfolio stats should render correctly 1`] = `
     }
   }
 >
-  <PortfolioStats>
-    <div
-      className="portfolio_stats"
-    >
-      <p
-        className="title"
-      >
-        Portfolio stats
-      </p>
+  <pure(PortfolioStats)>
+    <PortfolioStats>
       <div
-        className="portfolio_graph_container"
+        className="portfolio_stats"
       >
+        <p
+          className="title"
+        >
+          Portfolio stats
+        </p>
         <div
-          className="tabs"
+          className="portfolio_graph_container"
         >
           <div
-            className="tabs_left"
-          >
-            <span
-              className="btn_portfolio"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              1w
-            </span>
-            <span
-              className="btn_portfolio btn_portfolio_active"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              1m
-            </span>
-            <span
-              className="btn_portfolio"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              3m
-            </span>
-            <span
-              className="btn_portfolio"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              6m
-            </span>
-            <span
-              className="btn_portfolio"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              1y
-            </span>
-          </div>
-          <div
-            className="tabs_right"
-            id="select-c"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <Select
-              items="crypto"
-              setCryptoSelected={[Function]}
-            >
-              <div>
-                <select
-                  className="crypto exchange_element"
-                >
-                  <option
-                    className="option exchange_element"
-                    label="All"
-                    value="All"
-                  >
-                    All
-                  </option>
-                  <option
-                    className="option exchange_element"
-                    label="Bitcoin"
-                    value="Bitcoin"
-                  >
-                    Bitcoin
-                  </option>
-                  <option
-                    className="option exchange_element"
-                    label="Ethereum"
-                    value="Ethereum"
-                  >
-                    Ethereum
-                  </option>
-                  <option
-                    className="option exchange_element"
-                    label="Ripple"
-                    value="Ripple"
-                  >
-                    Ripple
-                  </option>
-                  <option
-                    className="option exchange_element"
-                    label="Litecoin"
-                    value="Litecoin"
-                  >
-                    Litecoin
-                  </option>
-                  <option
-                    className="option exchange_element"
-                    label="Neo"
-                    value="Neo"
-                  >
-                    Neo
-                  </option>
-                </select>
-                <div
-                  className="crypto-select exchange_element"
-                >
-                  <svg
-                    className="select-crypto-arrow exchange_element"
-                    fill="#605b95"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    width="24px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0h24v24H0V0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-                    />
-                  </svg>
-                  <button
-                    aria-label="btn-select"
-                    className="btn-crypto exchange_element"
-                    id="btn-select"
-                    type="button"
-                    value="All"
-                  />
-                  <div
-                    className="crypto-list exchange_element"
-                  >
-                    <ul
-                      id="crypto-items"
-                    />
-                  </div>
-                </div>
-              </div>
-            </Select>
-          </div>
-        </div>
-        <Graph
-          color="Green"
-          data={
-            Array [
-              Object {
-                "Price": 0,
-                "timestamp": 3227632,
-                "tokens": 0,
-              },
-            ]
-          }
-          height={400}
-          selected="All"
-          tooltip={true}
-          width={0}
-        >
-          <div
-            className="graph_container"
+            className="tabs"
           >
             <div
-              className="graph"
+              className="tabs_left"
             >
-              <ResponsiveContainer
-                debounce={0}
-                height={400}
-                width="90%"
+              <span
+                className="btn_portfolio"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
               >
-                <ResizeDetector
-                  handleHeight={true}
-                  handleWidth={true}
-                  onResize={[Function]}
-                  targetRef={
-                    Object {
-                      "current": <div
-                        class="recharts-responsive-container"
-                        style="width: 90%; height: 400px;"
-                      />,
-                    }
-                  }
-                >
+                1w
+              </span>
+              <span
+                className="btn_portfolio btn_portfolio_active"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                1m
+              </span>
+              <span
+                className="btn_portfolio"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                3m
+              </span>
+              <span
+                className="btn_portfolio"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                6m
+              </span>
+              <span
+                className="btn_portfolio"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                1y
+              </span>
+            </div>
+            <div
+              className="tabs_right"
+              id="select-c"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <Select
+                items="crypto"
+                setCryptoSelected={[Function]}
+              >
+                <div>
+                  <select
+                    className="crypto exchange_element"
+                  >
+                    <option
+                      className="option exchange_element"
+                      label="All"
+                      value="All"
+                    >
+                      All
+                    </option>
+                    <option
+                      className="option exchange_element"
+                      label="Bitcoin"
+                      value="Bitcoin"
+                    >
+                      Bitcoin
+                    </option>
+                    <option
+                      className="option exchange_element"
+                      label="Ethereum"
+                      value="Ethereum"
+                    >
+                      Ethereum
+                    </option>
+                    <option
+                      className="option exchange_element"
+                      label="Ripple"
+                      value="Ripple"
+                    >
+                      Ripple
+                    </option>
+                    <option
+                      className="option exchange_element"
+                      label="Litecoin"
+                      value="Litecoin"
+                    >
+                      Litecoin
+                    </option>
+                    <option
+                      className="option exchange_element"
+                      label="Neo"
+                      value="Neo"
+                    >
+                      Neo
+                    </option>
+                  </select>
                   <div
-                    className="recharts-responsive-container"
-                    style={
-                      Object {
-                        "height": 400,
-                        "maxHeight": undefined,
-                        "minHeight": undefined,
-                        "minWidth": undefined,
-                        "width": "90%",
-                      }
-                    }
-                  />
-                </ResizeDetector>
-              </ResponsiveContainer>
-              <Grid>
-                <div
-                  className="grid"
-                >
-                  <span
-                    className="grid_card"
-                  />
-                  <span
-                    className="grid_card"
-                  />
-                  <span
-                    className="grid_card"
-                  />
-                  <span
-                    className="grid_card"
-                  />
-                  <span
-                    className="grid_card"
-                  />
+                    className="crypto-select exchange_element"
+                  >
+                    <svg
+                      className="select-crypto-arrow exchange_element"
+                      fill="#605b95"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      width="24px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0h24v24H0V0z"
+                        fill="none"
+                      />
+                      <path
+                        d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <button
+                      aria-label="btn-select"
+                      className="btn-crypto exchange_element"
+                      id="btn-select"
+                      type="button"
+                      value="All"
+                    />
+                    <div
+                      className="crypto-list exchange_element"
+                    >
+                      <ul
+                        id="crypto-items"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </Grid>
+              </Select>
             </div>
           </div>
-        </Graph>
+          <Graph
+            color="Green"
+            data={
+              Array [
+                Object {
+                  "Price": 0,
+                  "tokens": 0,
+                },
+              ]
+            }
+            height={330}
+            selected="All"
+            tooltip={true}
+            width={0}
+          >
+            <div
+              className="graph_container"
+            >
+              <div
+                className="graph"
+              >
+                <ResponsiveContainer
+                  debounce={0}
+                  height={330}
+                  width="90%"
+                >
+                  <ResizeDetector
+                    handleHeight={true}
+                    handleWidth={true}
+                    onResize={[Function]}
+                    targetRef={
+                      Object {
+                        "current": <div
+                          class="recharts-responsive-container"
+                          style="width: 90%; height: 330px;"
+                        />,
+                      }
+                    }
+                  >
+                    <div
+                      className="recharts-responsive-container"
+                      style={
+                        Object {
+                          "height": 330,
+                          "maxHeight": undefined,
+                          "minHeight": undefined,
+                          "minWidth": undefined,
+                          "width": "90%",
+                        }
+                      }
+                    />
+                  </ResizeDetector>
+                </ResponsiveContainer>
+                <Grid>
+                  <div
+                    className="grid"
+                  >
+                    <span
+                      className="grid_card"
+                    />
+                    <span
+                      className="grid_card"
+                    />
+                    <span
+                      className="grid_card"
+                    />
+                    <span
+                      className="grid_card"
+                    />
+                    <span
+                      className="grid_card"
+                    />
+                  </div>
+                </Grid>
+              </div>
+            </div>
+          </Graph>
+        </div>
       </div>
-    </div>
-  </PortfolioStats>
+    </PortfolioStats>
+  </pure(PortfolioStats)>
 </Provider>
 `;

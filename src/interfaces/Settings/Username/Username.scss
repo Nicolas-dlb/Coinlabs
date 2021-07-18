@@ -9,7 +9,7 @@
   padding: 20px;
   border-radius: 15px;
   background: var(--third-bg-color);
-
+  transition: background-color 0.3s ease;
   margin-top: 2vh;
   .intro_change {
     margin-top: 2vh;
@@ -43,6 +43,7 @@
       background: var(--third-bg-color);
       border: none;
       outline: none;
+      transition: background-color 0.3s ease;
       color: var(--primary-font-color);
       caret-color: #1baa63;
       border-radius: 10px;

@@ -20,7 +20,7 @@ function Exchange() {
   const lastUpdateDate = useSelector(selectLastUpdate);
   const dispatch = useDispatch();
   const [cryptoSelected, setCryptoSelected] = useState("BTC");
-  const [currencySelected, setCurrencySelected] = useState("BTC");
+  const [currencySelected, setCurrencySelected] = useState("bitcoin");
   const [nbr, setNbr] = useState(0);
   const [nbrCurrency, setNbrCurrency] = useState(0);
   const [lastInput, setLastInput] = useState("");

@@ -9,7 +9,7 @@ describe("Founds", () => {
   let FoundsComponent;
   beforeEach(async () => {
     await act(async () => {
-      FoundsComponent = mount(
+      FoundsComponent = await mount(
         <Provider store={store}>
           <Founds />
         </Provider>

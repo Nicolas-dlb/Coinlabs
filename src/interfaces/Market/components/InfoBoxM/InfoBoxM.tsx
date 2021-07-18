@@ -1,7 +1,7 @@
 import "./InfoBoxM.scss";
-import Graph from "components/Graph/Graph";
 import { numberWithSpaces } from "utils/utils";
 import React from "react";
+import Graph from "components/Graph2/Graph";
 
 type InfoBoxProps = {
   name: string;

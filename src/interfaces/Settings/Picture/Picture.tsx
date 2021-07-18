@@ -25,7 +25,7 @@ function Picture({ setPicture }: PictureProps) {
           <input
             id="picture-input"
             type="file"
-            accept="image/jpeg"
+            accept="image/*"
             onChange={(e) =>
               selectProfilPicture(e, setPicture, "set_picture_message")
             }

@@ -121,7 +121,7 @@ function Graph({
           width={width || (!width && tooltip ? "90%" : "99%")}
           height={height}
         >
-          <AreaChart data={data}>
+          <AreaChart width={width} height={height} data={data}>
             <defs>
               <linearGradient id="Green" x1="1" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#2aac63" stopOpacity={0.17} />

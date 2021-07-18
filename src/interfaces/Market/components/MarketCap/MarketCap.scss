@@ -1,10 +1,11 @@
 .market_cap {
   width: 93%;
   background: var(--third-bg-color);
-  height: 39.5vh;
+  height: 100%;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
+  padding-bottom: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -19,6 +20,6 @@
 
 @media only screen and (min-width: 992px) {
   .market_cap {
-    height: 19.5vh;
+    height: 17vh;
   }
 }

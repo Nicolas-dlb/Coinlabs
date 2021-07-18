@@ -2,17 +2,20 @@ import React from "react";
 import { Provider } from "react-redux";
 import { mount } from "enzyme";
 import store from "redux/store";
+import { act } from "react-dom/test-utils";
 import Header from "./Header";
 
 describe("Header", () => {
   let HeaderComponent: any;
 
   beforeEach(async () => {
-    HeaderComponent = await mount(
-      <Provider store={store}>
-        <Header />
-      </Provider>
-    );
+    await act(async () => {
+      HeaderComponent = await mount(
+        <Provider store={store}>
+          <Header />
+        </Provider>
+      );
+    });
   });
   afterEach(() => {
     HeaderComponent = null;

@@ -9,7 +9,7 @@ describe("Portfolio", () => {
   let PortfolioComponent;
   beforeEach(async () => {
     await act(async () => {
-      PortfolioComponent = mount(
+      PortfolioComponent = await mount(
         <Provider store={store}>
           <Portfolio />
         </Provider>

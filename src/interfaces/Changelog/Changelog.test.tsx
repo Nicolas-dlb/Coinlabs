@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { render } from "@testing-library/react";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 import React from "react";
 import Changelog from "./Changelog";
 

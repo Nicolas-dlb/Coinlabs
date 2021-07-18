@@ -1,11 +1,11 @@
 .portfolio_item {
   display: flex;
-  width: 90%;
+  width: 92%;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 9vh;
+  padding-top: 3vh;
   &:first-of-type {
-    padding-top: 5vh;
+    padding-top: 2vh;
   }
   font-size: 15px;
   .portfolio_name {
@@ -44,9 +44,9 @@
 @media only screen and (min-width: 992px) {
   .portfolio_item {
     height: 4vh;
-    padding-top: 7.7vh !important;
+    padding-top: 3vh !important;
     &:first-of-type {
-      padding-top: 4vh !important;
+      padding-top: 2vh !important;
     }
     .grid {
       display: none;
@@ -54,7 +54,7 @@
     .portfolio_graph {
       display: inline-block;
       width: 200px;
-      margin-right: 10%;
+      margin-right: 6%;
       .graph_container {
         position: relative;
         bottom: 18px;
@@ -76,6 +76,7 @@
     }
     .portfolio_variation {
       display: flex !important;
+
       svg {
         width: 15px;
         margin-right: 5px;

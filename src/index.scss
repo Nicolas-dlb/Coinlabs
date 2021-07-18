@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--app-bg);
   overflow-x: hidden;
+
   &::-webkit-scrollbar {
     display: none;
   }

@@ -21,7 +21,7 @@ exports[`Picture should render correctly 1`] = `
         Select file
       </button>
       <input
-        accept="image/jpeg"
+        accept="image/*"
         id="picture-input"
         style="display:none"
         type="file"

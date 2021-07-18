@@ -22,60 +22,107 @@ exports[`settings should render correctly 1`] = `
       >
         Settings
       </p>
+      <Account>
+        <div
+          className="settings_account"
+        >
+          <h3
+            className="account"
+          >
+            Account
+          </h3>
+          <div
+            className="user_card"
+          >
+            <div
+              className="user_card_img"
+            >
+              <img
+                alt=""
+                src="https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
+              />
+              <div
+                className="point"
+              />
+            </div>
+            <div
+              className="user_card_info"
+            >
+              <h3 />
+              <h5 />
+              <div
+                className="change_user"
+              >
+                <p>
+                  Not you?
+                </p>
+                <span
+                  className="change"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  Change User
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Account>
       <div
         className="settings_top"
       >
         <div
           className="settings_top_left"
         >
-          <Account>
+          <Picture
+            setPicture={[Function]}
+          >
             <div
-              className="settings_account"
+              className="settings_picture"
             >
-              <h3
-                className="account"
-              >
-                Account
+              <h3>
+                Profil picture
               </h3>
               <div
-                className="user_card"
+                className="settings_picture_container"
               >
                 <div
-                  className="user_card_img"
+                  className="settings_picture_input"
                 >
-                  <img
-                    alt=""
-                    src="https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
-                  />
-                  <div
-                    className="point"
+                  <button
+                    className="set_profil_picture"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Select file
+                  </button>
+                  <input
+                    accept="image/*"
+                    id="picture-input"
+                    onChange={[Function]}
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                    type="file"
                   />
                 </div>
                 <div
-                  className="user_card_info"
+                  className="settings_picture_message"
+                  id="set_picture_message"
                 >
-                  <h3 />
-                  <h5 />
-                  <div
-                    className="change_user"
-                  >
-                    <p>
-                      Not you?
-                    </p>
-                    <span
-                      className="change"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      role="button"
-                      tabIndex={0}
-                    >
-                      Change User
-                    </span>
-                  </div>
+                  <p>
+                    Any file selected
+                  </p>
                 </div>
               </div>
             </div>
-          </Account>
+          </Picture>
         </div>
         <div
           className="settings_top_right"
@@ -109,53 +156,6 @@ exports[`settings should render correctly 1`] = `
           </Theme>
         </div>
       </div>
-      <Picture
-        setPicture={[Function]}
-      >
-        <div
-          className="settings_picture"
-        >
-          <h3>
-            Profil picture
-          </h3>
-          <div
-            className="settings_picture_container"
-          >
-            <div
-              className="settings_picture_input"
-            >
-              <button
-                className="set_profil_picture"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Select file
-              </button>
-              <input
-                accept="image/jpeg"
-                id="picture-input"
-                onChange={[Function]}
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
-                type="file"
-              />
-            </div>
-            <div
-              className="settings_picture_message"
-              id="set_picture_message"
-            >
-              <p>
-                Any file selected
-              </p>
-            </div>
-          </div>
-        </div>
-      </Picture>
       <Username
         onClick={[Function]}
       >
@@ -193,9 +193,7 @@ exports[`settings should render correctly 1`] = `
           </div>
         </div>
       </Username>
-      <Email
-        setEmail={[Function]}
-      >
+      <Email>
         <div
           className="settings_email"
         >
@@ -243,6 +241,7 @@ exports[`settings should render correctly 1`] = `
             </div>
             <button
               className="btn_settings"
+              onClick={[Function]}
               type="button"
             >
               Update

@@ -1,6 +1,6 @@
 .changelog {
   padding-left: 19px;
-  padding-bottom: 3vh;
+  padding-bottom: 17px;
   border-radius: 30px;
   z-index: 50;
   background: var(--secondary-bg-color);
@@ -9,10 +9,15 @@
   pointer-events: none;
   margin-top: 1vh;
   overflow: hidden;
-  position: relative;
-  bottom: 357vh;
-  height: 100%;
+  position: absolute;
+  transition: background-color 0.3s ease;
+  top: 0;
+  height: 89%;
   width: 100%;
+  .page-title,
+  .title {
+    margin-left: 1%;
+  }
   .change_container {
     display: flex;
     align-items: center;
@@ -84,7 +89,7 @@
 @media only screen and (min-width: 992px) {
   .changelog {
     padding-left: 208px;
-    bottom: 303vh;
+    bottom: 308.5vh;
     .title,
     .page-title {
       margin-left: 1%;

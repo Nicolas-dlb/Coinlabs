@@ -1,0 +1,103 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin-right: 2vw;
+
+  .portfolio_graph_container {
+    width: 100%;
+    height: 87%;
+    background: var(--third-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-start;
+    border-radius: 20px;
+
+    .graph {
+      top: 17vh;
+      left: 1vw;
+
+      &::after {
+        top: -20vh;
+        width: 94%;
+      }
+      .grid {
+        display: none;
+      }
+      .recharts-responsive-container {
+        position: relative;
+        top: -2vh !important;
+        right: 1.5vw;
+      }
+    }
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 22px;
+    height: 40px;
+    z-index: 10;
+    .tabs_left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      .btn_portfolio {
+        border-radius: 4px;
+        padding: 5px 15px;
+        background: #2b263f;
+        width: 23px;
+        text-align: center;
+        font-size: 15px;
+
+        &:hover {
+          background: var(--primary-font-color);
+          color: #2d2a38 !important;
+        }
+      }
+      span {
+        cursor: pointer;
+        color: #c4c3c9;
+        &:hover {
+          color: #fff;
+        }
+      }
+      .btn_portfolio_active {
+        color: black;
+        background: var(--primary-font-color);
+      }
+    }
+    .toggle-select {
+      height: 190px !important;
+    }
+    .tabs_right {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      color: #f8f7f9;
+
+      border-radius: 6px;
+      padding: 3px 0px;
+      font-size: 15px;
+      z-index: 1000;
+      background: #2b263f;
+      height: 23px;
+      transition: all 0.35s ease-in;
+      overflow: hidden;
+      width: 103px;
+      svg {
+        fill: #c8c6d2;
+        height: 23px;
+        position: relative;
+        top: 2px;
+        left: 70px;
+        margin-left: 5px;
+        width: auto;
+        pointer-events: none;
+      }
+    }
+  }
+}

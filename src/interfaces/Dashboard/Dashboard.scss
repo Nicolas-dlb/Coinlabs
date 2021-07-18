@@ -1,129 +1,137 @@
 .dashboard {
-	padding-left: 17px;
-	padding-bottom: 20px;
-	border-radius: 30px;
-	transition: background-color 0.3s ease;
-	background-color: var(--secondary-bg-color);
-	padding-top: 10vh;
-	opacity: 0;
-	pointer-events: none;
-	margin-top: 1vh;
-	overflow: hidden;
+  padding-left: 17px;
+  padding-bottom: 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  background-color: var(--secondary-bg-color);
+  padding-top: 10vh;
+  opacity: 0;
+  pointer-events: none;
+  margin-top: 1vh;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  width: 95%;
 
-	.page_title {
-		font-size: 20px;
-		font-weight: 600;
-		margin-bottom: 15px;
-		margin-left: 1%;
-	}
-	.infobox_dashboard {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		margin-bottom: 3vh;
-		height: 28vh;
-		flex-direction: column;
-		.infobox_dashboard_top,
-		.infobox_dashboard_bottom {
-			display: flex;
-			justify-content: space-between;
-			width: 96.5%;
-			margin-bottom: 1vh;
-			.infoboxD:first-child {
-				margin-right: 4vw;
-			}
-		}
-	}
-	.title {
-		font-size: 20px;
-		margin-left: 5%;
-		margin-top: 3vh;
-		margin-bottom: 1vh;
-	}
-	.infobox_market {
-		display: flex;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
-	.transactions_container {
-		display: none;
-	}
+  .page_title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 1%;
+  }
+  .title {
+    margin-left: 1% !important;
+  }
+  .infobox_dashboard {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+    height: 28vh;
+    flex-direction: column;
+    .infobox_dashboard_top,
+    .infobox_dashboard_bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 96.5%;
+      margin-bottom: 1vh;
+      .infoboxD:first-child {
+        margin-right: 4vw;
+      }
+    }
+  }
+  .title {
+    font-size: 20px;
+    margin-left: 5%;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+  }
+  .infobox_market {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .transactions_container {
+    display: none;
+  }
 }
 @media only screen and (max-height: 600px) {
-	.dashboard {
-		padding-left: 13px;
-	}
-	.title_market {
-		margin-top: 6vh !important;
-	}
+  .dashboard {
+    padding-left: 13px;
+  }
+  .title_market {
+    margin-top: 6vh !important;
+  }
 }
 @media only screen and (min-width: 992px) {
-	.dashboard {
-		padding-left: 196px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: flex-start;
-		padding-top: 7vh;
-		transform: scaleY(0.95);
-		overflow: visible;
-		.dashboard_title {
-			margin-left: 1vw;
-			font-size: 28px;
-			margin-bottom: 4vh;
-		}
-		.infobox_dashboard {
-			align-items: center;
-			justify-content: flex-start;
-			margin-bottom: 0vh;
-			transition: background-color 0.3s ease;
-			background-color: var(--third-bg-color);
-			border-radius: 20px;
-			padding: 25px 35px;
-			height: fit-content;
-			flex-direction: row;
-			width: 92.5%;
-			.infobox_dashboard_top,
-			.infobox_dashboard_bottom {
-				justify-content: center;
-			}
+  .dashboard {
+    padding-left: 196px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 7vh;
+    transform: scaleY(0.95);
+    overflow: visible;
+    width: 87%;
+    height: 100%;
+    .dashboard_title {
+      margin-left: 1vw;
+      font-size: 28px;
+      margin-bottom: 4vh;
+    }
+    .infobox_dashboard {
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 0vh;
+      transition: background-color 0.3s ease;
+      background-color: var(--third-bg-color);
+      border-radius: 20px;
+      padding: 25px 35px;
+      height: fit-content;
+      flex-direction: row;
+      width: 92.5%;
+      .infobox_dashboard_top,
+      .infobox_dashboard_bottom {
+        justify-content: center;
+      }
 
-			div {
-				display: flex;
-			}
-			.infobox_dashboard_bottom > div:last-child {
-				border-right: none;
-				padding-right: 10px;
-			}
-		}
-		.infobox_market {
-			width: 89.8vw;
-		}
-		.dashboard_bottom {
-			display: flex;
-			align-items: flex-start;
-			justify-content: flex-start;
-			width: 98%;
+      div {
+        display: flex;
+      }
+      .infobox_dashboard_bottom > div:last-child {
+        border-right: none;
+        padding-right: 10px;
+      }
+    }
+    .infobox_market {
+      width: 89.8vw;
+    }
+    .dashboard_bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 98%;
 
-			.growth_container {
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: flex-start;
-				width: 100%;
-			}
-			.transactions_container {
-				margin-left: 2vw;
-				padding-top: 1vh;
-				display: inline-block;
-				width: 38%;
-			}
-		}
-		.title {
-			margin-left: 1vw;
-		}
-	}
+      .growth_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .transactions_container {
+        margin-left: 2vw;
+        padding-top: 1vh;
+        display: inline-block;
+        width: 38%;
+      }
+    }
+    .title {
+      margin-left: 1vw;
+    }
+  }
 }

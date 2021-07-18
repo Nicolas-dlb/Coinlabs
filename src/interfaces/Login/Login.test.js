@@ -3,19 +3,19 @@ import { mount } from "enzyme";
 import React from "react";
 import store from "redux/store";
 import { Provider } from "react-redux";
-import { fireEvent, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { login } from "redux/reducers/userSlice";
+import { act } from "react-dom/test-utils";
 import Login from "./Login";
 
-describe("InfoBoxD", () => {
+describe("Login", () => {
   let LoginComponent;
-  beforeEach(() => {
-    LoginComponent = mount(
-      <Provider store={store}>
-        <Login />
-      </Provider>
-    );
+  beforeEach(async () => {
+    await act(async () => {
+      LoginComponent = mount(
+        <Provider store={store}>
+          <Login />
+        </Provider>
+      );
+    });
   });
   it("should render correctly", () => {
     expect(LoginComponent).toMatchSnapshot();

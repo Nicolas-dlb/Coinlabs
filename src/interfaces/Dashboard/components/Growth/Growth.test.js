@@ -2,14 +2,8 @@
 import { mount, render } from "enzyme";
 import React from "react";
 import { Provider } from "react-redux";
-import Graph from "components/Graph/Graph";
 import store from "redux/store";
-import { act, fireEvent, screen, waitForElement } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import {
-  setBalanceHistory,
-  setExpensesHistory,
-} from "redux/reducers/walletsSlice";
+import { act } from "react-dom/test-utils";
 import Growth from "./Growth";
 
 describe("Growth", () => {
@@ -20,7 +14,7 @@ describe("Growth", () => {
 
   beforeEach(async () => {
     await act(async () => {
-      GrowthComponent = mount(
+      GrowthComponent = await mount(
         <Provider store={store}>
           <Growth />
         </Provider>

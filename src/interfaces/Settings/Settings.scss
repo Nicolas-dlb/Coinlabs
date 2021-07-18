@@ -1,6 +1,6 @@
 .settings {
   padding-left: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 157px;
   border-radius: 30px;
   background: var(--secondary-bg-color);
   padding-top: 10vh;
@@ -8,8 +8,15 @@
   pointer-events: none;
   margin-top: 1vh;
   overflow: hidden;
-  position: relative;
-  bottom: 489vh;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 0;
+  width: 99%;
+  height: 73%;
+
+  .settings_email {
+    display: none;
+  }
   .page-title {
     margin-left: 10px;
   }
@@ -60,12 +67,40 @@
     display: none;
   }
 }
+.settings_theme {
+  display: none !important;
+}
 
 @media only screen and (min-width: 992px) {
   .settings {
     padding-left: 208px;
-    bottom: 441vh;
+    bottom: 432vh;
     scale: 0.97;
+    height: 100%;
+    .settings_email,
+    .settings_username,
+    .settings_email,
+    .settings_picture {
+      width: 300px;
+      padding: 15px 20px;
+      .input {
+        width: 90%;
+      }
+    }
+    .settings_theme {
+      width: 150px;
+      display: none !important;
+    }
+
+    .settings_founds {
+      width: 250px;
+      .input {
+        width: 90%;
+      }
+    }
+    .settings_picture {
+      width: 220px;
+    }
     .settings_theme:last-child {
       display: none;
     }

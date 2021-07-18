@@ -7,7 +7,7 @@ describe("Username", () => {
   let UsernameComponent;
   beforeEach(async () => {
     await act(async () => {
-      UsernameComponent = render(<Username />);
+      UsernameComponent = await render(<Username />);
     });
   });
   it("should render correctly", () => {

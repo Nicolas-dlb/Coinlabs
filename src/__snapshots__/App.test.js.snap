@@ -259,7 +259,7 @@ exports[`App should render correctly 1`] = `
                       File selected is not an image
                     </p>
                     <input
-                      accept="image/jpeg"
+                      accept="image/*"
                       id="file-input"
                       onChange={[Function]}
                       style={

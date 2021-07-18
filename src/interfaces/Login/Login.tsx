@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable consistent-return */
@@ -5,14 +6,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./Login.scss";
-import { login, logout, setProfilPic } from "redux/reducers/userSlice";
+import { login, setProfilPic } from "redux/reducers/userSlice";
 import { useDispatch } from "react-redux";
 import {
   loadBalanceHistory,
   loadCryptoHistory,
   loadExpensesHistory,
   loadIncomeHistory,
-  setLastUpdate,
   setWallets,
 } from "redux/reducers/walletsSlice";
 import {
@@ -21,7 +21,9 @@ import {
   resetLoginInputValue,
   selectProfilPicture,
 } from "utils/utils";
-import { auth, db } from "firebaseConfig";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 function Login() {
   const [userName, setUserName] = useState("");
@@ -63,7 +65,9 @@ function Login() {
   const [userList, setUserList]: any = useState({});
   const length = Object.keys(userList)?.length;
   useEffect(() => {
-    db.collection("users")
+    firebase
+      .firestore()
+      .collection("users")
       .get()
       .then((querySnapshot: any) => {
         querySnapshot.forEach((User: any) => {
@@ -143,12 +147,15 @@ function Login() {
         //       }
         //     });
         //   });
-        auth
+        firebase
+          .auth()
           .signInWithEmailAndPassword(email, password)
           .catch((error: Error) => alert(error));
       } else {
         let emailRegistered: string;
-        db.collection("users")
+        firebase
+          .firestore()
+          .collection("users")
           .get()
           .then((querySnapshot: any) => {
             querySnapshot.forEach((doc: any) => {
@@ -164,7 +171,8 @@ function Login() {
               checkUsername();
             }, 10);
           } else {
-            auth
+            firebase
+              .auth()
               .signInWithEmailAndPassword(emailRegistered, password)
               .catch((error: Error) => alert(error));
           }
@@ -177,8 +185,9 @@ function Login() {
   const handleDemoLogin = () => {
     loginAnimation();
 
-    auth
-      .signInWithEmailAndPassword("johndoe@gmail.com", "johndoe")
+    firebase
+      .auth()
+      .signInWithEmailAndPassword("elonmusk@gmail.com", "elonmusk")
       .catch((error: Error) => alert(error));
   };
 
@@ -677,7 +686,8 @@ function Login() {
         Password: password,
       },
     });
-    auth
+    firebase
+      .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((userAuth: any) => {
         const timelineDefault = [...Array(101).keys()].map((x) => ({
@@ -722,22 +732,25 @@ function Login() {
             );
           })
           .then(() => {
-            db.collection("users").doc(auth.currentUser?.uid).set(
-              {
-                username: userName,
-                password,
-                email,
-                // baseEmail: email,
-                time: "Month",
-                currency: "Dollar",
-                profilPic: picture,
-                balanceHistory: timelineDefault,
-                cryptoHistory: timelineDefault,
-                expensesHistory: timelineDefault,
-                incomeHistory: timelineDefault,
-              },
-              { merge: true }
-            );
+            firebase
+              .firestore()
+              .collection("users")
+              .doc(firebase.auth().currentUser?.uid)
+              .set(
+                {
+                  username: userName,
+                  password,
+                  email,
+                  // baseEmail: email,
+
+                  profilPic: picture,
+                  balanceHistory: timelineDefault,
+                  cryptoHistory: timelineDefault,
+                  expensesHistory: timelineDefault,
+                  incomeHistory: timelineDefault,
+                },
+                { merge: true }
+              );
           });
       })
       .catch((error: Error) => alert(error));
@@ -911,7 +924,7 @@ function Login() {
               <input
                 id="file-input"
                 type="file"
-                accept="image/jpeg"
+                accept="image/*"
                 onChange={(e) =>
                   selectProfilPicture(e, setPicture, "file_error")
                 }

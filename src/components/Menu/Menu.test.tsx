@@ -2,13 +2,13 @@ import React from "react";
 import { mount } from "enzyme";
 import store from "redux/store";
 import { Provider } from "react-redux";
-import { login, setProfilPic, setUsername } from "redux/reducers/userSlice";
+import { login, setUsername } from "redux/reducers/userSlice";
 import Menu from "./Menu";
 
 describe("Menu", () => {
   let MenuComponent: any;
   beforeEach(async () => {
-    MenuComponent = mount(
+    MenuComponent = await mount(
       <Provider store={store}>
         <Menu />
       </Provider>
@@ -27,14 +27,7 @@ describe("Menu", () => {
   });
 
   it("should render user profil picture", () => {
-    store.dispatch(
-      setProfilPic(
-        "https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
-      )
-    );
-    expect(MenuComponent.find(".user_icon").props().src).toBe(
-      store.getState().user.profilPic
-    );
+    expect(MenuComponent.find("img").exists()).toBe(true);
   });
 
   it("should render user name name", () => {

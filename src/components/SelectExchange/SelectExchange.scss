@@ -1,21 +1,21 @@
 .sell,
 .buy,
 .add {
-	display: none;
+  display: none;
 }
 
 #sell-items li,
 #buy-items li,
 #add-items li {
-	list-style: none;
-	padding-top: 5px;
-	padding-bottom: 5px;
+  list-style: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #sell-items li:hover,
 #buy-items li:hover,
 #add-items li:hover {
-	background: #312d49;
+  background: #312d49;
 }
 
 #sell-items > li > span,
@@ -24,8 +24,8 @@
 .btn-buy > li > span,
 #add-items > li > span,
 .btn-add > li > span {
-	margin-left: 30px;
-	cursor: pointer;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 /* item list */
@@ -33,85 +33,85 @@
 .sell-list,
 .buy-list,
 .add-list {
-	background: #1d1a3f;
-	height: 0;
-	width: 60px;
-	position: relative;
-	bottom: 35px;
-	background: var(--third-bg-color);
-	transition: all 0.35s ease-in;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	overflow: hidden;
-	cursor: pointer;
+  background: #1d1a3f;
+  height: 0;
+  width: 60px;
+  position: relative;
+  bottom: 35px;
+  background: var(--third-bg-color);
+  transition: all 0.35s ease-in;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
 
-	padding-top: 5px;
-	p {
-		padding-left: 11px;
-	}
+  padding-top: 5px;
+  p {
+    padding-left: 11px;
+  }
 
-	z-index: 1000;
+  z-index: 1000;
 }
 
 .buy-list {
-	z-index: 100;
+  z-index: 100;
 }
 
 .sell-list-active,
 .buy-list-active,
 .add-list-active {
-	height: 143.2px;
+  height: 143.2px;
 }
 
 .open {
-	display: flex !important;
+  display: flex !important;
 }
 
 .select-sell-arrow,
 .select-buy-arrow,
 .select-add-arrow {
-	width: 20px;
-	position: relative;
-	left: 45px;
-	top: 3px;
-	z-index: 101;
-	cursor: pointer;
-	pointer-events: none;
+  width: 20px;
+  position: relative;
+  left: 45px;
+  top: 3px;
+  z-index: 101;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 .select-add-arrow {
-	left: 25px;
+  left: 25px;
 }
 
 .btn-sell,
 .btn-buy,
 .btn-add {
-	outline: none;
-	position: relative;
-	top: -30px;
-	width: 60px;
-	font-size: 16px;
-	padding-left: 15px;
-	color: var(--primary-font-color);
-	font-family: Karla;
-	text-align: start;
-	height: 34px;
-	border-radius: 15px;
-	background: var(--third-bg-color);
-	border: none;
-	cursor: pointer;
+  outline: none;
+  position: relative;
+  top: -30px;
+  width: 60px;
+  font-size: 16px;
+  padding-left: 15px;
+  color: var(--primary-font-color);
+  font-family: Karla;
+  text-align: start;
+  height: 34px;
+  border-radius: 15px;
+  background: var(--third-bg-color);
+  border: none;
+  cursor: pointer;
 
-	z-index: 100;
+  z-index: 10;
 }
 
 .btn-sell > li,
 .btn-buy > li,
 .btn-add > li {
-	list-style: none;
-	float: center;
-	position: relative;
-	left: -3px;
-	padding-bottom: 0px;
-	cursor: pointer;
-	z-index: 200;
+  list-style: none;
+  float: center;
+  position: relative;
+  left: -3px;
+  padding-bottom: 0px;
+  cursor: pointer;
+  z-index: 200;
 }

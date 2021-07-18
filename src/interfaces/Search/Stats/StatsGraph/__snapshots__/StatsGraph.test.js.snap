@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatsGraph should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Graph
+    color="White"
+    data={
+      Array [
+        Object {
+          "Price": 0,
+          "timestamp": 0,
+          "tokens": 0,
+        },
+      ]
+    }
+    height={10}
+    selected="Bitcoin"
+    tooltip={true}
+    width={10}
+  >
+    <div
+      className="graph_container"
+    >
+      <div
+        className="graph"
+      >
+        <ResponsiveContainer
+          debounce={0}
+          height={10}
+          width={10}
+        >
+          <ResizeDetector
+            handleHeight={true}
+            handleWidth={true}
+            onResize={[Function]}
+            targetRef={
+              Object {
+                "current": <div
+                  class="recharts-responsive-container"
+                  style="width: 10px; height: 10px;"
+                >
+                  <div
+                    class="recharts-wrapper"
+                    style="position: relative; cursor: default; width: 10px; height: 10px;"
+                  >
+                    <svg
+                      class="recharts-surface"
+                      height="10"
+                      version="1.1"
+                      viewBox="0 0 10 10"
+                      width="10"
+                    >
+                      <defs>
+                        <clippath
+                          id="recharts1-clip"
+                        >
+                          <rect
+                            height="0"
+                            width="0"
+                            x="5"
+                            y="5"
+                          />
+                        </clippath>
+                      </defs>
+                      <defs>
+                        <lineargradient
+                          id="Green"
+                          x1="1"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#2aac63"
+                            stop-opacity="0.17"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#2aac63"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                        <lineargradient
+                          id="White"
+                          x1="0"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#fff"
+                            stop-opacity="0"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#fff"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                        <lineargradient
+                          id="Blue"
+                          x1="1"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#4689b6"
+                            stop-opacity="0.17"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#4689b6"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                        <lineargradient
+                          id="Pink"
+                          x1="1"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#a075b9"
+                            stop-opacity="0.17"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#a075b9"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                        <lineargradient
+                          id="Orange"
+                          x1="1"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#db9a67"
+                            stop-opacity="0.17"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#db9a67"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                        <lineargradient
+                          id="Blue2"
+                          x1="1"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stop-color="#4a9cc0"
+                            stop-opacity="0.17"
+                          />
+                          <stop
+                            offset="100%"
+                            stop-color="#4a9cc0"
+                            stop-opacity="0"
+                          />
+                        </lineargradient>
+                      </defs>
+                      <g
+                        class="recharts-layer recharts-area"
+                      >
+                        <g
+                          class="recharts-layer recharts-area-dots"
+                        >
+                          <circle
+                            class="recharts-dot recharts-area-dot"
+                            cx="5"
+                            cy="5"
+                            fill="url(#White)"
+                            fill-opacity="1"
+                            height="0"
+                            points="[object Object]"
+                            r="3"
+                            stroke="#fff"
+                            stroke-width="1"
+                            type="monotone"
+                            width="0"
+                          />
+                        </g>
+                      </g>
+                      <g
+                        class="recharts-layer recharts-area"
+                      >
+                        <g
+                          class="recharts-layer recharts-area-dots"
+                        />
+                      </g>
+                      <g
+                        class="recharts-layer recharts-area"
+                      >
+                        <g
+                          class="recharts-layer recharts-area-dots"
+                        />
+                      </g>
+                      <g
+                        class="recharts-layer recharts-area"
+                      >
+                        <g
+                          class="recharts-layer recharts-area-dots"
+                        />
+                      </g>
+                      <g
+                        class="recharts-layer recharts-area"
+                      >
+                        <g
+                          class="recharts-layer recharts-area-dots"
+                        />
+                      </g>
+                    </svg>
+                    <div
+                      class="recharts-tooltip-wrapper"
+                      style="transform: translate(undefinedpx, undefinedpx); pointer-events: none; visibility: hidden; position: absolute; top: 0px; left: 0px; border-radius: 15px; color: rgb(255, 255, 255); padding: 12px 10px 10px 10px; align-items: space-evenly; justify-content: center; z-index: 1000;"
+                    />
+                  </div>
+                </div>,
+              }
+            }
+          >
+            <div
+              className="recharts-responsive-container"
+              style={
+                Object {
+                  "height": 10,
+                  "maxHeight": undefined,
+                  "minHeight": undefined,
+                  "minWidth": undefined,
+                  "width": 10,
+                }
+              }
+            />
+          </ResizeDetector>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  </Graph>
+</Provider>
+`;

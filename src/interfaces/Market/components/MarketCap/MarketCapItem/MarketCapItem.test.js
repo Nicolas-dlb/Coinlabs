@@ -1,15 +1,15 @@
 import React from "react";
-import { render } from "enzyme";
+import { mount } from "enzyme";
 import { Provider } from "react-redux";
 import store from "redux/store";
-import { act } from "react-test-renderer";
+import { act } from "react-dom/test-utils";
 import MarketCapItem from "./MarketCapItem";
 
 describe("MarketCapItem", () => {
   let MarketCapItemComponent;
   beforeEach(async () => {
     await act(async () => {
-      MarketCapItemComponent = render(
+      MarketCapItemComponent = await mount(
         <Provider store={store}>
           <MarketCapItem name="bitcoin" />
         </Provider>

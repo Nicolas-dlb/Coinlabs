@@ -23,7 +23,14 @@ exports[`Menu should render correctly 1`] = `
         <img
           alt=""
           className="user_icon"
-          src="https://www.vhv.rs/dpng/d/164-1645859_selfie-clipart-groucho-glass-good-profile-hd-png.png"
+          src={
+            Object {
+              "canInstrument": true,
+              "createTransformer": [Function],
+              "getCacheKey": [Function],
+              "process": [Function],
+            }
+          }
         />
         <div
           className="user_name"

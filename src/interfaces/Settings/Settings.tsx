@@ -1,19 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { auth, db } from "firebaseConfig";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectUserEmail,
   selectUserName,
   setProfilPic,
-  setUserEmail,
   setUsername,
 } from "redux/reducers/userSlice";
 import "./Settings.scss";
 import $ from "jquery";
-import { selectProfilPicture } from "utils/utils";
-import { selectWallets, setWallets } from "redux/reducers/walletsSlice";
-import * as admin from "firebase-admin";
 import Account from "./Account/Account";
 import Picture from "./Picture/Picture";
 import Username from "./Username/Username";
@@ -40,40 +39,53 @@ function Settings() {
 
   const changeUsername = () => {
     const value: any = $("#change_username").val();
-
-    db.collection("users").doc(auth.currentUser?.uid).set(
-      {
-        username: value,
-      },
-      { merge: true }
-    );
+    firebase.auth().currentUser!.updateProfile({
+      displayName: value,
+    });
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(firebase.auth().currentUser?.uid)
+      .set(
+        {
+          username: value,
+        },
+        { merge: true }
+      );
     dispatch(setUsername(value));
     setUserName(value);
     $("#change_username").val();
   };
 
   useEffect(() => {
-    dispatch(setProfilPic(picture));
-    db.collection("users").doc(auth.currentUser?.uid).set(
-      {
-        profilPic: picture,
-      },
-      { merge: true }
-    );
+    if (userName && picture.split("").length > 1) {
+      dispatch(setProfilPic(picture));
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(firebase.auth().currentUser?.uid)
+        .set(
+          {
+            profilPic: picture,
+          },
+          { merge: true }
+        );
+    }
   }, [picture]);
 
   return (
     <div id="settings" className="settings">
       <p className="page-title">Settings</p>
+      <Account />
       <div className="settings_top">
         <div className="settings_top_left">
-          <Account />
+          <Picture setPicture={setPicture} />
         </div>
         <div className="settings_top_right">
           <Theme />
         </div>
       </div>
-      <Picture setPicture={setPicture} />
+
       <Username onClick={changeUsername} />
       <Email />
       <Founds />

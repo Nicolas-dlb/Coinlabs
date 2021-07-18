@@ -9,7 +9,7 @@ describe("TransactionItem", () => {
   let TransactionComponent;
   beforeEach(async () => {
     await act(async () => {
-      TransactionComponent = render(
+      TransactionComponent = await render(
         <Provider store={store}>
           <Transaction name="Bitcoin" status="Buy" price={100} />
         </Provider>

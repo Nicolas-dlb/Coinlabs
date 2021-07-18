@@ -9,7 +9,7 @@
   border-radius: 15px;
   background: var(--third-bg-color);
   margin-top: 2vh;
-
+  transition: background-color 0.3s ease;
   .settings_founds_input {
     display: flex;
     align-items: center;
@@ -36,6 +36,7 @@
       background: var(--third-bg-color);
       border: none;
       outline: none;
+      transition: background-color 0.3s ease;
       color: var(--primary-font-color);
       caret-color: #1baa63;
       border-radius: 10px;

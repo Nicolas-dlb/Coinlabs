@@ -2,14 +2,14 @@ import React from "react";
 import { mount } from "enzyme";
 import { Provider } from "react-redux";
 import store from "redux/store";
-import { act } from "react-test-renderer";
+import { act } from "react-dom/test-utils";
 import Market from "./Market";
 
 describe("Market", () => {
   let MarketComponent;
   beforeEach(async () => {
     await act(async () => {
-      MarketComponent = mount(
+      MarketComponent = await mount(
         <Provider store={store}>
           <Market />
         </Provider>

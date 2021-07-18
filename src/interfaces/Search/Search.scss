@@ -1,0 +1,143 @@
+.search {
+  padding-left: 15px;
+  padding-bottom: 80px;
+  border-radius: 30px;
+  background: var(--secondary-bg-color);
+  padding-top: 10vh;
+  opacity: 0;
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  margin-top: 1vh;
+  height: 98vh;
+  position: absolute;
+  top: 0;
+  width: 97.5%;
+  z-index: 1000;
+  .page-title,
+  .title {
+    margin-left: 1%;
+  }
+  .no_results_found {
+    position: relative;
+    background-color: var(--secondary-bg-color);
+    bottom: 105vh;
+    width: 100vw;
+    height: 116vh;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    .no_result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      width: 150px;
+    }
+  }
+  .title_stats {
+    display: none;
+  }
+  .search_bottom {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .variations {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 88%;
+    .variation:first-child {
+      margin-left: 0 !important;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .portfolio_stats {
+    width: 96%;
+    height: 52vh;
+    .tabs_right {
+      display: none;
+    }
+    .tabs_left {
+      width: 100%;
+    }
+    .graph {
+      position: relative;
+      top: 4vh;
+    }
+  }
+  .portfolio_container {
+    background: var(--third-bg-color);
+    border-radius: 10px;
+    width: 96%;
+
+    .portfolio_item {
+      padding: 10px;
+
+      .portfolio_graph {
+        display: none;
+      }
+      .portfolio_variation {
+        display: none !important;
+      }
+    }
+  }
+  .market_cap_container {
+    background: var(--third-bg-color);
+    border-radius: 10px;
+    width: 96%;
+    .market_cap_item {
+      padding: 10px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .search {
+    padding-left: 207px;
+    bottom: 530vh;
+    padding-bottom: 100px;
+    .search_bottom {
+      display: flex;
+      flex-direction: row;
+      height: 65vh;
+      .search_bottom_left {
+        width: 50%;
+        .graph {
+          .recharts-responsive-container {
+            top: 0vh !important;
+            position: relative;
+          }
+          &::after {
+            top: -2vh;
+            bottom: 0vh;
+          }
+        }
+      }
+      .portfolio_item {
+        padding-top: 10px !important;
+      }
+    }
+    .page-title {
+      margin-left: 1%;
+    }
+    .title_stats {
+      display: flex;
+    }
+    .no_result {
+      position: relative;
+      right: 100px;
+      text-align: center;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InfoBoxD should render correctly 1`] = `
+exports[`Login should render correctly 1`] = `
 <Provider
   store={
     Object {
@@ -253,7 +253,7 @@ exports[`InfoBoxD should render correctly 1`] = `
                 File selected is not an image
               </p>
               <input
-                accept="image/jpeg"
+                accept="image/*"
                 id="file-input"
                 onChange={[Function]}
                 style={

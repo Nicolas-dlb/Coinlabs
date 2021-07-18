@@ -9,8 +9,17 @@
   pointer-events: none;
   margin-top: 1vh;
   overflow: hidden;
-  position: relative;
-  bottom: 120vh;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 0;
+  width: 99%;
+
+  .title {
+    margin-left: 1%;
+  }
+  .page-title {
+    margin-left: 3%;
+  }
 
   .infobox_market {
     display: flex;
@@ -33,6 +42,9 @@
     align-items: center;
     width: 100%;
     margin-left: 2vw;
+    .portfolio_stats {
+      display: none;
+    }
 
     .market_right {
       display: flex;
@@ -48,7 +60,7 @@
   .market {
     bottom: 130vh;
     padding-left: 8px;
-
+    height: 100%;
     .page-title {
       margin-bottom: 1.5vh !important;
     }
@@ -61,7 +73,7 @@
 @media only screen and (min-width: 992px) {
   .market {
     padding-left: 208px;
-    bottom: 103vh;
+    width: 89%;
     .page-title {
       margin-left: 1%;
     }
@@ -80,6 +92,9 @@
       height: 69vh;
       margin-left: 0;
 
+      .portfolio_stats {
+        display: flex;
+      }
       .market_right {
         width: 460px;
       }

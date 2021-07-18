@@ -8,8 +8,8 @@ import PortfolioItem from "./PortfolioItem";
 describe("PortfolioItem", () => {
   let PortfolioItemComponent;
   beforeEach(async () => {
-    act(async () => {
-      PortfolioItemComponent = mount(
+    await act(async () => {
+      PortfolioItemComponent = await mount(
         <Provider store={store}>
           <PortfolioItem name="Bitcoin" />
         </Provider>

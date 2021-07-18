@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "enzyme";
 import { Provider } from "react-redux";
 import store from "redux/store";
-import { act } from "react-test-renderer";
+import { act } from "react-dom/test-utils";
 import MarketCap from "./MarketCap";
 
 describe("MarketCap", () => {

@@ -41,10 +41,6 @@ function Growth() {
         [...Array(25).keys()].map((x) => ({
           tokens: x,
           Price: 0,
-          ethereum: 0,
-          ripple: 0,
-          litecoin: 0,
-          neo: 0,
           timestamp: 0,
         }))
       );

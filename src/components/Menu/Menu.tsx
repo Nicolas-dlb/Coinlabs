@@ -25,6 +25,9 @@ function Menu() {
     $("#dashboard").removeClass("active_window");
     $("#changelog").removeClass("active_window");
     $("#settings").removeClass("active_window");
+    $(".search_icon").removeClass("search_icon_active");
+    $("#search").removeClass("active_window");
+    $(".no_results_found").removeClass("active_window");
     $(`#${name}`).addClass("active_window");
   };
 
