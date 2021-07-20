@@ -103,6 +103,10 @@ function Variation({ name, time }: VariationProps) {
           (time === "Current" && history[historyName]) ||
           (time === "Week" && history[historyName])
             ? "variation_right fix"
+            : time === "Month" && history[historyName]
+            ? "variation_right fix_month"
+            : time === "3Month" && history[historyName]
+            ? "variation_right fix_3Month"
             : "variation_right"
         }
       >

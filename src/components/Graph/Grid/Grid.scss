@@ -19,9 +19,14 @@
   }
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 680px) {
   .grid {
-    bottom: 12px !important;
+    bottom: 3px !important;
+  }
+}
+@media only screen and (max-height: 580px) {
+  .grid {
+    bottom: 8.5px !important;
   }
 }
 
