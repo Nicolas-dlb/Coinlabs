@@ -45,6 +45,13 @@ npm install
 npm start
 ```
 
+### Tests
+
+run unit tests
+```sh
+npm test
+```
+
 
 
 <!-- CONTACT -->
