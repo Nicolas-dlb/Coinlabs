@@ -36,7 +36,7 @@ To run the project follow these simple steps.
 ```sh
 git clone https://github.com/Nicolas-dlb/Coinlabs
 ```
-2. install all dependances
+2. install dependances
 ```sh
 npm install
 ```
