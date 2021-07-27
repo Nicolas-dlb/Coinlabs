@@ -14,7 +14,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://coinlabs.web.app)
 
-Application de trading permettant aux utilisateurs d'analyser les gains et pertes provoqués par leurs placements grâce à la disposition d'un portefeuille fictif : https://coinlabs.web.app
+Trading application allowing users to analyze the gains and losses caused by their investments through the provision of a fictitious portfolio : https://coinlabs.web.app
 
 ### Built With
 
