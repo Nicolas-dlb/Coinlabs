@@ -12,7 +12,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://coinlabs.web.app)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://coinlabs.web.app) -->
+<p align="center" >
+<img src="src/assets/pictures/coinlabs.png" width="850px"/>
+</p>
 
 Trading application allowing users to analyze the gains and losses caused by their investments through the provision of a fictitious portfolio : https://coinlabs.web.app
 
