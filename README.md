@@ -12,7 +12,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://coinlabs.web.app)
 
 Application de trading permettant aux utilisateurs d'analyser les gains et pertes provoqués par leurs placements grâce à la disposition d'un portefeuille fictif : https://coinlabs.web.app
 
