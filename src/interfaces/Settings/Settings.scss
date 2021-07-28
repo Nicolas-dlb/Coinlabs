@@ -5,6 +5,8 @@
   background: var(--secondary-bg-color);
   padding-top: 10vh;
   opacity: 0;
+  content-visibility: auto;
+
   pointer-events: none;
   margin-top: 1vh;
   overflow: hidden;

@@ -18,6 +18,7 @@ exports[`MenuItem should render correctly 1`] = `
     <img
       alt=""
       className="market_icon"
+      height="35px"
       src={
         Object {
           "canInstrument": true,
@@ -26,6 +27,7 @@ exports[`MenuItem should render correctly 1`] = `
           "process": [Function],
         }
       }
+      width="35px"
     />
   </div>
   <p>

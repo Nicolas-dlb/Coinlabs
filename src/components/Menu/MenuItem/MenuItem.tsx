@@ -73,7 +73,6 @@ function MenuItem({ item, onClick, active }: MenuItemProps) {
       onKeyDown={() => onClick(item.toLowerCase())}
       role="button"
       onClick={() => {
-        $(`#menu_${item.toLowerCase()}`).addClass("active_window");
         onClick(item.toLowerCase());
       }}
       className={
@@ -91,7 +90,13 @@ function MenuItem({ item, onClick, active }: MenuItemProps) {
         ) : item === "Settings" ? (
           settingsIcon
         ) : (
-          <img className={`${item.toLowerCase()}_icon`} src={img} alt="" />
+          <img
+            className={`${item.toLowerCase()}_icon`}
+            width="35px"
+            height="35px"
+            src={img}
+            alt=""
+          />
         )}
       </div>
       <p>{item}</p>

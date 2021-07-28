@@ -3,6 +3,8 @@
   padding-bottom: 32vh;
   border-radius: 30px;
 
+  content-visibility: auto;
+
   background: var(--secondary-bg-color);
   padding-top: 10vh;
   opacity: 0;
@@ -20,7 +22,7 @@
   }
 
   .portfolio_container {
-    width: 95%;
+    width: 95.5%;
     background: var(--third-bg-color);
     transition: background-color 0.3s ease;
     border-radius: 20px;
@@ -66,7 +68,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 97%;
+    width: 98%;
     .infoboxD {
       margin-right: 10px;
       .infobox_bottom {
@@ -103,6 +105,9 @@
   .portfolio {
     padding-left: 208px;
     width: 88%;
+    .portfolio_container {
+      width: 86%;
+    }
     .page-title,
     .title {
       margin-left: 1%;
@@ -118,9 +123,11 @@
       padding: 25px 35px;
       height: fit-content;
       flex-direction: row;
-      width: 90%;
+      width: 81%;
+
       .balance_top:last-of-type > .infoboxD:last-child {
         border-right: none;
+        padding-right: 00px;
       }
     }
     .infoboxD {

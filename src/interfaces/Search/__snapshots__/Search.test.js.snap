@@ -2998,7 +2998,7 @@ exports[`Search should render corectly 1`] = `
             >
               <div
                 class="recharts-responsive-container"
-                style="width:90%;height:260px"
+                style="width:90%;height:180px"
               />
             </div>
           </div>
@@ -3210,7 +3210,9 @@ exports[`Search should render corectly 1`] = `
     >
       <img
         alt=""
+        height="150px"
         src="[object Object]"
+        width="150px"
       />
       <p>
         No results found

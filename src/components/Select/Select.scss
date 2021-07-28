@@ -1,114 +1,114 @@
 .crypto,
 .currency {
-	display: none;
+  display: none;
 }
 
 #crypto-items li,
 #currency-items li {
-	list-style: none;
-	padding-top: 5px;
-	padding-bottom: 5px;
+  list-style: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #crypto-items li:hover,
 #currency-items li:hover {
-	background: #312d49;
+  background: #312d49;
 }
 
 #crypto-items > li > span,
 .btn-crypto > li > span,
 #currency-items > li > span,
 .btn-currency > li > span {
-	margin-left: 30px;
-	cursor: pointer;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 /* item list */
 
 .crypto-list {
-	background: #1d1a3f;
-	height: 0;
-	width: 103px;
-	background: #2b263f;
-	transition: all 0.35s ease-in;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	overflow: hidden;
-	cursor: pointer;
-	position: absolute;
-	p {
-		padding-left: 11px;
-	}
-	transform: translateY(-25px);
-	z-index: 1000;
+  background: #1d1a3f;
+  height: 0;
+  width: 103px;
+  background: #2b263f;
+  transition: all 0.35s ease-in;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute;
+  p {
+    padding-left: 11px;
+  }
+  transform: translateY(-25px);
+  z-index: 1000;
 }
 .currency-list {
-	@extend .crypto-list;
-	transition: all 0.3s ease-in;
+  @extend .crypto-list;
+  transition: all 0.3s ease-in;
 }
 
 .crypto-list-active {
-	height: 168px;
+  height: 168px;
 }
 .currency-list-active {
-	height: 111px !important;
-	padding-top: 2px;
+  height: 111px !important;
+  padding-top: 2px;
 }
 
 .open {
-	display: flex !important;
+  display: flex !important;
 }
 
 .select-crypto-arrow,
 .select-currency-arrow {
-	width: 20px;
-	position: relative;
-	left: 37px;
-	top: 43px;
-	z-index: 101;
-	cursor: pointer;
-	pointer-events: none;
+  width: 20px;
+  position: relative;
+  left: 37px;
+  top: 43px;
+  z-index: 101;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 .btn-crypto {
-	outline: none;
-	position: relative;
-	bottom: 25px;
-	width: 103px;
-	padding-left: 15px;
-	color: var(--primary-font-color);
-	font-family: Karla;
-	text-align: start;
-	height: 100%;
-	border-radius: 15px;
-	background: #2b263f;
-	border: none;
-	cursor: pointer;
+  outline: none;
+  position: relative;
+  bottom: 25px;
+  width: 103px;
+  padding-left: 15px;
+  color: var(--primary-font-color);
+  font-family: Karla;
+  text-align: start;
+  height: 100%;
+  border-radius: 15px;
+  background: #2b263f;
+  border: none;
+  cursor: pointer;
 
-	z-index: 100;
+  z-index: 100;
 }
 
 .btn-currency {
-	@extend .btn-crypto;
+  @extend .btn-crypto;
 }
 
 .btn-crypto > li,
 .btn-currency > li {
-	list-style: none;
-	float: center;
-	position: relative;
-	left: -3px;
-	padding-bottom: 0px;
-	cursor: pointer;
-	z-index: 200;
+  list-style: none;
+  float: center;
+  position: relative;
+  left: -3px;
+  padding-bottom: 0px;
+  cursor: pointer;
+  z-index: 200;
 }
 
 @media only screen and (max-width: 992px) {
-	.btn-currency {
-		background: none;
-	}
+  .btn-currency {
+    background: none;
+  }
 
-	.currency-list {
-		background: var(--third-bg-color);
-	}
+  .currency-list {
+    background: var(--third-bg-color);
+  }
 }

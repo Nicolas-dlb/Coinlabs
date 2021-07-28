@@ -3,6 +3,9 @@
   padding-bottom: 17px;
   border-radius: 30px;
   z-index: 50;
+  display: none;
+  content-visibility: auto;
+
   background: var(--secondary-bg-color);
   padding-top: 10vh;
   opacity: 0;

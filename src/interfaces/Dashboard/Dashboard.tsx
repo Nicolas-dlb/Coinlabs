@@ -1,7 +1,6 @@
 import "./Dashboard.scss";
 import InfoBoxD from "interfaces/Dashboard/components/InfoBoxD/InfoBoxD";
 import InfoBoxM from "interfaces/Market/components/InfoBoxM/InfoBoxM";
-import { pure } from "recompose";
 import { useSelector } from "react-redux";
 import {
   selectHistory,
@@ -77,4 +76,4 @@ function Dashboard() {
   );
 }
 
-export default pure(Dashboard);
+export default Dashboard;

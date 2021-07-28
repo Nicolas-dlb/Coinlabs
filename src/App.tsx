@@ -1,18 +1,17 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import Header from "components/Header/Header";
+
 import "./App.scss";
 import Market from "interfaces/Market/Market";
 import Dashboard from "interfaces/Dashboard/Dashboard";
-import Menu from "components/Menu/Menu";
+
 import Login from "interfaces/Login/Login";
 import React, { useEffect } from "react";
 import Settings from "interfaces/Settings/Settings";
-import getData, { getHistoricalData } from "utils/api/api";
+import getData from "utils/api/api";
 import { useDispatch, useSelector } from "react-redux";
 import {
   loadCrypto,
-  loadHistory,
   selectHistory,
   selectMarket,
   setVariation,
@@ -37,7 +36,12 @@ import {
   setCryptoHistory,
   setWallets,
 } from "redux/reducers/walletsSlice";
-import { fetchWallet, updateUserWallet } from "utils/utils";
+import {
+  checkVariation,
+  fetchWallet,
+  updateUserWallet,
+  updateWallet,
+} from "utils/utils";
 import {
   login,
   logout,
@@ -46,6 +50,8 @@ import {
   resetProfilPic,
 } from "redux/reducers/userSlice";
 import { auth, db } from "firebaseConfig";
+import Header from "components/Header/Header";
+import Menu from "components/Menu/Menu";
 import Portfolio from "interfaces/Portfolio/Portfolio";
 import Changelog from "interfaces/Changelog/Changelog";
 
@@ -53,6 +59,12 @@ import Search from "interfaces/Search/Search";
 
 function App() {
   const a = useSelector(selectHistory);
+
+  // const Market = lazy(() => import("interfaces/Market/Market"));
+  // const Portfolio = lazy(() => import("interfaces/Portfolio/Portfolio"));
+  // const Changelog = lazy(() => import("interfaces/Changelog/Changelog"));
+  // const Settings = lazy(() => import("interfaces/Settings/Settings"));
+  // const Search = lazy(() => import("interfaces/Search/Search"));
 
   const dispatch = useDispatch();
   const wallet = useSelector(selectWallets);
@@ -64,258 +76,9 @@ function App() {
   const incomeHistory = useSelector(selectIncomeHistory);
   const cryptoHistory = useSelector(selectCryptoHistory);
 
-  function checkVariation() {
-    let ethereumMonth1: number;
-    let ethereum3Month1: number;
-    let ethereum6Month1: number;
-    let ethereumYear1: number;
-    let ethereumWeek1: number;
-
-    let bitcoinMonth1: number;
-    let bitcoin6Month1: number;
-    let bitcoin3Month1: number;
-    let bitcoinYear1: number;
-    let bitcoinWeek1: number;
-
-    let rippleMonth1: number;
-    let ripple6Month1: number;
-    let ripple3Month1: number;
-    let rippleYear1: number;
-    let rippleWeek1: number;
-
-    let litecoinMonth1: number;
-    let litecoin6Month1: number;
-    let litecoin3Month1: number;
-    let litecoinYear1: number;
-    let litecoinWeek1: number;
-
-    let neo6Month1: number;
-    let neoMonth1: number;
-    let neo3Month1: number;
-    let neoYear1: number;
-    let neoWeek1: number;
-
-    let bitcoinCap1: number;
-    let ethereumCap1: number;
-    let rippleCap1: number;
-    let litecoinCap1: number;
-    let neoCap1: number;
-
-    const get = () => {
-      let now: number | Date | any = new Date();
-      let lastMonth: number | Date | any = new Date();
-      let lastYear: number | Date | any = new Date();
-      let lastDay: number | Date | any = new Date();
-      let lastWeek: number | Date | any = new Date();
-      let last3Month: number | Date | any = new Date();
-      let last6Month: number | Date | any = new Date();
-      now = now.getTime();
-      now = (now - (now % 1000)) / 1000;
-
-      lastMonth.setMonth(lastMonth.getMonth() - 1);
-      lastMonth = (lastMonth - (lastMonth % 1000)) / 1000;
-
-      last3Month.setMonth(last3Month.getMonth() - 3);
-      last3Month = (last3Month - (last3Month % 1000)) / 1000;
-
-      last6Month.setMonth(last6Month.getMonth() - 6);
-      last6Month = (last6Month - (last6Month % 1000)) / 1000;
-
-      lastYear.setYear(lastYear.getFullYear() - 1);
-      lastYear = (lastYear - (lastYear % 1000)) / 1000;
-
-      lastDay.setDate(lastDay.getDate() - 1);
-      lastDay = (lastDay - (lastDay % 1000)) / 1000;
-
-      lastWeek.setDate(lastWeek.getDate() - 7);
-      lastWeek = (lastWeek - (lastWeek % 1000)) / 1000;
-
-      getHistoricalData("ethereum", lastMonth, now).then((data: any) => {
-        ethereumMonth1 = data?.prices;
-      });
-      getHistoricalData("ethereum", last3Month, now).then((data: any) => {
-        ethereum3Month1 = data?.prices;
-      });
-      getHistoricalData("ethereum", last6Month, now).then((data: any) => {
-        ethereum6Month1 = data?.prices;
-      });
-
-      getHistoricalData("ethereum", lastYear, now).then((data: any) => {
-        ethereumYear1 = data?.prices;
-      });
-      getHistoricalData("ethereum", lastWeek, now).then((data: any) => {
-        ethereumWeek1 = data?.prices;
-        ethereumCap1 = data?.market_caps;
-      });
-      getHistoricalData("bitcoin", lastMonth, now).then((data: any) => {
-        bitcoinMonth1 = data?.prices;
-      });
-      getHistoricalData("bitcoin", last6Month, now).then((data: any) => {
-        bitcoin6Month1 = data?.prices;
-      });
-      getHistoricalData("bitcoin", last3Month, now).then((data: any) => {
-        bitcoin3Month1 = data?.prices;
-      });
-
-      getHistoricalData("bitcoin", lastYear, now).then((data: any) => {
-        bitcoinYear1 = data?.prices;
-      });
-      getHistoricalData("bitcoin", lastWeek, now).then((data: any) => {
-        bitcoinWeek1 = data?.prices;
-        bitcoinCap1 = data?.market_caps;
-      });
-      getHistoricalData("ripple", lastMonth, now).then((data: any) => {
-        rippleMonth1 = data?.prices;
-      });
-      getHistoricalData("ripple", last6Month, now).then((data: any) => {
-        ripple6Month1 = data?.prices;
-      });
-      getHistoricalData("ripple", last3Month, now).then((data: any) => {
-        ripple3Month1 = data?.prices;
-      });
-
-      getHistoricalData("ripple", lastYear, now).then((data: any) => {
-        rippleYear1 = data?.prices;
-      });
-      getHistoricalData("ripple", lastWeek, now).then((data: any) => {
-        rippleWeek1 = data?.prices;
-        rippleCap1 = data?.market_caps;
-      });
-
-      getHistoricalData("litecoin", last6Month, now).then((data: any) => {
-        litecoin6Month1 = data?.prices;
-      });
-      getHistoricalData("litecoin", last3Month, now).then((data: any) => {
-        litecoin3Month1 = data?.prices;
-      });
-      getHistoricalData("litecoin", lastYear, now).then((data: any) => {
-        litecoinYear1 = data?.prices;
-      });
-      getHistoricalData("litecoin", lastWeek, now).then((data: any) => {
-        litecoinWeek1 = data?.prices;
-        litecoinCap1 = data?.market_caps;
-      });
-      getHistoricalData("litecoin", lastMonth, now).then((data: any) => {
-        litecoinMonth1 = data?.prices;
-      });
-      getHistoricalData("neo", lastMonth, now).then((data: any) => {
-        neoMonth1 = data?.prices;
-      });
-      getHistoricalData("neo", last6Month, now).then((data: any) => {
-        neo6Month1 = data?.prices;
-      });
-      getHistoricalData("neo", last3Month, now).then((data: any) => {
-        neo3Month1 = data?.prices;
-      });
-
-      getHistoricalData("neo", lastYear, now).then((data: any) => {
-        neoYear1 = data?.prices;
-      });
-      getHistoricalData("neo", lastWeek, now).then((data: any) => {
-        neoWeek1 = data?.prices;
-        neoCap1 = data?.market_caps;
-      });
-    };
-    get();
-    const load2 = () => {
-      if (
-        bitcoinMonth1 &&
-        bitcoinYear1 &&
-        bitcoin3Month1 &&
-        bitcoin6Month1 &&
-        ethereumYear1 &&
-        ethereum6Month1 &&
-        ethereum3Month1 &&
-        ethereumMonth1 &&
-        ripple6Month1 &&
-        ripple3Month1 &&
-        rippleYear1 &&
-        rippleMonth1 &&
-        litecoin6Month1 &&
-        litecoin3Month1 &&
-        litecoinYear1 &&
-        litecoinMonth1 &&
-        neo6Month1 &&
-        neo3Month1 &&
-        neoYear1 &&
-        neoMonth1
-      ) {
-        dispatch(
-          loadHistory({
-            bitcoinMonth: bitcoinMonth1,
-            bitcoinYear: bitcoinYear1,
-            bitcoin3Month: bitcoin3Month1,
-            bitcoin6Month: bitcoin6Month1,
-
-            ethereumYear: ethereumYear1,
-            ethereum3Month: ethereum3Month1,
-            ethereum6Month: ethereum6Month1,
-            ethereumMonth: ethereumMonth1,
-
-            ripple3Month: ripple3Month1,
-            ripple6Month: ripple6Month1,
-            rippleYear: rippleYear1,
-            rippleMonth: rippleMonth1,
-
-            litecoin3Month: litecoin3Month1,
-            litecoin6Month: litecoin6Month1,
-            litecoinMonth: litecoinMonth1,
-            litecoinYear: litecoinYear1,
-
-            neo3Month: neo3Month1,
-            neo6Month: neo6Month1,
-            neoYear: neoYear1,
-            neoMonth: neoMonth1,
-          })
-        );
-      } else {
-        setTimeout(() => {
-          load2();
-        }, 10);
-      }
-    };
-    const load = () => {
-      if (
-        bitcoinWeek1 &&
-        ethereumWeek1 &&
-        rippleWeek1 &&
-        litecoinWeek1 &&
-        neoWeek1 &&
-        bitcoinCap1 &&
-        ethereumCap1 &&
-        rippleCap1 &&
-        litecoinCap1 &&
-        neoCap1
-      ) {
-        dispatch(
-          loadHistory({
-            bitcoinCap: bitcoinCap1,
-            litecoinCap: litecoinCap1,
-            rippleCap: rippleCap1,
-            ethereumCap: ethereumCap1,
-            neoCap: neoCap1,
-
-            bitcoinWeek: bitcoinWeek1,
-            ethereumWeek: ethereumWeek1,
-            rippleWeek: rippleWeek1,
-            litecoinWeek: litecoinWeek1,
-            neoWeek: neoWeek1,
-          })
-        );
-      } else {
-        setTimeout(() => {
-          load();
-        }, 10);
-      }
-    };
-
-    load();
-    load2();
-  }
-
   useEffect(() => {
-    checkVariation();
-    setInterval(() => checkVariation(), 60000);
+    checkVariation(dispatch);
+    setInterval(() => checkVariation(dispatch), 60000);
     getData().then((data: any) => {
       if (data !== market && data) {
         dispatch(loadCrypto(data));
@@ -333,57 +96,32 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (user !== null && auth.currentUser && balanceHistory?.length > 0) {
-      db.collection("users").doc(auth.currentUser?.uid).set(
-        {
-          balanceHistory,
-        },
-        { merge: true }
-      );
+    if (user !== null) {
+      updateWallet(balanceHistory);
     }
   }, [balanceHistory, user]);
 
   useEffect(() => {
-    if (user !== null && auth.currentUser && walletHistory?.length > 0) {
-      db.collection("users").doc(auth.currentUser?.uid).set(
-        {
-          walletHistory,
-        },
-        { merge: true }
-      );
+    if (user !== null) {
+      updateWallet(walletHistory);
     }
   }, [walletHistory, user]);
 
   useEffect(() => {
-    if (user !== null && auth.currentUser && cryptoHistory?.length > 0) {
-      db.collection("users").doc(auth.currentUser?.uid).set(
-        {
-          cryptoHistory,
-        },
-        { merge: true }
-      );
+    if (user !== null) {
+      updateWallet(cryptoHistory);
     }
   }, [cryptoHistory, user]);
 
   useEffect(() => {
-    if (user !== null && auth.currentUser && incomeHistory?.length > 0) {
-      db.collection("users").doc(auth.currentUser?.uid).set(
-        {
-          incomeHistory,
-        },
-        { merge: true }
-      );
+    if (user !== null) {
+      updateWallet(incomeHistory);
     }
   }, [incomeHistory, user]);
 
   useEffect(() => {
-    if (user !== null && auth.currentUser && expensesHistory?.length > 0) {
-      db.collection("users").doc(auth.currentUser?.uid).set(
-        {
-          expensesHistory,
-        },
-        { merge: true }
-      );
+    if (user !== null) {
+      updateWallet(expensesHistory);
     }
   }, [expensesHistory, user]);
 
@@ -864,7 +602,9 @@ function App() {
           <div id="shadow" className="shadow" />
           <div id="container" className="container">
             <Dashboard />
+
             <Market />
+
             <Portfolio />
             <Changelog />
             <Settings />

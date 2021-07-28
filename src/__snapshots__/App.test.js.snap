@@ -12,148 +12,154 @@ exports[`App should render correctly 1`] = `
     }
   }
 >
-  <pure(App)>
-    <App>
-      <div
-        className="app"
-        id="app"
-      >
-        <Login>
+  <App>
+    <div
+      className="app"
+      id="app"
+    >
+      <Login>
+        <div
+          className="login-container"
+          id="login_container"
+        >
           <div
-            className="login-container"
-            id="login_container"
+            className="coinlabs"
+            id="coinlabs"
           >
             <div
-              className="coinlabs"
-              id="coinlabs"
+              className="stick1"
+              id="stick1"
+            />
+            <div
+              className="stick2"
+              id="stick2"
+            />
+            <div
+              className="stick3"
+              id="stick3"
+            />
+            <p>
+              Coinlabs
+            </p>
+          </div>
+          <div
+            className="login"
+            id="login"
+          >
+            <p
+              className="welcome"
             >
-              <div
-                className="stick1"
-                id="stick1"
-              />
-              <div
-                className="stick2"
-                id="stick2"
-              />
-              <div
-                className="stick3"
-                id="stick3"
-              />
-              <p>
-                Coinlabs
-              </p>
+              Welcome
+            </p>
+            <h3>
+              Log into your account
+            </h3>
+            <p
+              className="bad_log"
+              id="log_error"
+            >
+              Username or password incorrect
+            </p>
+            <div
+              className="input"
+            >
+              <label
+                htmlFor="email"
+              >
+                <div
+                  className="input_header"
+                >
+                  <p>
+                    E-mail or Username
+                  </p>
+                  <p
+                    className="input_advertise"
+                    id="email_error"
+                  />
+                </div>
+                <input
+                  autoComplete="off"
+                  id="email"
+                  onChange={[Function]}
+                  placeholder="Enter your e-mail or username"
+                  spellCheck="false"
+                  type="text"
+                />
+              </label>
+              <label
+                htmlFor="password"
+              >
+                <div
+                  className="input_header"
+                >
+                  <p>
+                    Password
+                  </p>
+                  <p
+                    className="input_advertise"
+                    id="password_error"
+                  />
+                </div>
+                <input
+                  autoComplete="off"
+                  id="password"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Enter your password"
+                  type="text"
+                />
+              </label>
             </div>
             <div
-              className="login"
-              id="login"
+              className="button"
             >
-              <p
-                className="welcome"
+              <button
+                onClick={[Function]}
+                type="button"
               >
-                Welcome
-              </p>
-              <h3>
-                Log into your account
-              </h3>
-              <p
-                className="bad_log"
-                id="log_error"
+                Login
+              </button>
+              <button
+                id="btn-demo-login"
+                onClick={[Function]}
+                type="button"
               >
-                Username or password incorrect
-              </p>
-              <div
-                className="input"
-              >
-                <label
-                  htmlFor="email"
-                >
-                  <div
-                    className="input_header"
-                  >
-                    <p>
-                      E-mail or Username
-                    </p>
-                    <p
-                      className="input_advertise"
-                      id="email_error"
-                    />
-                  </div>
-                  <input
-                    autoComplete="off"
-                    id="email"
-                    onChange={[Function]}
-                    placeholder="Enter your e-mail or username"
-                    spellCheck="false"
-                    type="text"
-                  />
-                </label>
-                <label
-                  htmlFor="password"
-                >
-                  <div
-                    className="input_header"
-                  >
-                    <p>
-                      Password
-                    </p>
-                    <p
-                      className="input_advertise"
-                      id="password_error"
-                    />
-                  </div>
-                  <input
-                    autoComplete="off"
-                    id="password"
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    placeholder="Enter your password"
-                    type="text"
-                  />
-                </label>
-              </div>
-              <div
-                className="button"
-              >
-                <button
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Login
-                </button>
-                <button
-                  id="btn-demo-login"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Demo Login
-                </button>
-              </div>
-              <div
-                className="not_register"
-              >
-                <p>
-                  Not registered yet?
-                </p>
-                <p
-                  className="to_register"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  Register
-                   
-                  <svg
-                    fill="#fff"
-                    viewBox="0 0 492 492"
-                    width="12px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M464.3 207.4l0.8 0.2H135.9l103.5-103.7c5.1-5.1 7.8-11.9 7.8-19.1 0-7.2-2.8-14-7.8-19.1L223.3 49.5c-5.1-5.1-11.8-7.9-19-7.9 -7.2 0-14 2.8-19 7.8L7.8 226.9C2.8 232 0 238.8 0 246c0 7.2 2.8 14 7.8 19.1l177.4 177.4c5.1 5.1 11.8 7.8 19 7.8 7.2 0 13.9-2.8 19-7.8l16.1-16.1c5.1-5.1 7.8-11.8 7.8-19 0-7.2-2.8-13.6-7.8-18.7L134.7 284.4h330c14.8 0 27.3-12.8 27.3-27.6v-22.8C492 219.2 479.2 207.4 464.3 207.4z"
-                    />
-                  </svg>
-                </p>
-              </div>
+                Demo Login
+              </button>
             </div>
+            <div
+              className="not_register"
+            >
+              <p>
+                Not registered yet?
+              </p>
+              <p
+                className="to_register"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+              >
+                Register
+                 
+                <svg
+                  fill="#fff"
+                  viewBox="0 0 492 492"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M464.3 207.4l0.8 0.2H135.9l103.5-103.7c5.1-5.1 7.8-11.9 7.8-19.1 0-7.2-2.8-14-7.8-19.1L223.3 49.5c-5.1-5.1-11.8-7.9-19-7.9 -7.2 0-14 2.8-19 7.8L7.8 226.9C2.8 232 0 238.8 0 246c0 7.2 2.8 14 7.8 19.1l177.4 177.4c5.1 5.1 11.8 7.8 19 7.8 7.2 0 13.9-2.8 19-7.8l16.1-16.1c5.1-5.1 7.8-11.8 7.8-19 0-7.2-2.8-13.6-7.8-18.7L134.7 284.4h330c14.8 0 27.3-12.8 27.3-27.6v-22.8C492 219.2 479.2 207.4 464.3 207.4z"
+                  />
+                </svg>
+              </p>
+            </div>
+          </div>
+          <Register
+            register={[Function]}
+            setEmail={[Function]}
+            setPassword={[Function]}
+            setPicture={[Function]}
+            setUserName={[Function]}
+          >
             <div
               className="register_container"
             >
@@ -308,10 +314,10 @@ exports[`App should render correctly 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-        </Login>
-      </div>
-    </App>
-  </pure(App)>
+          </Register>
+        </div>
+      </Login>
+    </div>
+  </App>
 </Provider>
 `;

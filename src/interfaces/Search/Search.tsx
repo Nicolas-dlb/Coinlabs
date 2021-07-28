@@ -41,7 +41,7 @@ function Search() {
       </div>
       <div id="no_results" className="no_results_found">
         <div className="no_result">
-          <img src={toTheStars} alt="" />
+          <img src={toTheStars} width="150px" height="150px" alt="" />
           <p>No results found</p>
         </div>
       </div>

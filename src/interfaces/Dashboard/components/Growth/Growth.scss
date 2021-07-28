@@ -1,6 +1,6 @@
 .growth {
   width: 93%;
-  height: 44vh;
+  height: 36vh;
   background-color: var(--third-bg-color);
   border-radius: 20px;
   margin-left: 10px;
@@ -64,7 +64,7 @@
 
   .graph {
     position: relative;
-    top: 127px;
+    top: 0px;
     .grid {
       display: none !important;
     }
@@ -73,15 +73,15 @@
       left: 2%;
       right: 2%;
     }
-    .recharts-responsive-container {
+    .recharts-surface {
       top: -7.5vh;
     }
   }
 }
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 650px) {
   .growth {
     .graph {
-      top: 30px;
+      top: -50px;
     }
   }
 }
@@ -90,14 +90,21 @@
   .growth {
     width: 99%;
     margin-left: 0;
+    height: 44vh;
     .graph_container {
       width: 97%;
       position: relative;
-      top: 4vh;
+      top: 2vh;
+    }
+    .graph {
+      .recharts-surface {
+        position: relative;
+        top: 60px;
+      }
     }
     .graph::after {
       top: -4vh;
-      bottom: -5vh;
+      bottom: -12vh;
       width: 98.2%;
     }
     .tabs_left {

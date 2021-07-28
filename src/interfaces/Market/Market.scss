@@ -2,6 +2,7 @@
   padding-left: 10px;
   padding-bottom: 20px;
   border-radius: 30px;
+  content-visibility: auto;
 
   background: var(--secondary-bg-color);
   padding-top: 10vh;
@@ -12,7 +13,7 @@
   transition: background-color 0.3s ease;
   position: absolute;
   top: 0;
-  width: 97%;
+  width: 97.3%;
 
   .title {
     margin-left: 1%;

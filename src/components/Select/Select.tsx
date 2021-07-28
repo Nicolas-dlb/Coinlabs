@@ -28,6 +28,13 @@ function Select({
     secondType = "crypto";
     arrow = "select-currency-arrow";
     firstValue = "Balance";
+  } else if (items === "crypto2") {
+    const langArray2: any = [];
+    array = langArray2;
+    type = "crypto2";
+    secondType = "crypto";
+    arrow = "select-crypto2-arrow";
+    firstValue = "Bitcoin";
   }
 
   useEffect(() => {
@@ -35,9 +42,12 @@ function Select({
     $(`.${type} option`).each(function loadItems() {
       const value = $(this).text();
       const item = `<li><p>${value}</p></li>`;
-      array.push(item);
+      if (array.length < 6) {
+        array.push(item);
+      }
     });
     // set options with this array
+
     $(`#${type}-items`).html(array);
 
     // Set the button value to the first element of the array
@@ -85,7 +95,7 @@ function Select({
     <>
       <div>
         <select className={`${type} exchange_element`}>
-          {items === "crypto" ? (
+          {items === "crypto" || items === "crypto2" ? (
             <>
               <option
                 className="option exchange_element"

@@ -1,6 +1,7 @@
 .portfolio_item {
   display: flex;
   width: 92%;
+  margin-right: 2px;
   align-items: center;
   justify-content: flex-start;
   padding-top: 3vh;
@@ -44,6 +45,8 @@
 @media only screen and (min-width: 992px) {
   .portfolio_item {
     height: 4vh;
+    width: 92%;
+    margin-right: -0px;
     padding-top: 3vh !important;
     &:first-of-type {
       padding-top: 2vh !important;
@@ -74,9 +77,12 @@
         top: 2px;
       }
     }
+    .portfolio_graph {
+      margin-left: 25px;
+    }
     .portfolio_variation {
       display: flex !important;
-
+      margin-left: 20px;
       svg {
         width: 15px;
         margin-right: 5px;
