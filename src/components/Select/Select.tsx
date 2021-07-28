@@ -28,9 +28,10 @@ function Select({
     secondType = "crypto";
     arrow = "select-currency-arrow";
     firstValue = "Balance";
-  } else if (items === "crypto2") {
-    const langArray2: any = [];
-    array = langArray2;
+  }
+  if (items === "crypto2") {
+    const langArray3: any = [];
+    array = langArray3;
     type = "crypto2";
     secondType = "crypto";
     arrow = "select-crypto2-arrow";
