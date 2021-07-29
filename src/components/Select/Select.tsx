@@ -43,9 +43,8 @@ function Select({
     $(`.${type} option`).each(function loadItems() {
       const value = $(this).text();
       const item = `<li><p>${value}</p></li>`;
-      if (array.length < 6) {
-        array.push(item);
-      }
+
+      array.push(item);
     });
     // set options with this array
 
@@ -71,26 +70,21 @@ function Select({
       $("#select-c").removeClass("toggle-select");
       e.stopPropagation();
     });
-    // open options panel on click
+
     $(`.btn-${type}, .${arrow}`).click((e) => {
       $(`.${secondType}-list`).removeClass(`${secondType}-list-active`);
       $(`.${type}-list`).toggleClass(`${type}-list-active`);
 
       e.stopPropagation();
     });
+
     // close options panel when click outside
     $(document).click(() => {
       $(`.${type}-list`).removeClass(`${type}-list-active`);
+
       $("#select-c").removeClass("toggle-select");
     });
   }, []);
-
-  $(`.btn-${type}, .${arrow}`).click((e) => {
-    $(`.${secondType}-list`).removeClass(`${secondType}-list-active`);
-    $(`.${type}-list`).toggleClass(`${type}-list-active`);
-
-    e.stopPropagation();
-  });
 
   return (
     <>
@@ -197,8 +191,16 @@ function Select({
             type="button"
             className={`btn-${type} exchange_element`}
             value="All"
+            onClick={() => {
+              // document
+              //   .getElementById(`${type}-list`)!
+              //   .classList.toggle(`${type}-list-active`);
+              // document
+              //   .getElementById(`${secondType}-list`)!
+              //   .classList.remove(`${secondType}-list-active`);
+            }}
           />
-          <div className={`${type}-list exchange_element`}>
+          <div id={`${type}-list`} className={`${type}-list exchange_element`}>
             <ul id={`${type}-items`} />
           </div>
         </div>

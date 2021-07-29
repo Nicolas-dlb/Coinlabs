@@ -163,7 +163,7 @@ function PortfolioStats({ search }: PortfolioStatsProps) {
               }}
               className="tabs_right"
             >
-              <Select items="crypto2" setCryptoSelected={setSelectedCrypto} />
+              <Select items="crypto" setCryptoSelected={setSelectedCrypto} />
             </div>
           )}
         </div>

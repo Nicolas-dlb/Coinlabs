@@ -189,7 +189,9 @@ function Graph({
                 r: number === 0 ? 5 : 0,
               }}
               onMouseOver={() => {
-                setNumber(0);
+                if (selected.includes("All")) {
+                  setNumber(0);
+                }
               }}
               strokeWidth={
                 selected.includes("Bitcoin") ||
@@ -227,7 +229,9 @@ function Graph({
                 r: number === 1 ? 5 : 0,
               }}
               onMouseOver={() => {
-                setNumber(1);
+                if (selected.includes("All")) {
+                  setNumber(1);
+                }
               }}
               strokeWidth={
                 selected.includes("Ethereum") || selected.includes("All")
@@ -252,7 +256,9 @@ function Graph({
                 r: number === 2 ? 5 : 0,
               }}
               onMouseOver={() => {
-                setNumber(2);
+                if (selected.includes("All")) {
+                  setNumber(2);
+                }
               }}
               strokeWidth={
                 selected.includes("Litecoin") || selected.includes("All")
@@ -278,7 +284,9 @@ function Graph({
                 r: number === 3 ? 5 : 0,
               }}
               onMouseOver={() => {
-                setNumber(3);
+                if (selected.includes("All")) {
+                  setNumber(3);
+                }
               }}
               strokeWidth={
                 selected.includes("Neo") || selected.includes("All") ? 1 : 0
@@ -302,7 +310,9 @@ function Graph({
                 r: number === 4 ? 5 : 0,
               }}
               onMouseOver={() => {
-                setNumber(4);
+                if (selected.includes("All")) {
+                  setNumber(4);
+                }
               }}
               strokeWidth={
                 selected.includes("Ripple") || selected.includes("All") ? 1 : 0
