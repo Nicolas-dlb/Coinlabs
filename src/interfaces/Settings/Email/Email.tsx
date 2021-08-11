@@ -11,6 +11,30 @@ function Email() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
 
+  const changeEmail = () => {
+    const user = auth.currentUser!;
+    const newEmail: any = $("#set_email").val();
+    user
+      .updateEmail(newEmail)
+      .then(() => {
+        // Update successful
+        // ...
+      })
+      .catch((error) => {
+        // An error occurred
+        // ...
+      });
+    db.collection("users").doc(auth.currentUser?.uid).set(
+      {
+        email: newEmail,
+      },
+      { merge: true }
+    );
+    dispatch(setUserEmail(newEmail));
+    setUserEmail(newEmail);
+    $("#set_email").val("");
+  };
+
   // const updateEmail = (newEmail: string) => {
   //   db.collection("users")
   //     .doc(auth.currentUser!.uid)
@@ -46,14 +70,7 @@ function Email() {
             placeholder="Enter new email"
           />
         </div>
-        <button
-          onClick={() => {
-            dispatch(setUserEmail(email));
-            $("#set_email").val("");
-          }}
-          type="button"
-          className="btn_settings"
-        >
+        <button onClick={changeEmail} type="button" className="btn_settings">
           Update
         </button>
       </div>

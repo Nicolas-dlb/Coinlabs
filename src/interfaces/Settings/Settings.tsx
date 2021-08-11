@@ -9,6 +9,7 @@ import {
   selectUserEmail,
   selectUserName,
   setProfilPic,
+  setUserEmail,
   setUsername,
 } from "redux/reducers/userSlice";
 import "./Settings.scss";
