@@ -183,7 +183,478 @@ function Login() {
   };
 
   const register = () => {
-    valideRegister(email, password, picture, userName, emailExist);
+    if (!password && !email && !userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      document.getElementById("password_register")!.classList.add("bad_input");
+      document.getElementById("email_register")!.classList.add("bad_input");
+
+      document.getElementById("username_register")!.classList.add("bad_input");
+      return;
+    }
+    if (
+      !password &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+
+    if (
+      password.length < 6 &&
+      email &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 characters";
+      document.getElementById("password_advertise")!.style.width = "10vw";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+
+    if (!password && emailExist(email) && !userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (password.length < 6 && !email && !userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 charachters";
+      document.getElementById("password_advertise")!.style.width = "10vw";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (password && password.length < 6 && !email && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 charachters";
+      document.getElementById("password_advertise")!.style.width = "10vw";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (!password && !email && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (password.length >= 6 && !email && !userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      password &&
+      password.length < 6 &&
+      email &&
+      !emailExist(email) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 charachters";
+      document.getElementById("password_advertise")!.style.width = "10vw";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      !password &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      !emailExist(email) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      password.length >= 6 &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      !emailExist(email) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+    }
+    if (
+      password.length >= 6 &&
+      email &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      !emailExist(email) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      password.length >= 6 &&
+      email &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      password.length >= 6 &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      emailExist(email) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      password.length >= 6 &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      !emailExist(email) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (password.length >= 6 && !email && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      password.length >= 6 &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (password.length >= 6 && emailExist(email) && !userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (password.length >= 6 && emailExist(email) && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML = "";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "0";
+      return;
+    }
+    if (
+      !password &&
+      email &&
+      (!email.includes("@") ||
+        (!email.includes(".com") && !email.includes(".fr"))) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      !password &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      emailExist(email) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      !password &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      !emailExist(email) &&
+      userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      password.length < 6 &&
+      email &&
+      (email.includes("@") ||
+        (email.includes(".com") && email.includes(".fr"))) &&
+      !emailExist(email) &&
+      !userName
+    ) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      document.getElementById("email_advertise")!.innerHTML = "";
+      document.getElementById("email_advertise")!.style.opacity = "0";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 characters";
+      document.getElementById("password_advertise")!.style.width = "10vw";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+
+    if (!password && emailExist(email) && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (password.length < 6 && emailExist(email) && userName) {
+      document.getElementById("username_advertise")!.innerHTML = "";
+      document.getElementById("username_advertise")!.style.opacity = "0";
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 characters";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (!userName) {
+      document.getElementById("username_advertise")!.innerHTML =
+        "Username required";
+      document.getElementById("username_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (!email) {
+      document.getElementById("email_advertise")!.innerHTML = "Email required";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (
+      !email.includes("@") ||
+      (!email.includes(".com") && !email.includes(".fr"))
+    ) {
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email is badly formatted";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (emailExist(email)) {
+      document.getElementById("email_advertise")!.innerHTML =
+        "Email already registered";
+      document.getElementById("email_advertise")!.style.opacity = "1";
+      return;
+    }
+
+    if (!password) {
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password required";
+      document.getElementById("password_advertise")!.style.width =
+        "fit-content";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+      return;
+    }
+    if (password.length < 6) {
+      document.getElementById("password_advertise")!.innerHTML =
+        "Password must contain at least 6 characters";
+      document.getElementById("password_advertise")!.style.width = "18vh";
+      document.getElementById("password_advertise")!.style.opacity = "1";
+    }
     loginAnimation();
 
     setUserList({

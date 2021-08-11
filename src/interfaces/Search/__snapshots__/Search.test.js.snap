@@ -2908,7 +2908,7 @@ exports[`Search should render corectly 1`] = `
             >
               <div>
                 <select
-                  class="crypto exchange_element"
+                  class="crypto2 exchange_element"
                 >
                   <option
                     class="option exchange_element"
@@ -2954,10 +2954,10 @@ exports[`Search should render corectly 1`] = `
                   </option>
                 </select>
                 <div
-                  class="crypto-select exchange_element"
+                  class="crypto2-select exchange_element"
                 >
                   <svg
-                    class="select-crypto-arrow exchange_element"
+                    class="select-crypto2-arrow exchange_element"
                     fill="#605b95"
                     height="24px"
                     viewBox="0 0 24 24"
@@ -2974,16 +2974,17 @@ exports[`Search should render corectly 1`] = `
                   </svg>
                   <button
                     aria-label="btn-select"
-                    class="btn-crypto exchange_element"
+                    class="btn-crypto2 exchange_element"
                     id="btn-select"
                     type="button"
                     value="All"
                   />
                   <div
-                    class="crypto-list exchange_element"
+                    class="crypto2-list exchange_element"
+                    id="crypto2-list"
                   >
                     <ul
-                      id="crypto-items"
+                      id="crypto2-items"
                     />
                   </div>
                 </div>

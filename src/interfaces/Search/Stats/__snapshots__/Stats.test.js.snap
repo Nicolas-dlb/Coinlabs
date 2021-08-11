@@ -92,12 +92,12 @@ exports[`Stats should render correctly 1`] = `
               tabIndex={0}
             >
               <Select
-                items="crypto"
+                items="crypto2"
                 setCryptoSelected={[Function]}
               >
                 <div>
                   <select
-                    className="crypto exchange_element"
+                    className="crypto2 exchange_element"
                   >
                     <option
                       className="option exchange_element"
@@ -143,10 +143,10 @@ exports[`Stats should render correctly 1`] = `
                     </option>
                   </select>
                   <div
-                    className="crypto-select exchange_element"
+                    className="crypto2-select exchange_element"
                   >
                     <svg
-                      className="select-crypto-arrow exchange_element"
+                      className="select-crypto2-arrow exchange_element"
                       fill="#605b95"
                       height="24px"
                       viewBox="0 0 24 24"
@@ -163,16 +163,18 @@ exports[`Stats should render correctly 1`] = `
                     </svg>
                     <button
                       aria-label="btn-select"
-                      className="btn-crypto exchange_element"
+                      className="btn-crypto2 exchange_element"
                       id="btn-select"
+                      onClick={[Function]}
                       type="button"
                       value="All"
                     />
                     <div
-                      className="crypto-list exchange_element"
+                      className="crypto2-list exchange_element"
+                      id="crypto2-list"
                     >
                       <ul
-                        id="crypto-items"
+                        id="crypto2-items"
                       />
                     </div>
                   </div>

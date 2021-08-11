@@ -135,11 +135,13 @@ exports[`Growth should render correctly 1`] = `
                   aria-label="btn-select"
                   className="btn-currency exchange_element"
                   id="btn-select"
+                  onClick={[Function]}
                   type="button"
                   value="All"
                 />
                 <div
                   className="currency-list exchange_element"
+                  id="currency-list"
                 >
                   <ul
                     id="currency-items"

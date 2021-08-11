@@ -159,11 +159,13 @@ exports[`Portfolio stats should render correctly 1`] = `
                       aria-label="btn-select"
                       className="btn-crypto exchange_element"
                       id="btn-select"
+                      onClick={[Function]}
                       type="button"
                       value="All"
                     />
                     <div
                       className="crypto-list exchange_element"
+                      id="crypto-list"
                     >
                       <ul
                         id="crypto-items"

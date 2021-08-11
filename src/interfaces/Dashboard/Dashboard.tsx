@@ -8,6 +8,7 @@ import {
   selectVariation,
 } from "redux/reducers/marketSlice";
 import React from "react";
+import { pure } from "recompose";
 import Transactions from "./components/Transactions/Transactions";
 import Growth from "./components/Growth/Growth";
 
@@ -76,4 +77,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default pure(Dashboard);
