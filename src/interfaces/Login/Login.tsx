@@ -44,24 +44,27 @@ function Login() {
   const [userList, setUserList]: any = useState({});
   const length = Object.keys(userList)?.length;
   useEffect(() => {
-    firebase
-      .firestore()
-      .collection("users")
-      .get()
-      .then((querySnapshot: any) => {
-        querySnapshot.forEach((User: any) => {
-          const USER = User.data().username;
-          const PASSWORD = User.data().password;
-          const EMAIL = User.data().email;
-          setUserList({
-            ...userList,
-            [USER]: {
-              Email: EMAIL,
-              Password: PASSWORD,
-            },
+    const getUserList = () => {
+      firebase
+        .firestore()
+        .collection("users")
+        .get()
+        .then((querySnapshot: any) => {
+          querySnapshot.forEach((User: any) => {
+            const USER = User.data().username;
+            const PASSWORD = User.data().password;
+            const EMAIL = User.data().email;
+            setUserList({
+              ...userList,
+              [USER]: {
+                Email: EMAIL,
+                Password: PASSWORD,
+              },
+            });
           });
         });
-      });
+    };
+    return getUserList;
   }, [length]);
   // let baseEmail: any;
   const handleLogin = () => {
