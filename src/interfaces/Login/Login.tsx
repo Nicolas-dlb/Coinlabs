@@ -64,6 +64,7 @@ function Login() {
           });
         });
     };
+    getUserList();
     return getUserList;
   }, [length]);
   // let baseEmail: any;
