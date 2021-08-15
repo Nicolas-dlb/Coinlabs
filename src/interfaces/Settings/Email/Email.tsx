@@ -68,6 +68,11 @@ function Email() {
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Enter new email"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                changeEmail();
+              }
+            }}
           />
         </div>
         <button onClick={changeEmail} type="button" className="btn_settings">

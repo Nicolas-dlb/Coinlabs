@@ -9,6 +9,11 @@ function Founds() {
   const dispatch = useDispatch();
   const wallet = useSelector(selectWallets);
   const [amount, setAmount] = useState(0);
+  const setWallet = () => {
+    dispatch(setWallets({ usd: wallet.usd + amount }));
+    $("#add_founds").val("");
+    setAmount(0);
+  };
   return (
     <div className="settings_founds">
       <h3>Founds</h3>
@@ -21,14 +26,17 @@ function Founds() {
             type="number"
             min="0"
             placeholder="Enter amount"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                setWallet();
+              }
+            }}
           />
         </div>
         <button
           className="btn_settings"
           onClick={() => {
-            dispatch(setWallets({ usd: wallet.usd + amount }));
-            $("#add_founds").val("");
-            setAmount(0);
+            setWallet();
           }}
           type="button"
         >

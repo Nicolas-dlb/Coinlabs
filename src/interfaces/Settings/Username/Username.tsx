@@ -20,6 +20,11 @@ function Username({ onClick }: UsernameProps) {
             className="username_element"
             spellCheck="false"
             autoComplete="off"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                onClick();
+              }
+            }}
           />
         </div>
         <button className="btn_settings" type="button" onClick={onClick}>
