@@ -112,6 +112,9 @@ function Portfolio({ name }: PortfolioItemProps) {
 
   useEffect(() => {
     if (history[timeline]) {
+      document.querySelectorAll(".portfolio_graph")!.forEach((node) => {
+        node.classList.remove("portfolio_graph_offline");
+      });
       setData(
         [...Array(history[timeline].length).keys()].map((x) => ({
           tokens: x,
@@ -119,6 +122,9 @@ function Portfolio({ name }: PortfolioItemProps) {
         }))
       );
     } else {
+      document.querySelectorAll(".portfolio_graph")!.forEach((node) => {
+        node.classList.add("portfolio_graph_offline");
+      });
       setData(
         [...Array(24).keys()].map((x) => ({
           tokens: x,

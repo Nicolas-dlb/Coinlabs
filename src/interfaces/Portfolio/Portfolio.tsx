@@ -7,7 +7,6 @@ function Portfolio() {
   return (
     <div id="portfolio" className="portfolio">
       <p className="page-title">Portfolio</p>
-
       <div className="portfolio_top">
         <div className="balance_container">
           <div className="balance_top">
