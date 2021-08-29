@@ -91,6 +91,12 @@
       bottom: 5px;
       pointer-events: none;
     }
+    .header_notification {
+      fill: var(--primary-font-color) !important;
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+    }
 
     #btn_search_mobile {
       fill: var(--primary-font-color);
@@ -188,6 +194,9 @@ label {
       bottom: 5px;
       margin-left: 0;
     }
+  }
+  .search_header {
+    display: none;
   }
   .search_icon_active {
     background: linear-gradient(
