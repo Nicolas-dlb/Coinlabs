@@ -5,6 +5,12 @@
 }
 * {
   -webkit-tap-highlight-color: transparent;
+  &::-moz-selection {
+    background: #0fac5e;
+  }
+  &::selection {
+    background: #0fac5e;
+  }
 }
 
 .shadow {
