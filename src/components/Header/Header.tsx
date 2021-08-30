@@ -298,7 +298,22 @@ function Header() {
 
         <img className="header_user_icon" src={profilPic || john} alt="" />
 
-        <div role="button" tabIndex={0} className="header_user_name">
+        <div
+          role="button"
+          tabIndex={0}
+          id="header_user_name"
+          onKeyDown={() => {
+            document
+              .getElementById("header_user_logout")!
+              .classList.toggle("header_user_logout_active");
+          }}
+          onClick={() => {
+            document
+              .getElementById("header_user_logout")!
+              .classList.toggle("header_user_logout_active");
+          }}
+          className="header_user_name"
+        >
           <p className="username">{username}</p>
           <svg
             className="header_arrow"

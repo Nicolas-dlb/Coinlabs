@@ -279,7 +279,7 @@ label {
       display: flex !important;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      cursor: pointer !important;
       padding: 5px;
       background: var(--app-bg);
       min-width: 60px;
@@ -288,7 +288,6 @@ label {
           color: var(--primary-font-color);
         }
         .header_user_logout {
-          bottom: -17px;
           span:hover {
             color: var(--primary-font-color);
           }
@@ -299,6 +298,9 @@ label {
         }
       }
 
+      .header_user_logout_active {
+        bottom: -17px !important;
+      }
       .header_arrow {
         fill: var(--secondary-font-color);
         width: 10px;
