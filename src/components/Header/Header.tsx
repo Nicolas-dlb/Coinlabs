@@ -302,6 +302,11 @@ function Header() {
           role="button"
           tabIndex={0}
           id="header_user_name"
+          onBlur={() => {
+            document
+              .getElementById("header_user_logout")!
+              .classList.remove("header_user_logout_active");
+          }}
           onKeyDown={() => {
             document
               .getElementById("header_user_logout")!
@@ -314,8 +319,22 @@ function Header() {
           }}
           className="header_user_name"
         >
-          <p className="username">{username}</p>
+          <p
+            onFocus={() => {}}
+            onMouseOver={() => {
+              document.getElementById("header_arrow")!.style.fill =
+                "var(--primary-font-color)";
+            }}
+            onMouseLeave={() => {
+              document.getElementById("header_arrow")!.style.fill =
+                "var(--secondary-font-color)";
+            }}
+            className="username"
+          >
+            {username}
+          </p>
           <svg
+            id="header_arrow"
             className="header_arrow"
             xmlns="http://www.w3.org/2000/svg"
             width="452"

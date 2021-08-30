@@ -283,18 +283,15 @@ label {
       padding: 5px;
       background: var(--app-bg);
       min-width: 60px;
+      .username:hover {
+        color: var(--primary-font-color);
+      }
+
       &:hover {
-        .username {
-          color: var(--primary-font-color);
-        }
         .header_user_logout {
           span:hover {
             color: var(--primary-font-color);
           }
-        }
-
-        svg {
-          fill: var(--primary-font-color);
         }
       }
 
