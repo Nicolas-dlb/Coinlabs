@@ -63,7 +63,7 @@ function Header() {
       document.getElementById("logo_stick1")!.style.animation = "none";
       document.getElementById("logo_stick2")!.style.animation = "none";
       document.getElementById("logo_stick3")!.style.animation = "none";
-    }, 1600);
+    }, 1000);
   };
 
   const dispatch = useDispatch();
@@ -302,11 +302,6 @@ function Header() {
           role="button"
           tabIndex={0}
           id="header_user_name"
-          onBlur={() => {
-            document
-              .getElementById("header_user_logout")!
-              .classList.remove("header_user_logout_active");
-          }}
           onKeyDown={() => {
             document
               .getElementById("header_user_logout")!
