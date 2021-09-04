@@ -91,6 +91,7 @@
   .portfolio {
     bottom: 261vh;
     height: 100%;
+
     .infobox_bottom,
     input {
       font-size: 16px !important;
@@ -103,8 +104,9 @@
 
 @media only screen and (min-width: 992px) {
   .portfolio {
-    padding-left: 208px;
-    width: 88%;
+    padding-left: 200px;
+    width: 95%;
+    top: -6px;
     .portfolio_container {
       width: 86%;
     }
