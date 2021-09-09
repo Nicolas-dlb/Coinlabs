@@ -56,6 +56,8 @@ import Portfolio from "interfaces/Portfolio/Portfolio";
 import Changelog from "interfaces/Changelog/Changelog";
 
 import Search from "interfaces/Search/Search";
+import { loadNotifications, resetNotifications } from "redux/reducers/appSlice";
+import Notif from "interfaces/Notif/Notif";
 
 function App() {
   const a = useSelector(selectHistory);
@@ -141,6 +143,7 @@ function App() {
                 dispatch(loadIncomeHistory(data.incomeHistory));
                 dispatch(loadExpensesHistory(data.expensesHistory));
                 dispatch(loadWalletHistory(data.walletHistory));
+                dispatch(loadNotifications(data.notifications));
                 if (data.profilPic) {
                   dispatch(setProfilPic(data.profilPic));
                 }
@@ -152,6 +155,7 @@ function App() {
           dispatch(resetIncomeHistory());
           dispatch(resetExpensesHistory());
           dispatch(resetWalletHistory());
+          dispatch(resetNotifications());
         }
 
         setTimeout(() => {
@@ -602,13 +606,12 @@ function App() {
           <div id="shadow" className="shadow" />
           <div id="container" className="container">
             <Dashboard />
-
             <Market />
-
             <Portfolio />
             <Changelog />
             <Settings />
             <Search />
+            <Notif />
           </div>
         </>
       )}

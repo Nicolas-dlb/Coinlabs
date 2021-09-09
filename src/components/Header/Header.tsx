@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { auth } from "firebaseConfig";
@@ -5,15 +7,53 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectProfilPic, selectUserName } from "redux/reducers/userSlice";
 import john from "assets/pictures/john.png";
 import $ from "jquery";
-import { setSearch } from "redux/reducers/appSlice";
+import { selectNotifications, setSearch } from "redux/reducers/appSlice";
 import disableScroll from "disable-scroll";
+import Notifications from "./notifications/Notifications";
 
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
   const username = useSelector(selectUserName);
   const profilPic = useSelector(selectProfilPic);
+  const [notificationActive, setNotificationActive] = useState(false);
+  const [notif, setNotif] = useState(false);
 
+  $(".notification_title not").click(() => {
+    setNotificationActive(false);
+  });
+  const n = useSelector(selectNotifications);
+  let a = false;
+  n.map((x: any) => (x.read === false ? (a = true) : x));
   const logoutColor = menuActive ? "#787878" : "#FFF";
+
+  useEffect(() => {
+    const event = () => {
+      $(".app").click((e) => {
+        if (!e.target.classList.contains("not")) {
+          if (notificationActive === true) setNotificationActive(false);
+        }
+        if (!e.target.classList.contains("log")) {
+          if (document.getElementById("header_user_logout")) {
+            document
+              .getElementById("header_user_logout")!
+              .classList.remove("header_user_logout_active");
+          }
+        }
+      });
+    };
+    event();
+    return event;
+  }, []);
+  // $(".app").click((e) => {
+  //   if (!e.target.classList.contains("not")) {
+  //     if (notificationActive === true) setNotificationActive(false);
+  //   }
+  //   if (!e.target.classList.contains("log")) {
+  //     document
+  //       .getElementById("header_user_logout")!
+  //       .classList.remove("header_user_logout_active");
+  //   }
+  // });
 
   const handleClick = () => {
     document.getElementById("toggleMenu")!.classList.toggle("is-active");
@@ -295,7 +335,29 @@ function Header() {
           <path d="M255.2 468.6H63.8c-11.7 0-21.3-9.5-21.3-21.3V64.6c0-11.7 9.5-21.3 21.3-21.3H255.2c11.8 0 21.3-9.5 21.3-21.3S266.9 0.9 255.2 0.9H63.8C28.6 0.9 0 29.5 0 64.6v382.7c0 35.2 28.6 63.8 63.8 63.8H255.2c11.8 0 21.3-9.5 21.3-21.3C276.4 478.1 266.9 468.6 255.2 468.6z" />
           <path d="M505.7 240.9L376.4 113.3c-8.3-8.2-21.8-8.1-30.1 0.2s-8.2 21.8 0.2 30.1l92.4 91.2H191.4c-11.8 0-21.3 9.5-21.3 21.3 0 11.8 9.5 21.3 21.3 21.3h247.6l-92.4 91.2c-8.4 8.3-8.4 21.7-0.2 30.1 4.2 4.2 9.7 6.3 15.1 6.3 5.4 0 10.8-2 14.9-6.1l129.3-127.6c4-4 6.3-9.4 6.3-15.1C512 250.3 509.7 244.9 505.7 240.9z" />
         </svg>
-
+        <div className="header_notification">
+          <div>
+            <svg
+              className="not"
+              onClick={() => setNotificationActive(!notificationActive)}
+              id="notification"
+              viewBox="0 5.4 32 32"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g data-name="Layer 31" id="Layer_31">
+                <path d="M27,27H5a1,1,0,0,1-.89-1.45,18.14,18.14,0,0,0,1.89-8V14a10,10,0,0,1,20,0v3.53a18.14,18.14,0,0,0,1.89,8A1,1,0,0,1,27,27ZM6.55,25h18.9A20.14,20.14,0,0,1,24,17.53V14A8,8,0,0,0,8,14v3.53A20.14,20.14,0,0,1,6.55,25Z" />
+                <path d="M16,31a5,5,0,0,1-5-5,1,1,0,0,1,2,0,3,3,0,0,0,.88,2.12,3.08,3.08,0,0,0,4.24,0,1,1,0,0,1,1.42,1.42A5,5,0,0,1,16,31Z" />
+                <path d="M16,6a1,1,0,0,1-1-1V2a1,1,0,0,1,2,0V5A1,1,0,0,1,16,6Z" />
+                <path d="M26,5a2,2,0,1,1,2-2A2,2,0,0,1,26,5Zm0-2h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Zm0,0h0Z" />
+              </g>
+            </svg>
+            {a && <div className="notif" />}
+          </div>
+          {notificationActive && (
+            <Notifications setNotificationActive={setNotificationActive} />
+          )}
+        </div>
         <img className="header_user_icon" src={profilPic || john} alt="" />
 
         <div
@@ -312,7 +374,7 @@ function Header() {
               .getElementById("header_user_logout")!
               .classList.toggle("header_user_logout_active");
           }}
-          className="header_user_name"
+          className="header_user_name log"
         >
           <p
             onFocus={() => {}}
@@ -324,13 +386,13 @@ function Header() {
               document.getElementById("header_arrow")!.style.fill =
                 "var(--secondary-font-color)";
             }}
-            className="username"
+            className="username log"
           >
             {username}
           </p>
           <svg
             id="header_arrow"
-            className="header_arrow"
+            className="header_arrow log"
             xmlns="http://www.w3.org/2000/svg"
             width="452"
             height="452"
@@ -338,10 +400,11 @@ function Header() {
           >
             <path d="M225.9 354.7c-8.1 0-16.2-3.1-22.4-9.3L9.3 151.2c-12.4-12.4-12.4-32.4 0-44.8 12.4-12.4 32.4-12.4 44.7 0l171.9 171.9 171.9-171.9c12.4-12.4 32.4-12.4 44.7 0 12.4 12.4 12.4 32.4 0 44.8L248.3 345.4C242.1 351.6 234 354.7 225.9 354.7z" />
           </svg>
-          <div id="header_user_logout" className="header_user_logout">
+          <div id="header_user_logout" className="header_user_logout log">
             <span
               id="btn-logout"
               tabIndex={0}
+              className="log"
               role="button"
               onKeyDown={() => auth.signOut()}
               onClick={() => auth.signOut()}

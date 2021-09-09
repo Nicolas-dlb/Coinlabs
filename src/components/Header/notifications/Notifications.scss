@@ -1,0 +1,68 @@
+@import "theme/_variables.scss";
+
+.notifications {
+  width: 125px;
+  background: var(--third-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6%;
+  position: relative;
+  right: 5px;
+  box-shadow: inset 0px 13px 31px 39px var(--third-bg-color);
+  h3 {
+    font-size: 16px;
+    padding: 2px;
+  }
+  .notifications_title {
+    width: 90%;
+    margin: 0 5px;
+    cursor: default;
+    h3 {
+      padding-left: 2px;
+      color: var(--primary-font-color);
+    }
+    border-bottom: 1px solid rgb(112, 112, 112);
+  }
+  .no_notifications {
+    color: var(--third-font-color);
+    font-size: 14.5px;
+    padding: 4px;
+    cursor: default;
+  }
+  .not_read {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #71ce98;
+    margin-right: 25px;
+    margin-top: 4px;
+  }
+  .notification {
+    width: 90%;
+    padding: 10px 6px;
+    border-radius: 7%;
+    cursor: pointer;
+
+    .notification_title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      p {
+        font-size: 13px;
+      }
+    }
+    &:hover {
+      background: #2b253f;
+    }
+
+    h4 {
+      color: #fff;
+    }
+    p {
+      font-size: 14px;
+      color: var(--secondary-font-color);
+    }
+  }
+}

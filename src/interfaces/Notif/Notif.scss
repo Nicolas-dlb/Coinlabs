@@ -1,0 +1,33 @@
+.notification_panel {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.137);
+  z-index: 10000;
+  position: absolute;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+
+  .notification_container {
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    background: var(--app-bg);
+    .notification_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      svg {
+        fill: var(--third-font-color);
+        cursor: pointer;
+        &:hover {
+          fill: var(--secondary-font-color);
+        }
+      }
+    }
+  }
+}

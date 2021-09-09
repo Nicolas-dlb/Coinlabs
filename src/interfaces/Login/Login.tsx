@@ -28,6 +28,7 @@ import {
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import { setNotifications } from "redux/reducers/appSlice";
 import Register from "./Register/Register";
 
 function Login() {
@@ -676,11 +677,18 @@ function Login() {
           total: 0,
           timestamp: new Date().getTime(),
         }));
-
         dispatch(loadCryptoHistory(timelineDefault));
         dispatch(loadIncomeHistory(timelineDefault));
         dispatch(loadExpensesHistory(timelineDefault));
         dispatch(loadBalanceHistory(timelineDefault));
+        dispatch(
+          setNotifications({
+            name: "Hy!",
+            content: "Hi, I'm Nicolas.",
+            time: new Date().getTime(),
+            read: false,
+          })
+        );
         userAuth.user
           .updateProfile({
             displayName: userName,
@@ -730,6 +738,14 @@ function Login() {
                   cryptoHistory: timelineDefault,
                   expensesHistory: timelineDefault,
                   incomeHistory: timelineDefault,
+                  notifications: [
+                    {
+                      name: "Hy!",
+                      content: "Hi, I'm Nicolas.",
+                      time: new Date().getTime(),
+                      read: false,
+                    },
+                  ],
                 },
                 { merge: true }
               );
