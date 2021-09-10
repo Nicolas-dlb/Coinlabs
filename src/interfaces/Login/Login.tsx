@@ -708,7 +708,7 @@ function Login() {
             dispatch(
               setNotifications({
                 name: "Welcome!",
-                content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$ 💸`,
+                content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$`,
                 time: new Date().getTime(),
                 read: false,
               })
@@ -742,7 +742,7 @@ function Login() {
                   notifications: [
                     {
                       name: "Welcome!",
-                      content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$ 💸`,
+                      content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$`,
                       time: new Date().getTime(),
                       read: false,
                     },
