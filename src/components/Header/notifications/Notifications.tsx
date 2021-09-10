@@ -51,6 +51,9 @@ function Notifications({ setNotificationActive }: NotificationsProps) {
     }
     interval = seconds / 3600;
     if (interval > 1) {
+      return `${Math.floor(interval)} hour`;
+    }
+    if (interval > 2) {
       return `${Math.floor(interval)} hours`;
     }
     interval = seconds / 60;
@@ -118,8 +121,11 @@ function Notifications({ setNotificationActive }: NotificationsProps) {
               {notification.read === false && <div className="not_read not" />}
               <p className="not">{date(notification?.time)}</p>
             </div>
-            {notification?.content.split("").length > 15 ? (
-              <p className="not">{notification?.content.slice(0, 15)} ...</p>
+            {notification?.content.split("").length > 40 ? (
+              <p className="not">
+                {notification?.content.replace("<br></br>", "").slice(0, 40)}{" "}
+                ...
+              </p>
             ) : (
               <p className="not">{notification?.content}</p>
             )}

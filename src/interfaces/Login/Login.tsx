@@ -681,14 +681,7 @@ function Login() {
         dispatch(loadIncomeHistory(timelineDefault));
         dispatch(loadExpensesHistory(timelineDefault));
         dispatch(loadBalanceHistory(timelineDefault));
-        dispatch(
-          setNotifications({
-            name: "Hy!",
-            content: "Hi, I'm Nicolas.",
-            time: new Date().getTime(),
-            read: false,
-          })
-        );
+
         userAuth.user
           .updateProfile({
             displayName: userName,
@@ -740,8 +733,8 @@ function Login() {
                   incomeHistory: timelineDefault,
                   notifications: [
                     {
-                      name: "Hy!",
-                      content: "Hi, I'm Nicolas.",
+                      name: "Welcome!",
+                      content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$`,
                       time: new Date().getTime(),
                       read: false,
                     },

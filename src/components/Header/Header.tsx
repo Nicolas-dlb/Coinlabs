@@ -30,7 +30,7 @@ function Header() {
     const event = () => {
       $(".app").click((e) => {
         if (!e.target.classList.contains("not")) {
-          if (notificationActive === true) setNotificationActive(false);
+          setNotificationActive(false);
         }
         if (!e.target.classList.contains("log")) {
           if (document.getElementById("header_user_logout")) {

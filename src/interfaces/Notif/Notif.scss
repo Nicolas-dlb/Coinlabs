@@ -16,8 +16,13 @@
     padding: 20px;
     cursor: pointer;
     background: var(--app-bg);
+    line-height: 1.1;
+    p {
+      margin-top: 15px;
+    }
     .notification_header {
       display: flex;
+
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
