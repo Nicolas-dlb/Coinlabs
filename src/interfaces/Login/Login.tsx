@@ -705,6 +705,14 @@ function Login() {
                 expenses: 0,
               })
             );
+            dispatch(
+              setNotifications({
+                name: "Welcome!",
+                content: `Hi ${userName}! <br></br> Your account has been funded with 20,000$`,
+                time: new Date().getTime(),
+                read: false,
+              })
+            );
             lastUpdate(dispatch);
             dispatch(setProfilPic(picture));
             dispatch(
