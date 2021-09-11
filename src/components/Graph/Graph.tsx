@@ -66,7 +66,17 @@ function Graph({
       return (
         <>
           <div className="tooltip-top">
-            <p style={{ marginRight: "25px" }}>Balance</p>
+            <p style={{ marginRight: "25px" }}>
+              {num === 0
+                ? "BTC"
+                : num === 1
+                ? "ETH"
+                : num === 2
+                ? "LTC"
+                : num === 3
+                ? "NEO"
+                : "XRP"}
+            </p>
             <svg
               style={{ transform: `rotate(${angle})` }}
               xmlns="http://www.w3.org/2000/svg"

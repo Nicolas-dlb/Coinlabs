@@ -121,9 +121,9 @@ function Notifications({ setNotificationActive }: NotificationsProps) {
               {notification.read === false && <div className="not_read not" />}
               <p className="not">{date(notification?.time)}</p>
             </div>
-            {notification?.content.split("").length > 40 ? (
+            {notification?.content.split("").length > 30 ? (
               <p className="not">
-                {notification?.content.replace("<br></br>", "").slice(0, 40)}{" "}
+                {notification?.content.replace("<br></br>", "").slice(0, 20)}{" "}
                 ...
               </p>
             ) : (

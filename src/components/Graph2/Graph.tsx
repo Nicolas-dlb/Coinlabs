@@ -59,7 +59,7 @@ function Graph({
       return (
         <>
           <div className="tooltip-top">
-            <p style={{ marginRight: "25px" }}>Balance</p>
+            <p style={{ marginRight: "25px" }}>{selected}</p>
             <svg
               style={{ transform: `rotate(${angle})` }}
               xmlns="http://www.w3.org/2000/svg"
