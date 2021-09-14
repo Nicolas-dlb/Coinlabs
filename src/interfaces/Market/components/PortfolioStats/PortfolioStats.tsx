@@ -42,6 +42,7 @@ function PortfolioStats({ search }: PortfolioStatsProps) {
       : 0;
   const multiplicateur = active === "Week" ? 0.94 : 1;
   const l = -length;
+
   useEffect(() => {
     if (
       history[bitcoin] &&
@@ -58,6 +59,7 @@ function PortfolioStats({ search }: PortfolioStatsProps) {
           ripple: history[ripple].slice(l)[x][1] * 5000,
           litecoin: history[litecoin].slice(l)[x][1] * 100,
           neo: history[neo].slice(l)[x][1] * 200,
+          timestamp: history[bitcoin].slice(l)[x][0],
         }))
       );
     } else {
