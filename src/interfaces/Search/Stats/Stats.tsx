@@ -177,7 +177,7 @@ function Stats({ search = undefined }: StatsProps) {
           data={data}
           color="Green"
           width={0}
-          height={180}
+          height={230}
           tooltip
         />
       </div>

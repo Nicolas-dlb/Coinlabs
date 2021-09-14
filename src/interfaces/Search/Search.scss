@@ -125,8 +125,10 @@
             position: relative;
           }
           &::after {
-            top: -4vh;
-            bottom: 0vh;
+            top: -4.5vh;
+            width: 95%;
+            left: -0.5vw;
+            bottom: -2vh;
           }
         }
       }
