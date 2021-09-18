@@ -23,7 +23,7 @@ function Header() {
   });
   const n = useSelector(selectNotifications);
   let a = false;
-  n.map((x: any) => (x.read === false ? (a = true) : x));
+  n?.map((x: any) => (x?.read === false ? (a = true) : x));
   const logoutColor = menuActive ? "#787878" : "#FFF";
 
   useEffect(() => {
