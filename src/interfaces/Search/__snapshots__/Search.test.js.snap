@@ -2999,7 +2999,7 @@ exports[`Search should render corectly 1`] = `
             >
               <div
                 class="recharts-responsive-container"
-                style="width:90%;height:180px"
+                style="width:90%;height:230px"
               />
             </div>
           </div>

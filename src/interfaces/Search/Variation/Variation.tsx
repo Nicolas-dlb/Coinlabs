@@ -21,12 +21,23 @@ function Variation({ name, time }: VariationProps) {
   let color;
   if (variation) {
     color =
-      variation[name.toLowerCase()][time.toLowerCase()] > 0
+      variation[name.toLowerCase()][
+        time !== "3Month" && time !== "6Month"
+          ? time.toLowerCase()
+          : time.toLowerCase().slice(-5) + time.charAt(0)
+      ] > 0
         ? "#37bb77"
         : "#f1c94f";
   }
   const angle =
-    variation[name.toLowerCase()][time.toLowerCase()] > 0 ? "140deg" : "210deg";
+    variation[name.toLowerCase()][
+      time !== "3Month" && time !== "6Month"
+        ? time.toLowerCase()
+        : time.toLowerCase().slice(-5) + time.charAt(0)
+    ] > 0
+      ? "140deg"
+      : "210deg";
+
   const historyName =
     time === "Current"
       ? `${name.toLowerCase()}Week`

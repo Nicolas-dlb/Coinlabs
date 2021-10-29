@@ -54,6 +54,7 @@ exports[`Email should render correctly 1`] = `
           <input
             id="set_email"
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder="Enter new email"
             type="text"
           />

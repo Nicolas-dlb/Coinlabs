@@ -178,6 +178,7 @@ exports[`settings should render correctly 1`] = `
                 autoComplete="off"
                 className="username_element"
                 id="change_username"
+                onKeyPress={[Function]}
                 placeholder="Enter username"
                 spellCheck="false"
                 type="text"
@@ -235,6 +236,7 @@ exports[`settings should render correctly 1`] = `
               <input
                 id="set_email"
                 onChange={[Function]}
+                onKeyPress={[Function]}
                 placeholder="Enter new email"
                 type="text"
               />
@@ -269,6 +271,7 @@ exports[`settings should render correctly 1`] = `
                 id="add_founds"
                 min="0"
                 onChange={[Function]}
+                onKeyPress={[Function]}
                 placeholder="Enter amount"
                 type="number"
               />

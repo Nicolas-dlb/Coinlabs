@@ -193,7 +193,7 @@ exports[`Stats should render correctly 1`] = `
                 },
               ]
             }
-            height={180}
+            height={230}
             selected="Bitcoin"
             tooltip={true}
             width={0}
@@ -206,7 +206,7 @@ exports[`Stats should render correctly 1`] = `
               >
                 <ResponsiveContainer
                   debounce={0}
-                  height={180}
+                  height={230}
                   width="90%"
                 >
                   <ResizeDetector
@@ -217,7 +217,7 @@ exports[`Stats should render correctly 1`] = `
                       Object {
                         "current": <div
                           class="recharts-responsive-container"
-                          style="width: 90%; height: 180px;"
+                          style="width: 90%; height: 230px;"
                         />,
                       }
                     }
@@ -226,7 +226,7 @@ exports[`Stats should render correctly 1`] = `
                       className="recharts-responsive-container"
                       style={
                         Object {
-                          "height": 180,
+                          "height": 230,
                           "maxHeight": undefined,
                           "minHeight": undefined,
                           "minWidth": undefined,
