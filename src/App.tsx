@@ -26,6 +26,7 @@ import {
   resetCryptoHistory,
   resetExpensesHistory,
   resetIncomeHistory,
+  resetLastUpdate,
   resetWalletHistory,
   selectBalanceHistory,
   selectCryptoHistory,
@@ -156,6 +157,7 @@ function App() {
           dispatch(resetExpensesHistory());
           dispatch(resetWalletHistory());
           dispatch(resetNotifications());
+          dispatch(resetLastUpdate());
         }
 
         setTimeout(() => {

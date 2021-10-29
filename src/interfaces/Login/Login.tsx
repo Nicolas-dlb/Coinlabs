@@ -13,6 +13,7 @@ import {
   loadCryptoHistory,
   loadExpensesHistory,
   loadIncomeHistory,
+  setLastUpdate,
   setWallets,
 } from "redux/reducers/walletsSlice";
 import {
@@ -29,6 +30,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import { setNotifications } from "redux/reducers/appSlice";
+import { auth } from "firebaseConfig";
 import Register from "./Register/Register";
 
 function Login() {
@@ -713,7 +715,7 @@ function Login() {
                 read: false,
               })
             );
-            lastUpdate(dispatch);
+            lastUpdate(dispatch, auth.currentUser?.uid);
             dispatch(setProfilPic(picture));
             dispatch(
               login({
@@ -723,6 +725,15 @@ function Login() {
             );
           })
           .then(() => {
+            const date = new Date();
+            const month =
+              date.getMonth() + 1 < 10
+                ? `0${date.getMonth() + 1}`
+                : date.getMonth() + 1;
+            const day =
+              date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+            const lastTrade = `${day}/${month}`;
+            dispatch(setLastUpdate(lastTrade));
             firebase
               .firestore()
               .collection("users")
@@ -733,7 +744,7 @@ function Login() {
                   password,
                   email,
                   // baseEmail: email,
-
+                  lastTrade,
                   profilPic: picture,
                   balanceHistory: timelineDefault,
                   cryptoHistory: timelineDefault,

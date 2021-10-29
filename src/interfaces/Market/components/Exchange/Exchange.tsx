@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getNumberFixed, lastUpdate, numberWithSpaces } from "utils/utils";
 import SelectExchange from "components/SelectExchange/SelectExchange";
 import $ from "jquery";
@@ -8,12 +8,14 @@ import {
   setBalanceHistory,
   setExpensesHistory,
   setIncomeHistory,
+  setLastUpdate,
   setWalletHistory,
   setWallets,
 } from "redux/reducers/walletsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMarket } from "redux/reducers/marketSlice";
 import "./Exchange.scss";
+import { auth, db } from "firebaseConfig";
 
 function Exchange() {
   const wallet = useSelector(selectWallets);
@@ -27,6 +29,14 @@ function Exchange() {
   const market = useSelector(selectMarket);
   const numberCrypto = market[cryptoSelected]?.usd * nbr;
   const numberCurrency = nbrCurrency * market[currencySelected]?.usd;
+
+  useEffect(() => {
+    db.collection("users")
+      .doc(auth.currentUser?.uid)
+      .get()
+      .then((doc) => doc.data())
+      .then((data) => data && dispatch(setLastUpdate(data.lastTrade)));
+  }, []);
 
   const handleChangeCurrency = () => {
     const inputBuy: any = $("#inputBuy").val();
@@ -100,7 +110,7 @@ function Exchange() {
           price: getNumberFixed(Number(numberCrypto), 0),
         })
       );
-      lastUpdate(dispatch);
+      lastUpdate(dispatch, auth.currentUser?.uid);
       setLastInput("");
       setNbr(0);
       $("#inputSell").val(0);
@@ -149,7 +159,7 @@ function Exchange() {
           price: getNumberFixed(Number(numberCurrency), 0),
         })
       );
-      lastUpdate(dispatch);
+      lastUpdate(dispatch, auth.currentUser?.uid);
 
       setLastInput("");
       setNbrCurrency(0);

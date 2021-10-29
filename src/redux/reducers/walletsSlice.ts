@@ -158,6 +158,9 @@ const walletsSlice = createSlice({
     setLastUpdate: (state: WalletsState, action: any) => {
       state.lastUpdate = action.payload;
     },
+    resetLastUpdate: (state: WalletsState) => {
+      state.lastUpdate = "00/00";
+    },
   },
 });
 
@@ -172,6 +175,7 @@ export const selectExpensesHistory = (state: any) =>
   state.wallets.expensesHistory;
 export const {
   setLastUpdate,
+  resetLastUpdate,
   loadWallets,
   setWallets,
   setBalanceHistory,

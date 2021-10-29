@@ -17,12 +17,20 @@ export function numberWithSpaces(x: any) {
   }
   return parts?.join(".");
 }
-export function lastUpdate(dispatch: any) {
+export function lastUpdate(dispatch: any, user: any) {
   const date = new Date();
   const day = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`;
   const month =
-    date.getMonth() + 1 >= 10 ? date.getMonth() : `0${date.getMonth() + 1}`;
+    date.getMonth() + 1 >= 10 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`;
   dispatch(setLastUpdate(`${day}/${month}`));
+  db.collection("users")
+    .doc(user)
+    .set(
+      {
+        lastTrade: `${day}/${month}`,
+      },
+      { merge: true }
+    );
 }
 
 export const updateUserWallet = (wallet: any, user: any) => {

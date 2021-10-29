@@ -4,6 +4,7 @@ import { getNumberFixed, lastUpdate, numberWithSpaces } from "utils/utils";
 import "./InfoBoxD.scss";
 import $ from "jquery";
 import React, { useEffect } from "react";
+import { auth } from "firebaseConfig";
 
 type InfoBoxProps = {
   title: string;
@@ -29,7 +30,7 @@ function InfoBox({ title, variation, input }: InfoBoxProps) {
         usd: Number(value),
       })
     );
-    lastUpdate(dispatch);
+    lastUpdate(dispatch, auth.currentUser?.uid);
     $("#balance").val(getNumberFixed(value, 2));
   };
 
